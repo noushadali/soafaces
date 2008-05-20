@@ -1,13 +1,10 @@
-#summary One-sentence summary of this page.
-
 = Introduction =
 
-SOAFacesRunner
+SoaFacesRunner is a reference implementation of SOAFaces. It can be used for both development and production deployment purposes. Developers can use it to test development of their SOAFaces Bundle components (SFBs) and it can also be used to deploy a SOAFaces job or application as in its own WAR file for production deployment.
+
+With SoaFacesRunner you can package up your SFB into a WAR file and deploy to any standard JEE servlet engine. 
 
 
-= Details =
+= Status =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+Currently only SOAApplets are supported. In the future you will also be able to create jobs by composing together multiple SOATasklets in a WAR file.
