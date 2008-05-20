@@ -1,0 +1,3 @@
+= Introduction =
+
+PseudoMuleClient is GWT class interface that give you much of the power of the classical MuleClient used to connect to Mule endpoints and other SOA services all across your network.
