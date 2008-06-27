@@ -1,0 +1,15 @@
+#How to use the PseudoMuleClient API in your GWT applications
+
+= Introduction =
+
+  * Review the !PseudoMuleClient API in the SOAFaces JavaDocs
+  * Review the sample code in pmuleclient.war
+  * Download and install the necessary soafaces jars
+ 
+You need two jars to use the basic PseudoMuleClient GWT API and invoke RPC calls on services you have implemented in your webapps.
+  * soafaces-gwt-client.jar
+  * soafaces-gwt-mule-servlet.jar
+
+If you want to also access Mule endpoint services use these jars it is the same as the above jar but in addition it includes Mule jars that you will also need to include to your webapp:
+  * soafaces-gwt-client.jar
+  * soafaces-gwt-mule-servlet.jar
