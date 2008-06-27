@@ -1,3 +1,26 @@
 = Introduction =
 
-PseudoMuleClient is GWT class interface that give you much of the power of the classical MuleClient used to connect to Mule endpoints and other SOA services all across your network.
+!PseudoMuleClient is GWT interface that gives you much of the power of the classical [http://mulesource.org MuleClient] API used to connect to Mule endpoints and other SOA services all across your network.
+
+!PseudoMuleClient functions a universal interface capable of invoking any POJO service or any Mule service endpoint (SOAP, JMS...etc) using a simple API. You can pass and return POJO and JSON objects directly to your GWT application using the !PseudoMuleClient API.
+
+The !PseudoMuleClient interface can pass any java object supported for serialization by GWT including any object that support IsSerializable. You can also pass other objects by wrapping them as JSON. The interface allows you to pass any arbitrary number of objects by using an object array (e.g. Object []) argument. Here is an example of how you can use the API to invoke the object and method com.acme.FooObject.myMethod(int, String) :
+
+{{{
+  //If you are using soafaces from a generic GWT app then you need to use
+  //the PseudoMuleClientFactory to get the PseudoMuleClient object. Otherwise,
+  //if your code is running in a SFB Container you can simpley get the PseudoMuleClient
+  //object from the context.
+  PseudoMuleClient muleClient = PseudoMuleClientFactory.getInstance().getPseudoMuleClient("/mywebapp/SoafacesServlet");
+  
+  Object [] myArgs = new Object[2];
+  myArgs[0] = new Integer(5); //argument #1 is an integer
+  myArgs[1] = "Some Value"; //argument #2 is a string
+
+  //The method FooObject.myMethod must be marked with a soafaces annotation
+  //The example here uses the annotation name "SomeAnnotation" 
+  //The object FooObject must also have a default constructor
+  muleClient.request("sfb://com.acme.FooObject/SomeAnnotation", myArgs, asyncPOJOHandler);
+}}}
+
+Refer to the [http://soafaces.googlecode.com/files/pmuleclient-2.0.0.zip pmuleclient WAR file] for an example of how to use the !PseudoMuleClient API directly from your own GWT client code. This is a sample webapp that shows how to use the API. Download and install it in an servlet container to demo the API in a simple GWT client application.
