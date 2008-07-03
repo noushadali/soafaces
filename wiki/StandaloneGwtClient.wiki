@@ -4,9 +4,11 @@
 
 This section describes how you can use the services portion of the SOAFaces API to make SOA messaging/RPC calls from any GWT client application with no RPC complexity. All you do is set an annotation endpoint marker on methods on a POJO object and then reference that endpoint in your PseudoMuleClient calls. You can send and receive POJO and JSON arguments and return values without dealing with complex mar shelling and related logic. See the 'pmuleclient.war' WAR application for an example. The WAR file also contains the source for the demonstration.
 
-  * Review the !PseudoMuleClient Services API in the SOAFaces JavaDocs
+To get started:
+  * Review the !PseudoMuleClient Services API in the SOAFaces Javadocs
+  * Download and run the pmuleclient.war webapp in any servlet engine (aka Tomcat, Jetty ...etc)
   * Review the sample code in pmuleclient.war
-  * Download and install the necessary soafaces jars
+  * Download and install the necessary soafaces jars and build your own application using the !PseudoMuleClient Messaging API
 
 If you want to also access Mule endpoint services use these jars it is the same as the above jar but in addition it includes Mule jars that you will also need to include to your webapp:
   * soafaces-services-client.jar - Contains GWT client RPC APIs to use to compile your GWT application with
