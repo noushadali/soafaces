@@ -1,6 +1,8 @@
-#summary How to use the PseudoMuleClient API in your GWT applications
+#summary How to use the PseudoMuleClient API in your GWT applications to send and receive SOA messages.
 
 = Introduction =
+
+This section describes how you can use the services portion of the SOAFaces API to make SOA messaging/RPC calls from any GWT client application with no RPC complexity. All you do is set an annotation endpoint marker on methods on a POJO object and then reference that endpoint in your PseudoMuleClient calls. You can send and receive POJO and JSON arguments and return values without dealing with complex mar shelling and related logic. See the 'pmuleclient.war' WAR application for an example. The WAR file also contains the source for the demonstration.
 
   * Review the !PseudoMuleClient Services API in the SOAFaces JavaDocs
   * Review the sample code in pmuleclient.war
