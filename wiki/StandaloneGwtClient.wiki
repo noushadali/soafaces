@@ -2,14 +2,14 @@
 
 = Introduction =
 
-  * Review the !PseudoMuleClient API in the SOAFaces JavaDocs
+  * Review the !PseudoMuleClient Services API in the SOAFaces JavaDocs
   * Review the sample code in pmuleclient.war
   * Download and install the necessary soafaces jars
- 
-You need two jars to use the basic PseudoMuleClient GWT API and invoke RPC calls on services you have implemented in your webapps.
-  * soafaces-gwt-client.jar
-  * soafaces-gwt-mule-servlet.jar
 
 If you want to also access Mule endpoint services use these jars it is the same as the above jar but in addition it includes Mule jars that you will also need to include to your webapp:
-  * soafaces-gwt-client.jar
-  * soafaces-gwt-mule-servlet.jar
+  * soafaces-services-client.jar - Contains GWT client RPC APIs to use to compile your GWT application with
+  * soafaces-services-servlet.jar - Handles servlet RPC communicate with PseudoMuleClient messaging API.
+
+If you do not want to route calls to Mule supported endpoint and do not want to include the Mule JAR dependencies you can use a stripped down version of the servlet JAR as shown below. You need two jars to use the basic PseudoMuleClient GWT API that will allow you the ability to invoke RPC calls on services you have implemented in your webapps.
+  * soafaces-services-client.jar
+  * soafaces-services-nomule-servlet.jar
