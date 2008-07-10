@@ -1,3 +1,5 @@
+#summary Interface that allows you to invoke remote services from GWT client
+
 = Introduction =
 
 !UniversalClient is GWT interface that gives you much of the power of the classical [http://mulesource.org MuleClient] API used to connect to Mule endpoints and other SOA services all across your network.
