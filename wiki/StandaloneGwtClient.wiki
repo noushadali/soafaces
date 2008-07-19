@@ -1,19 +1,19 @@
-#summary How to use the PseudoMuleClient API in your GWT applications to send and receive SOA messages.
+#summary How to use the UniversalClient API in your GWT applications to send and receive SOA messages.
 
 = Introduction =
 
-This section describes how you can use the services portion of the SOAFaces API to make SOA messaging/RPC calls from any GWT client application with no RPC complexity. All you do is set an annotation endpoint marker on methods on a POJO object and then reference that endpoint in your PseudoMuleClient calls. You can send and receive POJO and JSON arguments and return values without dealing with complex mar shelling and related logic. See the 'pmuleclient.war' WAR application for an example. The WAR file also contains the source for the demonstration.
+This section describes how you can use the services portion of the SOAFaces API to make SOA messaging/RPC calls from any GWT client application with no RPC complexity. All you do is set an annotation endpoint marker on methods on a POJO object and then reference that endpoint in your !UniversalClient calls. You can send and receive POJO and JSON arguments and return values without dealing with complex mar shelling and related logic. See the 'pmuleclient.war' WAR application for an example. The WAR file also contains the source for the demonstration.
 
 To get started:
-  * Review the !PseudoMuleClient Services API in the SOAFaces Javadocs
-  * Download and run the pmuleclient.war webapp in any servlet engine (aka Tomcat, Jetty ...etc)
+  * Review the !UniversalClient Services API in the SOAFaces Javadocs
+  * Download and run the universalapp.war webapp in any servlet engine (aka Tomcat, Jetty ...etc)
   * Review the sample code in pmuleclient.war
-  * Download and install the necessary soafaces jars and build your own application using the !PseudoMuleClient Messaging API
+  * Download and install the necessary soafaces jars and build your own application using the !UniversalClient Messaging API
 
 If you want to also access Mule endpoint services use these jars it is the same as the above jar but in addition it includes Mule jars that you will also need to include to your webapp:
   * soafaces-services-client.jar - Contains GWT client RPC APIs to use to compile your GWT application with
-  * soafaces-services-servlet.jar - Handles servlet RPC communicate with PseudoMuleClient messaging API.
+  * soafaces-services-servlet.jar - Handles servlet RPC communicate with !UniversalClient messaging API.
 
-If you do not want to route calls to Mule supported endpoint and do not want to include the Mule JAR dependencies you can use a stripped down version of the servlet JAR as shown below. You need two jars to use the basic PseudoMuleClient GWT API that will allow you the ability to invoke RPC calls on services you have implemented in your webapps.
+If you do not want to route calls to Mule supported endpoint and do not want to include the Mule JAR dependencies you can use a stripped down version of the servlet JAR as shown below. You need two jars to use the basic !UniversalClient GWT API that will allow you the ability to invoke RPC calls on services you have implemented in your webapps.
   * soafaces-services-client.jar
   * soafaces-services-nomule-servlet.jar
