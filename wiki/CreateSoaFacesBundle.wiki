@@ -1,13 +1,5 @@
-#summary One-sentence summary of this page.
+#summary How to create a SFB (SOAFaces Bundle)
 
-= Introduction =
+= How to Create a SFB (SOAFaces Bundle) =
 
-Add your content here.
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+A SFB (SOAFaces Bundle) is a simple JAR that contains the classes and resources needed to execute your SOAFaces Application or Task/Job.
