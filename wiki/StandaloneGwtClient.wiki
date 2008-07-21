@@ -7,7 +7,7 @@ This section describes how you can use the services portion of the SOAFaces API 
 To get started:
   * Review the !UniversalClient Services API in the SOAFaces Javadocs
   * Download and run the universalapp.war webapp in any servlet engine (aka Tomcat, Jetty ...etc)
-  * Review the sample code in pmuleclient.war
+  * Review the sample code in universalapp.war
   * Download and install the necessary soafaces jars and build your own application using the !UniversalClient Messaging API
 
 If you want to also access Mule endpoint services use these jars it is the same as the above jar but in addition it includes Mule jars that you will also need to include to your webapp:
