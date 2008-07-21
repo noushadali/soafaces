@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary Specification for how logging is handled by the SOAFaces Container
 
 = Introduction =
 
