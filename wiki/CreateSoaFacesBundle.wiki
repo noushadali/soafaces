@@ -1,5 +1,3 @@
 #summary How to create a SFB (SOAFaces Bundle)
 
-= How to Create a SFB (SOAFaces Bundle) =
-
 A SFB (SOAFaces Bundle) is a simple JAR that contains the classes and resources needed to execute your SOAFaces Application or Task/Job.
