@@ -13,7 +13,7 @@ The !UniversalClient interface can pass any java object supported for serializat
   //the UniversalClientFactory to get the UniversalClient object. Otherwise,
   //if your code is running in a SFB Container you can simpley get the UniversalClient
   //object from the context.
-  UniversalClient muleClient = UniversalClientFactory.getInstance().getUniversalClient("/mywebapp/SoafacesServlet");
+  UniversalClient uClient = UniversalClientFactory.getInstance().getUniversalClient("/mywebapp/SoafacesServlet");
   
   Object [] myArgs = new Object[2];
   myArgs[0] = new Integer(5); //argument #1 is an integer
@@ -22,7 +22,7 @@ The !UniversalClient interface can pass any java object supported for serializat
   //The method FooObject.myMethod must be marked with a soafaces annotation
   //The example here uses the annotation name "SomeAnnotation" 
   //The object FooObject must also have a default constructor
-  muleClient.request("sfb://com.acme.FooObject/SomeAnnotation", myArgs, asyncPOJOHandler);
+  uClient.request("soafaces://com.acme.FooObject/SomeAnnotation", myArgs, asyncPOJOHandler);
 }}}
 
 Refer to the [http://soafaces.googlecode.com/files/pmuleclient-2.0.0.zip pmuleclient WAR file] for an example of how to use the !UniversalClient API directly from your own GWT client code. This is a sample webapp that shows how to use the API. Download and install it in an servlet container to demo the API in a simple GWT client application.
