@@ -10,7 +10,7 @@ To get started:
   * Review the sample code in universalapp.war
   * Download and install the necessary soafaces jars and build your own application using the !UniversalClient Messaging API
 
-If you want to also access Mule endpoint services use these jars it is the same as the above jar but in addition it includes Mule jars that you will also need to include to your webapp:
+If you want to also access endpoint services that include Mule use the jars shown below in your webapp. Note that you will also need include in your webapp an necessary Mule jars:
   * soafaces-services-client.jar - Contains GWT client RPC APIs to use to compile your GWT application with
   * soafaces-services-servlet.jar - Handles servlet RPC communicate with !UniversalClient messaging API.
 
