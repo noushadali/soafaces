@@ -2,7 +2,7 @@
 
 = Introduction =
 
-This section describes how you can use the services portion of the SOAFaces API to make SOA messaging/RPC calls from any GWT client application with no RPC complexity. All you do is set an annotation endpoint marker on methods on a POJO object and then reference that endpoint in your !UniversalClient calls. You can send and receive POJO and JSON arguments and return values without dealing with complex mar shelling and related logic. See the 'pmuleclient.war' WAR application for an example. The WAR file also contains the source for the demonstration.
+This section describes how you can use the services portion of the SOAFaces API to make SOA messaging/RPC calls from any GWT client application with no RPC complexity. All you do is set an annotation endpoint marker on methods on a POJO object and then reference that endpoint in your !UniversalClient calls. You can send and receive POJO and JSON arguments and return values without dealing with complex mar shelling and related logic. See the [http://soafaces.googlecode.com/files/universalapp-example-war-2.0.0.zip universalapp WAR] application for an example. The WAR file also contains the source for the demonstration.
 
 To get started:
   * Review the !UniversalClient Services API in the SOAFaces Javadocs
