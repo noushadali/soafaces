@@ -260,6 +260,6 @@ Here is an example of a simple ANT target that can construct the SFB archive fil
 
 Notice that the client GWT code requires the source also be included in the JAR file. The GWT compiler requires the source and will use this to compile, on the fly, the SOAApplet into GWT AJAX code. The lib directory can contain any needed third party JARs used by the SOAApplet or SOATasklet code.
 
-===Step 7: Deploy the new SFB to a SFB Container (like JobServer)===
+===Step 7: Deploy the new SFB to a SFB Container (like !JobServer)===
 
-Name the SFB JAR something like myhelloworld.sfb and place it in the JobServer soafaces directory. The name must be unique within JobServer. Now go to the JobServer SOAFaces Repository tool and you should see the new SFB. It can now be used to build a new job! 
+Name the SFB JAR something like myhelloworld.sfb and place it in the !JobServer soafaces directory. The name must be unique within !JobServer. Now go to the JobServer SOAFaces Repository tool and you should see the new SFB. It can now be used to build a new job! 
