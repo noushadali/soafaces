@@ -220,6 +220,42 @@ lib/
     someThirdPartyGWT-Client.jar
     someThirdPartyServer-Side.jar
 }}}
+
+Here is an example of a simple ANT target that can construct the SFB archive file:
+
+{{{
+    <target name="beansoup_tba" depends="beansoup" description="Package all BeanSoup components into tba jars">
+    <!-- Mail -->
+      <mkdir dir="build/beansoup-build/org-beansoup-gwtmail-v1-0-0/classes" />
+      <copy todir="build/beansoup-build/org-beansoup-gwtmail-v1-0-0/classes"
+            overwrite="false">
+         <fileset dir="${build.classes.dir}"
+                  includes="org/beansoup/gwtmail/**/*.class"/>
+                 
+         <fileset dir="${src.dir}"
+                  includes="org/beansoup/gwtmail/*.xml
+                            org/beansoup/gwtmail/client/*.java
+                            org/beansoup/gwtmail/public/*.css
+                            org/beansoup/gwtmail/client/*.jpg
+                            org/beansoup/gwtmail/client/*.png
+                            org/beansoup/gwtmail/client/*.gif"/>
+      </copy>
+      
+      <jar destfile="build/beansoup-build/org-beansoup-gwtmail-v1-0-0.sfb"
+           basedir="build/beansoup-build/org-beansoup-gwtmail-v1-0-0"
+           includes="**">
+    
+         <manifest>
+           <attribute name="SOAFaces-Name"            value="GWT Mail Demo"/>
+           <attribute name="SOAFaces-SymbolicName"    value="surda-beansoup-gwtmail"/>
+           <attribute name="SOAFaces-Version"         value="1.0.0"/>
+           <attribute name="SOAFaces-Description"     value="Repackaged GWT Mail sample application"/>
+           <attribute name="SOAFaces-Vendor"          value="Grand Logic, Inc"/>
+           <attribute name="SOAFaces-Category"        value="example"/>
+           <attribute name="SOAFaces-Applet"          value="org.beansoup.gwtmail.client.MailApplet"/>
+         </manifest>    
+      </jar>
+}}}
     
 
 Notice that the client GWT code requires the source also be included in the JAR file. The GWT compiler requires the source and will use this to compile, on the fly, the SOAApplet into GWT AJAX code. The lib directory can contain any needed third party JARs used by the SOAApplet or SOATasklet code.
