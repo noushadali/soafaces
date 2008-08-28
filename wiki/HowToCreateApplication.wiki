@@ -33,8 +33,7 @@ public class HelloWorldApp extends SimplePOJOApplet
     VerticalPanel vSpacer = null;
 
     getMainPanel().add(new Label("Simple hello world example. Constructs a simple " +
-                                  "hello world message and logs it using Java " + 
-                                  "Logging API when the SOATasklet is run in a Job"));
+                                  "hello world message"));
     vSpacer = new VerticalPanel(); vSpacer.setHeight("20");
     getMainPanel().add(vSpacer);
     
@@ -58,9 +57,7 @@ public class HelloWorldApp extends SimplePOJOApplet
    *
    * The Container hosting the SOApplet will call
    * this method in order to save the input JavaBean
-   * to its persistent store. The saved state of the
-   * input JavaBean is what is referenced when the
-   * SOATasklet/Job is run.
+   * to its persistent store.
    */
   public void onSaveInputBean(SuccessFailCallback callback)
   {
