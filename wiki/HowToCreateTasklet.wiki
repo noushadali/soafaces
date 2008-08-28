@@ -187,7 +187,7 @@ public class HelloWorldOutput implements IsSerializable
 
 ===Step 5: Create MANIFEST.MF File===
 
-The MANIFEST.MF file contains the meta information that informs JobServer what is contained in the SFB JAR file and what interfaces are defined by the SFB. The file is placed in the META-INF directory within the SFB JAR.
+The MANIFEST.MF file contains the meta information that informs a SOAFaces container like !JobServer what is contained in the SFB JAR file and what interfaces are defined by the SFB. The file is placed in the META-INF directory within the SFB JAR.
 
 {{{
 SOAFaces-Name: Hello World 3
@@ -225,34 +225,34 @@ Here is an example of a simple ANT target that can construct the SFB archive fil
 
 {{{
     <target name="beansoup_tba" depends="beansoup" description="Package all BeanSoup components into tba jars">
-    <!-- Mail -->
-      <mkdir dir="build/beansoup-build/org-beansoup-gwtmail-v1-0-0/classes" />
-      <copy todir="build/beansoup-build/org-beansoup-gwtmail-v1-0-0/classes"
+    <mkdir dir="build/beansoup-build/org-beansoup-helloworld3-v1-0-0/classes" />
+      <copy todir="build/beansoup-build/org-beansoup-helloworld3-v1-0-0/classes"
             overwrite="false">
          <fileset dir="${build.classes.dir}"
-                  includes="org/beansoup/gwtmail/**/*.class"/>
+                  includes="org/beansoup/helloworld3/**/*.class"/>
                  
          <fileset dir="${src.dir}"
-                  includes="org/beansoup/gwtmail/*.xml
-                            org/beansoup/gwtmail/client/*.java
-                            org/beansoup/gwtmail/public/*.css
-                            org/beansoup/gwtmail/client/*.jpg
-                            org/beansoup/gwtmail/client/*.png
-                            org/beansoup/gwtmail/client/*.gif"/>
+                  includes="org/beansoup/helloworld3/*.xml
+                            org/beansoup/helloworld3/client/*.java
+                            org/beansoup/helloworld3/public/*.css"/>
       </copy>
-      
-      <jar destfile="build/beansoup-build/org-beansoup-gwtmail-v1-0-0.sfb"
-           basedir="build/beansoup-build/org-beansoup-gwtmail-v1-0-0"
+      <jar destfile="build/beansoup-build/org-beansoup-helloworld3-v1-0-0.sfb"
+           basedir="build/beansoup-build/org-beansoup-helloworld3-v1-0-0"
            includes="**">
     
          <manifest>
-           <attribute name="SOAFaces-Name"            value="GWT Mail Demo"/>
-           <attribute name="SOAFaces-SymbolicName"    value="surda-beansoup-gwtmail"/>
+           <attribute name="SOAFaces-Name"            value="Hello World 3"/>
+           <attribute name="SOAFaces-SymbolicName"    value="surda-beansoup-helloworld3"/>
            <attribute name="SOAFaces-Version"         value="1.0.0"/>
-           <attribute name="SOAFaces-Description"     value="Repackaged GWT Mail sample application"/>
+           <attribute name="SOAFaces-Description"     value="Simple Mulet with an input JavaBean and MFace Customizer"/>
            <attribute name="SOAFaces-Vendor"          value="Grand Logic, Inc"/>
            <attribute name="SOAFaces-Category"        value="example"/>
-           <attribute name="SOAFaces-Applet"          value="org.beansoup.gwtmail.client.MailApplet"/>
+           <attribute name="SOAFaces-Tasklet"         value="org.beansoup.helloworld3.workflow.HelloWorld"/>
+           <attribute name="SOAFaces-InputBean"       value="org.beansoup.helloworld3.client.HelloWorldInput"/>
+           <attribute name="SOAFaces-OutputBean"      value=""/>
+           <attribute name="SOAFaces-Applet"          value="org.beansoup.helloworld3.client.HelloWorldCustomizer"/>
+           <attribute name="SOAFaces-InputViewer"     value=""/>
+           <attribute name="SOAFaces-OutputViewer"    value=""/>
          </manifest>    
       </jar>
 }}}
@@ -262,4 +262,4 @@ Notice that the client GWT code requires the source also be included in the JAR 
 
 ===Step 7: Deploy the new SFB to a SFB Container (like !JobServer)===
 
-Name the SFB JAR something like myhelloworld.sfb and place it in the !JobServer soafaces directory. The name must be unique within !JobServer. Now go to the JobServer SOAFaces Repository tool and you should see the new SFB. It can now be used to build a new job! 
+Name the SFB JAR something like myhelloworld.sfb and place it in the !JobServer soafaces directory. The name must be unique within !JobServer. Now go to the !JobServer SOAFaces Repository tool and you should see the new SFB. It can now be used to build a new job! 
