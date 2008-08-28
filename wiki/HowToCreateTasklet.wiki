@@ -265,6 +265,7 @@ Here is an example of a simple ANT target that can construct the SFB archive fil
            <attribute name="SOAFaces-OutputViewer"    value=""/>
          </manifest>    
       </jar>
+    </target>
 }}}
     
 
