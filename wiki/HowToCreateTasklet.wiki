@@ -1,6 +1,6 @@
 #summary Steps to creating a SFB Tasklet
 
-==Creating a Tasklet SFB Example==
+==Example Tasklet SFB==
 This example shows how to build a SFB that implements a Tasklet and also includes an Applet for customizing the Tasklet's input !JavaBean.
 
 Follow these steps to learn how to develop, package and deploy your own SOAFaces Bundle (SFB).
