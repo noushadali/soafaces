@@ -1,0 +1,199 @@
+#summary Steps to creating a SFB Tasklet
+
+==Creating a Tasklet SFB Example==
+This example shows how to build a SFB that implements a Tasklet and also includes an Applet for customizing the Tasklet's input !JavaBean.
+
+Follow these steps to learn how to develop, package and deploy your own SOAFaces Bundle (SFB).
+
+===Step 1: Implement a Tasklet===
+
+Using the SOATasklet interface, implement the `org.soafces.bundle.workflow.SOATasklet` interface by implementing the `onExecute` method. Here is a simple example:
+
+{{{
+public class HelloWorld implements SOATasklet 
+{
+  public HelloWorld()
+  {
+    super();
+  }
+
+  /**
+   * The outBean is null in this example because there is no
+   * output JavaBean defined.
+   *  
+   */
+  public void onExecute(SOATaskInputContext inputContext, SOATaskOutputContext outputContext)
+  {	
+    //If your SOATasklet uses an input and/or output JavaBean then it is 
+    //best to get them and cast to the appropriate class type.
+    HelloWorldInput inputBean = (HelloWorldInput) inputContext.getInputBean();
+
+    /**
+     * Create and name a logger in order to log all messages. The name
+     * can be anything you like. These logs messages can be viewed
+     * using the JobServer Tracker tool which privides a history of
+     * all Taskelets and Jobs that have run.
+     *
+     * JobServer captures all Log4J and Java Logging API messages
+     * made by the Tasklet and makes them available for viewing from
+     * the Job Tracker tool. Note that Log4J Logger must support
+     * additivity=true for logs to be captured and reported by Job Tracker.
+     */
+    Logger myLogger = Logger.getLogger("myLogger");
+    myLogger.log(Level.INFO, "Hello " + inputBean.getPersonName());
+
+    return;
+  }
+}
+}}}
+
+
+The onExecute method will be called when the above Tasklet is run as part of a job.
+
+===Step 2: Implement a SOAApplet==
+
+This step is optional when creating Tasklets. The SOAApplet will be used to customize the input !JavaBean that is used as input to the SOATasklet when the job is run. Here is what the SOAApplet implementation might look like:
+
+{{{
+public class HelloWorldCustomizer extends SimplePOJOApplet
+{ 
+  private TextBox _oNameField = new TextBox();
+  private HelloWorldInput _oMyInputBean = null;
+
+  /**
+   */
+  public HelloWorldCustomizer() {}
+
+  protected void populateMainPanelPOJO(IsSerializable inputBean)
+  {
+    _oMyInputBean = (HelloWorldInput) inputBean;
+
+    VerticalPanel vSpacer = null;
+
+    getMainPanel().add(new Label("Simple hello world example. Constructs a simple " +
+                                  "hello world message and logs it using Java " + 
+                                  "Logging API when the SOATasklet is run in a Job"));
+    vSpacer = new VerticalPanel(); vSpacer.setHeight("20");
+    getMainPanel().add(vSpacer);
+    
+    getMainPanel().add(new Label("(Enter your name to put into hello world message)"));	
+    vSpacer = new VerticalPanel(); vSpacer.setHeight("2");
+    getMainPanel().add(vSpacer);
+    getMainPanel().add(new Label("Name: "));
+    getMainPanel().add(_oNameField);
+    vSpacer = new VerticalPanel(); vSpacer.setHeight("20");
+    getMainPanel().add(vSpacer);
+      
+    //Initialize the field to the value in the input JavaBean
+    _oNameField.setText(_oMyInputBean.getPersonName());
+  }
+
+  /**
+   * This method should be used to save the state 
+   * of the GUI to the input JavaBean and perform
+   * any necessary validation checks. If the validation
+   * is not proper it should return false.
+   *
+   * The Container hosting the SOApplet will call
+   * this method in order to save the input JavaBean
+   * to its persistent store. The saved state of the
+   * input JavaBean is what is referenced when the
+   * SOATasklet/Job is run.
+   */
+  public void onSaveInputBean(SuccessFailCallback callback)
+  {
+    try {
+      //Save the changes made by the user/gui to the input JavaBean
+      //person name
+      if(_oNameField.getText() == null || _oNameField.getText().trim().equals(""))
+      {
+        Window.alert("Error: No name specified");
+        
+        callback.returnFailure();
+        return;
+      }
+      else
+      {
+        _oMyInputBean.setPersonName(_oNameField.getText());
+      }
+
+      callback.returnSuccess();
+    }catch(Throwable ex) {
+      callback.returnFailure();
+    }
+  }
+}
+}}}    
+    
+
+===Step 3: Define an Input !JavaBean===
+
+The input !JavaBean is edited by the SOAApplet and used as input by the SOATasklet when the job is run. An example would be like this:
+
+{{{
+public class HelloWorldInput implements IsSerializable
+{
+  private String personName="";
+
+  public HelloWorldInput()
+  {
+    super();
+  }
+
+  /**
+   * Name of person to put in the Hello world sentence.
+   */
+  public void setPersonName(String value)
+  {
+    personName=value;
+  } 
+
+  public String getPersonName()
+  {
+    return personName;
+  } 	
+}
+}}}
+    
+
+===Step 4: Create MANIFEST.MF File===
+
+The MANIFEST.MF file contains the meta information that informs JobServer what is contained in the SFB JAR file and what interfaces are defined by the SFB. The file is placed in the META-INF directory within the SFB JAR.
+
+{{{
+SOAFaces-Name: Hello World 3
+SOAFaces-SymbolicName: surda-beansoup-helloworld3
+SOAFaces-Version: 1.0.0
+SOAFaces-Description: Simple Mulet with an input JavaBean and MFace Customizer
+SOAFaces-Vendor: Grand Logic, Inc
+SOAFaces-Category: example
+SOAFaces-Tasklet: org.beansoup.helloworld3.workflow.HelloWorld
+SOAFaces-InputBean: org.beansoup.helloworld3.client.HelloWorldInput
+SOAFaces-Applet: org.beansoup.helloworld3.client.HelloWorldCustomizer
+}}}
+
+===Step 5: Package Contents into a SFB JAR file===
+
+All the code and content are packaged and put into a SFB JAR file with the file extension .sfb. Here is an example directory structure of the JAR file.
+
+{{{
+META-INF/MANIFEST.MF
+classes/org/beansoup/helloworld3/client/
+                                        HelloWorldCustomizer.java
+                                        HelloWorldCustomzier.class
+                                        HelloWorldInput.java
+                                        HelloWorldInput.class
+                                        
+classes/org/beansoup/helloworld3/workflow/
+                                          HelloWorld.class
+                                        
+lib/
+    someThirdPartyGWT-Client.jar
+    someThirdPartyServer-Side.jar
+}}}
+    
+
+Notice that the client GWT code requires the source also be included in the JAR file. The GWT compiler requires the source and will use this to compile, on the fly, the SOAApplet into GWT AJAX code. The lib directory can contain any needed third party JARs used by the SOAApplet or SOATasklet code.
+Step 6: Deploy the new SFB to JobServer
+
+Name the SFB JAR something like myhelloworld.sfb and place it in the JobServer soafaces directory. The name must be unique within JobServer. Now go to the JobServer SOAFaces Repository tool and you should see the new SFB. It can now be used to build a new Job! 
