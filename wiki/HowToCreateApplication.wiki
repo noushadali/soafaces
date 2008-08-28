@@ -5,60 +5,14 @@ This example shows how to build a SFB that implements a Tasklet and also include
 
 Follow these steps to learn how to develop, package and deploy your own SOAFaces Bundle (SFB):
 
-  # Implement SOATasklet Interface
-  # Implement SOAApplet Interface (Optional)
+  # Implement SOAApplet Interface
   # Define an Input !JavaBean for Tasklet (Optional)
-  # Define an Output !JavaBean for Tasklet (Optional)
   # Create MANIFEST.MF File
   # Package Contents into a SFB JAR file
   # Deploy the new SFB to a SFB Container (like !JobServer)
 
-===Step 1: Implement SOATasklet Interface===
 
-Using the SOATasklet interface, implement the `org.soafces.bundle.workflow.SOATasklet` interface by implementing the `onExecute` method. Here is a simple example:
-
-{{{
-public class HelloWorld implements SOATasklet 
-{
-  public HelloWorld()
-  {
-    super();
-  }
-
-  /**
-   * The outBean is null in this example because there is no
-   * output JavaBean defined.
-   *  
-   */
-  public void onExecute(SOATaskInputContext inputContext, SOATaskOutputContext outputContext)
-  {	
-    //If your SOATasklet uses an input and/or output JavaBean then it is 
-    //best to get them and cast to the appropriate class type.
-    HelloWorldInput inputBean = (HelloWorldInput) inputContext.getInputBean();
-
-    /**
-     * Create and name a logger in order to log all messages. The name
-     * can be anything you like. These logs messages can be viewed
-     * using the JobServer Tracker tool which privides a history of
-     * all Taskelets and Jobs that have run.
-     *
-     * JobServer captures all Log4J and Java Logging API messages
-     * made by the Tasklet and makes them available for viewing from
-     * the Job Tracker tool. Note that Log4J Logger must support
-     * additivity=true for logs to be captured and reported by Job Tracker.
-     */
-    Logger myLogger = Logger.getLogger("myLogger");
-    myLogger.log(Level.INFO, "Hello " + inputBean.getPersonName());
-
-    return;
-  }
-}
-}}}
-
-
-The `onExecute` method will be called when the above Tasklet is run as part of a job.
-
-===Step 2: Implement SOAApplet Interface (Optional)==
+===Step 1: Implement SOAApplet Interface ==
 
 This step is optional when creating Tasklets. The SOAApplet will be used to customize the input !JavaBean that is used as input to the SOATasklet when the job is run. Here is what the SOAApplet implementation might look like:
 
@@ -163,35 +117,6 @@ public class HelloWorldInput implements IsSerializable
 }
 }}}
 
-===Step 4: Define an Output !JavaBean for Tasklet (Optional) ===
-
-The output !JavaBean is used by the SOATasklet as output. When the Tasklet is run as part of a job the SOATasklet interface can write an relevant output to this !JavaBean An example would be like this:
-
-{{{
-public class HelloWorldOutput implements IsSerializable
-{
-  private String personName="";
-
-  public HelloWorldInput()
-  {
-    super();
-  }
-
-  /**
-   * Name of person to put in the Hello world sentence.
-   */
-  public void setPersonName(String value)
-  {
-    personName=value;
-  } 
-
-  public String getPersonName()
-  {
-    return personName;
-  } 	
-}
-}}}
-    
 
 ===Step 5: Create MANIFEST.MF File===
 
