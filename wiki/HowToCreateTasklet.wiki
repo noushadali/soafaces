@@ -3,7 +3,15 @@
 ==Example Tasklet SFB==
 This example shows how to build a SFB that implements a Tasklet and also includes an Applet for customizing the Tasklet's input !JavaBean.
 
-Follow these steps to learn how to develop, package and deploy your own SOAFaces Bundle (SFB).
+Follow these steps to learn how to develop, package and deploy your own SOAFaces Bundle (SFB):
+
+  # Implement SOATasklet Interface
+  # Implement SOAApplet Interface (Optional)
+  # Define an Input !JavaBean for Tasklet (Optional)
+  # Define an Output !JavaBean for Tasklet (Optional)
+  # Create MANIFEST.MF File
+  # Package Contents into a SFB JAR file
+  # Deploy the new SFB to a SFB Container (like !JobServer)
 
 ===Step 1: Implement SOATasklet Interface===
 
@@ -48,7 +56,7 @@ public class HelloWorld implements SOATasklet
 }}}
 
 
-The onExecute method will be called when the above Tasklet is run as part of a job.
+The `onExecute` method will be called when the above Tasklet is run as part of a job.
 
 ===Step 2: Implement SOAApplet Interface (Optional)==
 
@@ -126,7 +134,7 @@ public class HelloWorldCustomizer extends SimplePOJOApplet
 }}}    
     
 
-===Step 3: Define an Input !JavaBean (Optional) ===
+===Step 3: Define an Input !JavaBean for Tasklet (Optional) ===
 
 The input !JavaBean can be edited by the SOAApplet and used as input by the SOATasklet when the job is run. An example would be like this:
 
@@ -155,7 +163,7 @@ public class HelloWorldInput implements IsSerializable
 }
 }}}
 
-===Step 4: Define an Output !JavaBean (Optional) ===
+===Step 4: Define an Output !JavaBean for Tasklet (Optional) ===
 
 The output !JavaBean is used by the SOATasklet as output. When the Tasklet is run as part of a job the SOATasklet interface can write an relevant output to this !JavaBean An example would be like this:
 
@@ -193,7 +201,7 @@ The MANIFEST.MF file contains the meta information that informs a SOAFaces conta
 SOAFaces-Name: Hello World 3
 SOAFaces-SymbolicName: surda-beansoup-helloworld3
 SOAFaces-Version: 1.0.0
-SOAFaces-Description: Simple Mulet with an input JavaBean and MFace Customizer
+SOAFaces-Description: Simple Tasklet with an input JavaBean and MFace Customizer
 SOAFaces-Vendor: Grand Logic, Inc
 SOAFaces-Category: example
 SOAFaces-Tasklet: org.beansoup.helloworld3.workflow.HelloWorld
