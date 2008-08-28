@@ -254,7 +254,7 @@ Here is an example of a simple ANT target that can construct the SFB archive fil
            <attribute name="SOAFaces-Name"            value="Hello World 3"/>
            <attribute name="SOAFaces-SymbolicName"    value="surda-beansoup-helloworld3"/>
            <attribute name="SOAFaces-Version"         value="1.0.0"/>
-           <attribute name="SOAFaces-Description"     value="Simple Mulet with an input JavaBean and MFace Customizer"/>
+           <attribute name="SOAFaces-Description"     value="Simple Tasklet with an input JavaBean and Applet customizer"/>
            <attribute name="SOAFaces-Vendor"          value="Grand Logic, Inc"/>
            <attribute name="SOAFaces-Category"        value="example"/>
            <attribute name="SOAFaces-Tasklet"         value="org.beansoup.helloworld3.workflow.HelloWorld"/>
