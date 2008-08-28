@@ -3,10 +3,8 @@
 A SFB (SOAFaces Bundle) is a simple JAR that contains the classes and resources needed to execute your SOAFaces Application or Task/Job. SFBs are very powerful and flexible. You can develop a SFB to serve as an Application that will implement a GUI Application or as a Tasklet that will be part of a Job. In either case the process of developing, packaging, and deploying is very similar. 
 
 Let's walk through the process of creating a very simple SFB. We will show how to create the two kinds of SFBs:
-  # Application oriented SFB (used to build SOA powered GUI Applications)
-  # Tasklet oriented SFB (used to build batch jobs and workflows)
-
-
+  # [HowToCreateApplication Application oriented SFB (used to build SOA powered GUI applications)]
+  # [HowToCreateTasklet Tasklet oriented SFB (used to build batch jobs and workflows)]
 
 
 
