@@ -233,7 +233,7 @@ Here is an example of a simple ANT target that can construct the SFB archive fil
 
 {{{
     <target name="build_sfb" depends="compile" description="Build SFB for example Tasklet">
-    <mkdir dir="build/sfb-dir/org-beansoup-helloworld3-v1-0-0/classes" />
+      <mkdir dir="build/sfb-dir/org-beansoup-helloworld3-v1-0-0/classes" />
       <copy todir="build/sfb-dir/org-beansoup-helloworld3-v1-0-0/classes"
             overwrite="false">
          <fileset dir="${build.classes.dir}"
