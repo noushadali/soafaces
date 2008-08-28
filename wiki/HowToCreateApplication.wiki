@@ -1,12 +1,12 @@
 #summary How to create a SFB Application
 
 ==Example of an Application Based SFB==
-This example shows how to build a SFB that implements a Tasklet and also includes an Applet for customizing the Tasklet's input !JavaBean.
+This example shows how to build a SFB application. The application uses an input !JavaBean to allow users to customize the application behavior. The !JavaBean is persisted automatically by the framework.
 
-Follow these steps to learn how to develop, package and deploy your own SOAFaces Bundle (SFB):
+Follow these steps to learn how to develop, package and deploy your own SOAFaces Bundle (SFB) application:
 
   # Implement SOAApplet Interface
-  # Define an Input !JavaBean for Tasklet (Optional)
+  # Define an Input !JavaBean for Applet (Optional)
   # Create MANIFEST.MF File
   # Package Contents into a SFB JAR file
   # Deploy the new SFB to a SFB Container (like !JobServer)
@@ -14,17 +14,17 @@ Follow these steps to learn how to develop, package and deploy your own SOAFaces
 
 ===Step 1: Implement SOAApplet Interface ==
 
-This step is optional when creating Tasklets. The SOAApplet will be used to customize the input !JavaBean that is used as input to the SOATasklet when the job is run. Here is what the SOAApplet implementation might look like:
+The SOAApplet is the primary GUI interface of the application. Here is what the SOAApplet implementation might look like:
 
 {{{
-public class HelloWorldCustomizer extends SimplePOJOApplet
+public class HelloWorldApp extends SimplePOJOApplet
 { 
   private TextBox _oNameField = new TextBox();
   private HelloWorldInput _oMyInputBean = null;
 
   /**
    */
-  public HelloWorldCustomizer() {}
+  public HelloWorldApp() {}
 
   protected void populateMainPanelPOJO(IsSerializable inputBean)
   {
@@ -88,9 +88,9 @@ public class HelloWorldCustomizer extends SimplePOJOApplet
 }}}    
     
 
-===Step 3: Define an Input !JavaBean for Tasklet (Optional) ===
+===Step 3: Define an Input !JavaBean for Applet (Optional) ===
 
-The input !JavaBean can be edited by the SOAApplet and used as input by the SOATasklet when the job is run. An example would be like this:
+The input !JavaBean can be edited by the SOAApplet and used as input and to persist data for use by the application:
 
 {{{
 public class HelloWorldInput implements IsSerializable
@@ -123,15 +123,14 @@ public class HelloWorldInput implements IsSerializable
 The MANIFEST.MF file contains the meta information that informs a SOAFaces container like !JobServer what is contained in the SFB JAR file and what interfaces are defined by the SFB. The file is placed in the META-INF directory within the SFB JAR.
 
 {{{
-SOAFaces-Name: Hello World 3
-SOAFaces-SymbolicName: surda-beansoup-helloworld3
+SOAFaces-Name: Hello World App
+SOAFaces-SymbolicName: surda-beansoup-helloworldapp
 SOAFaces-Version: 1.0.0
-SOAFaces-Description: Simple Tasklet with an input JavaBean and MFace Customizer
+SOAFaces-Description: Simple Applet/Application with an input JavaBean
 SOAFaces-Vendor: Grand Logic, Inc
 SOAFaces-Category: example
-SOAFaces-Tasklet: org.beansoup.helloworld3.workflow.HelloWorld
-SOAFaces-InputBean: org.beansoup.helloworld3.client.HelloWorldInput
-SOAFaces-Applet: org.beansoup.helloworld3.client.HelloWorldCustomizer
+SOAFaces-InputBean: org.beansoup.helloworld.client.HelloWorldInput
+SOAFaces-Applet: org.beansoup.helloworld.client.HelloWorldApp
 }}}
 
 ===Step 6: Package Contents into a SFB JAR file===
@@ -140,58 +139,51 @@ All the code and content are packaged and put into a SFB JAR file with the file 
 
 {{{
 META-INF/MANIFEST.MF
-classes/org/beansoup/helloworld3/client/
-                                        HelloWorldCustomizer.java
-                                        HelloWorldCustomzier.class
+classes/org/beansoup/helloworld/client/
+                                        HelloWorldApp.java
+                                        HelloWorldApp.class
                                         HelloWorldInput.java
                                         HelloWorldInput.class
                                         
-classes/org/beansoup/helloworld3/workflow/
-                                          HelloWorld.class
                                         
 lib/
     someThirdPartyGWT-Client.jar
-    someThirdPartyServer-Side.jar
 }}}
 
 Here is an example of a simple ANT target that can construct the SFB archive file:
 
 {{{
-    <target name="beansoup_tba" depends="beansoup" description="Package all BeanSoup components into tba jars">
-    <mkdir dir="build/beansoup-build/org-beansoup-helloworld3-v1-0-0/classes" />
-      <copy todir="build/beansoup-build/org-beansoup-helloworld3-v1-0-0/classes"
+    <target name="build_sfb" depends="compile" description="Package application into a SFB jar">
+    <mkdir dir="build/sfb_build/org-beansoup-helloworld-v1-0-0/classes" />
+      <copy todir="build/sfb_build/org-beansoup-helloworld-v1-0-0/classes"
             overwrite="false">
          <fileset dir="${build.classes.dir}"
-                  includes="org/beansoup/helloworld3/**/*.class"/>
+                  includes="org/beansoup/helloworld/**/*.class"/>
                  
          <fileset dir="${src.dir}"
-                  includes="org/beansoup/helloworld3/*.xml
-                            org/beansoup/helloworld3/client/*.java
-                            org/beansoup/helloworld3/public/*.css"/>
+                  includes="org/beansoup/helloworld/*.xml
+                            org/beansoup/helloworld/client/*.java
+                            org/beansoup/helloworld/public/*.css"/>
       </copy>
-      <jar destfile="build/beansoup-build/org-beansoup-helloworld3-v1-0-0.sfb"
-           basedir="build/beansoup-build/org-beansoup-helloworld3-v1-0-0"
+      <jar destfile="build/sfb_build/org-beansoup-helloworld-v1-0-0.sfb"
+           basedir="build/sfb_build/org-beansoup-helloworld-v1-0-0"
            includes="**">
     
          <manifest>
-           <attribute name="SOAFaces-Name"            value="Hello World 3"/>
-           <attribute name="SOAFaces-SymbolicName"    value="surda-beansoup-helloworld3"/>
+           <attribute name="SOAFaces-Name"            value="Hello World App"/>
+           <attribute name="SOAFaces-SymbolicName"    value="surda-beansoup-helloworld"/>
            <attribute name="SOAFaces-Version"         value="1.0.0"/>
-           <attribute name="SOAFaces-Description"     value="Simple Mulet with an input JavaBean and MFace Customizer"/>
+           <attribute name="SOAFaces-Description"     value="Simple Applet/Application with an input JavaBean"/>
            <attribute name="SOAFaces-Vendor"          value="Grand Logic, Inc"/>
            <attribute name="SOAFaces-Category"        value="example"/>
-           <attribute name="SOAFaces-Tasklet"         value="org.beansoup.helloworld3.workflow.HelloWorld"/>
            <attribute name="SOAFaces-InputBean"       value="org.beansoup.helloworld3.client.HelloWorldInput"/>
-           <attribute name="SOAFaces-OutputBean"      value=""/>
-           <attribute name="SOAFaces-Applet"          value="org.beansoup.helloworld3.client.HelloWorldCustomizer"/>
-           <attribute name="SOAFaces-InputViewer"     value=""/>
-           <attribute name="SOAFaces-OutputViewer"    value=""/>
+           <attribute name="SOAFaces-Applet"          value="org.beansoup.helloworld3.client.HelloWorldApp"/>
          </manifest>    
       </jar>
 }}}
     
 
-Notice that the client GWT code requires the source also be included in the JAR file. The GWT compiler requires the source and will use this to compile, on the fly, the SOAApplet into GWT AJAX code. The lib directory can contain any needed third party JARs used by the SOAApplet or SOATasklet code.
+Notice that the client GWT code requires the source also be included in the JAR file. The GWT compiler requires the source and will use this to compile, on the fly, the SOAApplet into GWT AJAX code. The lib directory can contain any needed third party JARs used by the SOAApplet.
 
 ===Step 7: Deploy the new SFB to a SFB Container (like !JobServer)===
 
