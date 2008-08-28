@@ -6,7 +6,7 @@ Let's walk through the process of creating a very simple SFB. First we will crea
 
 
 ==Tasklet SFB Example==
-This example shows how to build a SFB that implements a Tasklet and also includes an Applet for customizing the Tasklet's input JavaBean.
+This example shows how to build a SFB that implements a Tasklet and also includes an Applet for customizing the Tasklet's input !JavaBean.
 
 Follow these steps to learn how to develop, package and deploy your own SOAFaces Bundle (SFB).
 
@@ -57,7 +57,7 @@ The onExecute method will be called when the above Tasklet is run as part of a j
 
 ===Step 2: Implement a SOAApplet==
 
-This step is optional when creating Tasklets. The SOAApplet will be used to customize the input JavaBean that is used as input to the SOATasklet when the job is run. Here is what the SOAApplet implementation might look like:
+This step is optional when creating Tasklets. The SOAApplet will be used to customize the input !JavaBean that is used as input to the SOATasklet when the job is run. Here is what the SOAApplet implementation might look like:
 
 {{{
 public class HelloWorldCustomizer extends SimplePOJOApplet
@@ -131,9 +131,9 @@ public class HelloWorldCustomizer extends SimplePOJOApplet
 }}}    
     
 
-===Step 3: Define an Input JavaBean===
+===Step 3: Define an Input !JavaBean===
 
-The input JavaBean is edited by the SOAApplet and used as input by the SOATasklet when the job is run. An example would be like this:
+The input !JavaBean is edited by the SOAApplet and used as input by the SOATasklet when the job is run. An example would be like this:
 
 {{{
 public class HelloWorldInput implements IsSerializable
