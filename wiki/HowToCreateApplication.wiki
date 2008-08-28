@@ -184,4 +184,4 @@ Notice that the client GWT code requires the source also be included in the JAR 
 
 ===Step 7: Deploy the new SFB to a SFB Container (like !JobServer)===
 
-Name the SFB JAR something like myhelloworld.sfb and place it in the !JobServer soafaces directory. The name must be unique within !JobServer. Now go to the !JobServer SOAFaces Repository tool and you should see the new SFB. It can now be used to build a new job!
+Name the SFB JAR something like myhelloworld.sfb and place it in the !JobServer soafaces directory. The name must be unique within !JobServer. Now go to the !JobServer SOAFaces Repository tool and you should see the new SFB. You are now ready to deploy and run your application.
