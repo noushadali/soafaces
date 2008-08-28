@@ -232,20 +232,22 @@ lib/
 Here is an example of a simple ANT target that can construct the SFB archive file:
 
 {{{
-    <target name="beansoup_tba" depends="beansoup" description="Package all BeanSoup components into tba jars">
-    <mkdir dir="build/beansoup-build/org-beansoup-helloworld3-v1-0-0/classes" />
-      <copy todir="build/beansoup-build/org-beansoup-helloworld3-v1-0-0/classes"
+    <target name="build_sfb" depends="compile" description="Build SFB for example Tasklet">
+    <mkdir dir="build/sfb-dir/org-beansoup-helloworld3-v1-0-0/classes" />
+      <copy todir="build/sfb-dir/org-beansoup-helloworld3-v1-0-0/classes"
             overwrite="false">
          <fileset dir="${build.classes.dir}"
                   includes="org/beansoup/helloworld3/**/*.class"/>
                  
+         <!-- include source for GWT client code -->
          <fileset dir="${src.dir}"
                   includes="org/beansoup/helloworld3/*.xml
                             org/beansoup/helloworld3/client/*.java
                             org/beansoup/helloworld3/public/*.css"/>
       </copy>
-      <jar destfile="build/beansoup-build/org-beansoup-helloworld3-v1-0-0.sfb"
-           basedir="build/beansoup-build/org-beansoup-helloworld3-v1-0-0"
+
+      <jar destfile="build/sfb-dir/org-beansoup-helloworld3-v1-0-0.sfb"
+           basedir="build/sfb-dir/org-beansoup-helloworld3-v1-0-0"
            includes="**">
     
          <manifest>
