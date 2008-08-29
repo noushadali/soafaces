@@ -85,7 +85,7 @@ public class HelloWorldApp extends SimplePOJOApplet
 }}}    
     
 
-===Step 3: Define an Input !JavaBean for Applet (Optional) ===
+===Step 2: Define an Input !JavaBean for Applet (Optional) ===
 
 The input !JavaBean can be edited by the SOAApplet and used as input and to persist data for use by the application:
 
@@ -115,7 +115,7 @@ public class HelloWorldInput implements IsSerializable
 }}}
 
 
-===Step 5: Create MANIFEST.MF File===
+===Step 3: Create MANIFEST.MF File===
 
 The MANIFEST.MF file contains the meta information that informs a SOAFaces container like !JobServer what is contained in the SFB JAR file and what interfaces are defined by the SFB. The file is placed in the META-INF directory within the SFB JAR.
 
@@ -130,7 +130,7 @@ SOAFaces-InputBean: org.beansoup.helloworld.client.HelloWorldInput
 SOAFaces-Applet: org.beansoup.helloworld.client.HelloWorldApp
 }}}
 
-===Step 6: Package Contents into a SFB JAR file===
+===Step 4: Package Contents into a SFB JAR file===
 
 All the code and content are packaged and put into a SFB JAR file with the file extension .sfb. Here is an example directory structure of the JAR file.
 
@@ -182,6 +182,6 @@ Here is an example of a simple ANT target that can construct the SFB archive fil
 
 Notice that the client GWT code requires the source also be included in the JAR file. The GWT compiler requires the source and will use this to compile, on the fly, the SOAApplet into GWT AJAX code. The lib directory can contain any needed third party JARs used by the SOAApplet.
 
-===Step 7: Deploy the new SFB to a SFB Container (like !JobServer)===
+===Step 5: Deploy the new SFB to a SFB Container (like !JobServer)===
 
 Name the SFB JAR something like myhelloworld.sfb and place it in the !JobServer soafaces directory. The name must be unique within !JobServer. Now go to the !JobServer SOAFaces Repository tool and you should see the new SFB. You are now ready to deploy and run your application.
