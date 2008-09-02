@@ -1,4 +1,4 @@
-# Open source engine for running SFBs (Applets and Tasklets)
+#summary Open source engine for running SFBs (Applets and Tasklets)
 = Introduction =
 
 SoaFacesRunner is a reference implementation of SOAFaces. It can be used for both development and production deployment purposes. Developers can use it to test development of their SOAFaces Bundle components (SFBs) and it can also be used to deploy a SOAFaces job or application as in its own WAR file for production deployment.
