@@ -1,3 +1,5 @@
+#summary How workflow tasklets pass and exchange properties when job runs
+
 = Introduction =
 
 SOATasklets can be chained together to form a job or workflow. SOATasklets that make up a job can work together and share data between each other.
