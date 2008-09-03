@@ -1,4 +1,4 @@
-#summary Interface that allows you to invoke remote services from GWT client
+#summary Interface that allows you to invoke remote services from GWT client with RPC
 
 = Introduction =
 
