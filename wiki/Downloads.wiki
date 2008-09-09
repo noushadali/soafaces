@@ -10,7 +10,7 @@ September 14, 2008 - Release notes
 August 16, 2008 - Release notes
 
 || *Download Package* || *Description* ||
-|| [http://soafaaces.googlecode.com/files/soafaces-jars-2.0.0.zip soafaces-jars-2.0.0.zip] || SOAFaces binary JARs ||
+|| [http://soafaces.googlecode.com/files/soafaces-jars-2.0.0.zip soafaces-jars-2.0.0.zip] || SOAFaces binary JARs ||
 || soafaces-src-2.0.0.zip || SOAFaces source ||
 || soafaces-javadocs-2.0.0.zip || SOAFaces Javadocs ||
 || beansoup-sfb-2.0.0.zip || Beansoup compiled sample SFB components. Unzip and use SFBs in your SOAFaces Container ||
