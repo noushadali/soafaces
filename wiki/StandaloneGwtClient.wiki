@@ -22,3 +22,23 @@ If you do not need to route calls to Mule supported endpoints and you do not wis
   # Place soafaces-services-servlet.jar in your webapps `WEB-INF/lib` directory
   # Add `xstream-1.2.2.jar` and `jettison-1.0.1.jar` in your webapps `WEB-INF/lib` directory
   # If you are using the mule make sure to include any mule dependent jars in your webapps `WEB-INF/lib` directory
+
+===Invoking !UniversalClient Services===
+This section describes how to use the !UniversalClient API and to invoke methods on remote services. The API uses a similar approach as the `MuleClient` ESB API to send and receive method arguments and return values. For example here one of the simiple :
+`send` methods available in !UniversalClient:
+{{{
+UniversalClient.send(String endpointURI, Object payload, UniversalClientPOJOCallback callback);
+}}}
+
+This send method can invoke Mule endpoints or soafaces endpoints. For example when invoking a soafaces endpoint (using `soafaces://') you are actually invoking a remote method. This method can have zero or more arguments and can return a result (or Void).
+
+The !UniversalClient send method lets you invoke virtually any method using a simple approach similar to that used by MuleClient. Multiple arguments must be wrapped in an `Object[]` and passed as the payload. Here are the different options for passing parameters to a method or services using send:
+
+|| *Supported Argument Types* || *Description* ||
+|| Standard Java types || For example String, Integer, int and any GWT supported serialized type can be sent as a single argument ||
+|| IsSeralizable || User defined types that support IsSerializable ||
+|| Arrays || Arrays of !IsSeralizable or Java standard types ||
+|| Collections || Map, List, Set are supported ||
+|| JSONObject || JSON is a convenient way to pass objects that do not support !IsSerializable ||
+|| Multiple arguments || A method that requires multiple arguments can be sent using Object[] ||
+
