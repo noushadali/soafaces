@@ -1,4 +1,4 @@
-#summary Download releases of SOAFaces source, binary builds javadocs and sample code
+#summary Download releases of SOAFaces source, binary builds, javadocs and sample code
 
 = SOAFaces Release Archive =
 
