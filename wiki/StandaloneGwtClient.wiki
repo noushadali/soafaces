@@ -2,18 +2,23 @@
 
 = Introduction =
 
-This section describes how you can use the services portion of the SOAFaces API to make SOA messaging/RPC calls from any GWT client application with no RPC complexity. All you do is set an annotation endpoint marker on methods on a POJO object and then reference that endpoint in your !UniversalClient calls. You can send and receive POJO and JSON arguments and return values without dealing with complex mar shelling and related logic. See the [http://soafaces.googlecode.com/files/universalapp-example-war-2.0.0.zip universalapp WAR] application for an example. The WAR file also contains the source for the demonstration.
+This section describes how you can use the *Services* (!UniversalClient) portion of the SOAFaces API to make SOA messaging/RPC calls from any GWT client application with no RPC complexity. All you do is set an annotation endpoint marker on methods on a POJO object and then reference that endpoint in your !UniversalClient calls. You can send POJO and JSON objects as arguments and return POJO/JSON values without dealing with serialization and RPC related logic. See the [http://soafaces.googlecode.com/files/universalapp-example-war-2.0.0.zip universalapp WAR] application for an example of how to use the !UniversalClient API in a standalone WAR application. The WAR file also contains the source for the demonstration application.
 
-To get started:
+===To get started:===
   * Review the !UniversalClient Services API in the SOAFaces Javadocs
   * Download and run the universalapp.war webapp in any servlet engine (aka Tomcat, Jetty ...etc)
   * Review the sample code in universalapp.war
-  * Download and install the necessary soafaces jars and build your own application using the !UniversalClient Messaging API
+  * Download and install the necessary soafaces jars and build your own application using the !UniversalClient messaging API
 
-If you want to also access endpoint services that include Mule use the jars shown below in your webapp. Note that you will also need include in your webapp an necessary Mule jars:
-  * soafaces-services-client.jar - Contains GWT client RPC APIs to use to compile your GWT application with
-  * soafaces-services-servlet.jar - Handles servlet RPC communicate with !UniversalClient messaging API.
-
-If you do not want to route calls to Mule supported endpoint and do not want to include the Mule JAR dependencies you can use a stripped down version of the servlet JAR as shown below. You need two jars to use the basic !UniversalClient GWT API that will allow you the ability to invoke RPC calls on services you have implemented in your webapps.
+If you want to also access endpoint services that include soafaces endpoints along with Mule endpoints (like JMS, SOAP ...etc) use the jars shown below in your webapp. Note that you will also need to include in your webapp an necessary Mule jars:
   * soafaces-services-client.jar
-  * soafaces-services-nomule-servlet.jar
+  * soafaces-services-servlet.jar
+
+If you do not need to route calls to Mule supported endpoints and you do not wish to include the Mule JAR dependencies you can use a stripped down version of the servlet JAR, `soafaces-services-servlet-nomule.jar` that has no mule dependencies or mule support. This will allow you to make !UniversalClient calls to endpoints using the `soafaces://` protocol only.
+
+===Steps for setting up your webapp to use the !UniversalClient:===
+  # Add soafaces-services-client.jar to your GWTCompiler's classpath
+  # Inherit the `Services.gwt.xml` module in your GWT module file
+  # Place soafaces-services-servlet.jar in your webapps `WEB-INF/lib` directory
+  # Add xstream-1.2.2.jar jettison-1.0.1.jar in your webapps `WEB-INF/lib` directory
+  # If you are using the mule make sure to include any mule dependent jars in your webapps `WEB-INF/lib` directory
