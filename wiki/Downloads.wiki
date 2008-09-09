@@ -1,13 +1,18 @@
-#summary SOAFaces builds, javadocs and sample code
+#summary Download releases of SOAFaces source, binary builds javadocs and sample code
 
-= Introduction =
+= SOAFaces Release Archive =
 
-Add your content here.
+== Version 2.0.3 ==
+September 14, 2008 - Release notes
 
 
-= Details =
+== Version 2.0.0 ==
+August 16, 2008 - Release notes
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+|| *Download Package* || *Description* ||
+|| [http://soafaaces.googlecode.com/files/soafaces-jars-2.0.0.zip soafaces-jars-2.0.0.zip] || SOAFaces binary JARs ||
+|| soafaces-src-2.0.0.zip || SOAFaces source ||
+|| soafaces-javadocs-2.0.0.zip || SOAFaces Javadocs ||
+|| beansoup-sfb-2.0.0.zip || Beansoup compiled sample SFB components. Unzip and use SFBs in your SOAFaces Container ||
+|| beansoup-sfb-src-2.0.0.zip || Beansoup sample SFB source code. Sample SFB components ||
+|| universalapp-example-war-2.0.0.zip || Example using !UniversalClient API in a GWT web application to access remote services with no RPC! WAR file includes the sample source code for both GWT client and backend services. ||
