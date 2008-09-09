@@ -7,7 +7,7 @@ September 14, 2008 - Release notes
 
 
 == Version 2.0.0 ==
-August 16, 2008
+July 9, 2008
 
 || *Download Package* || *Description* ||
 || [http://soafaces.googlecode.com/files/soafaces-jars-2.0.0.zip soafaces-jars-2.0.0.zip] || SOAFaces binary JARs ||
