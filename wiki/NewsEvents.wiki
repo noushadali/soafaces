@@ -2,5 +2,6 @@
 
 ==Status and News===
   * [9/11/2008] Release 2.0.3 Beta
+    * Support for GWT 1.5 and Java 1.5 among other things
   * [6/26/2008] Release 2.0.0 Beta is out the door!
   * [4/22/2008] Work is on-going towards the 2.0 release of the specification.
