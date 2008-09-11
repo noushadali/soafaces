@@ -1,3 +1,5 @@
 #summary New releases and happenings
 
-= News / Events =
+==Status and News===
+  * [6/26/2008] Release 2.0.0 is out the door!
+  * [4/22/2008] Work is on-going towards the 2.0 release of the specification.
