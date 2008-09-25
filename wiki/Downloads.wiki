@@ -2,7 +2,7 @@
 
 = SOAFaces Release Archive =
 
-== Version 2.2.0 Beta ==
+== Version 2.1.0 Beta ==
 September 11, 2008 - [http://soafaces.googlecode.com/files/release_notes-2.1.0.html Release Notes]
 
 || *Download Package* || *Description* ||
