@@ -204,9 +204,12 @@ SOAFaces-Version: 1.0.0
 SOAFaces-Description: Simple Tasklet with an input JavaBean and MFace Customizer
 SOAFaces-Vendor: Grand Logic, Inc
 SOAFaces-Category: example
+#Tasklet run on the server-side when java/task is run
 SOAFaces-Tasklet: org.beansoup.helloworld3.workflow.HelloWorld
+#Optional input JavaBean used by the Applet and Tasklet
 SOAFaces-InputBean: org.beansoup.helloworld3.client.HelloWorldInput
-SOAFaces-Applet: org.beansoup.helloworld3.client.HelloWorldCustomizer
+#GWT client Module name
+SOAFaces-Applet: org.beansoup.helloworld3.HelloModuleName
 }}}
 
 ===Step 6: Package Contents into a SFB JAR file===
@@ -270,6 +273,8 @@ Here is an example of a simple ANT target that can construct the SFB archive fil
     
 
 Notice that the client GWT code requires the source also be included in the JAR file. The GWT compiler requires the source and will use this to compile, on the fly, the SOAApplet into GWT AJAX code. The lib directory can contain any needed third party JARs used by the SOAApplet or SOATasklet code.
+
+Note, that you have the option to include the GWT client code (java source code an compiled code) in the SFB and let the SFB container compile the GWT client code into javascript for you (frees developer from dealing with GWT compiler) or you can compile the GWT client code yourself (using the GWT compiler) and include the javascript in the SFB directly. You simple include the compiled GWT client code in the <code>www</code> directory in the SFB jar.
 
 ===Step 7: Deploy the new SFB to a SFB Container (like !JobServer)===
 
