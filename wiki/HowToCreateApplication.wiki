@@ -11,7 +11,6 @@ Follow these steps to learn how to develop, package and deploy your own SOAFaces
   # Package Contents into a SFB JAR file
   # Deploy the new SFB to a SFB Container (like !JobServer)
 
-
 ===Step 1: Implement SOAApplet Interface ==
 
 The SOAApplet is the primary GUI interface of the application. Here is what the SOAApplet implementation might look like:
@@ -126,8 +125,10 @@ SOAFaces-Version: 1.0.0
 SOAFaces-Description: Simple Applet/Application with an input JavaBean
 SOAFaces-Vendor: Grand Logic, Inc
 SOAFaces-Category: example
+#Optional input JavaBean used by the Applet for persistence
 SOAFaces-InputBean: org.beansoup.helloworld.client.HelloWorldInput
-SOAFaces-Applet: org.beansoup.helloworld.client.HelloWorldApp
+#GWT client Module name
+SOAFaces-Applet: org.beansoup.helloworld.HelloBundeName
 }}}
 
 ===Step 4: Package Contents into a SFB JAR file===
@@ -137,12 +138,11 @@ All the code and content are packaged and put into a SFB JAR file with the file 
 {{{
 META-INF/MANIFEST.MF
 classes/org/beansoup/helloworld/client/
-                                        HelloWorldApp.java
-                                        HelloWorldApp.class
-                                        HelloWorldInput.java
-                                        HelloWorldInput.class
-                                        
-                                        
+                                       HelloWorldApp.java
+                                       HelloWorldApp.class
+                                       HelloWorldInput.java
+                                       HelloWorldInput.class
+                                                                                
 lib/
     someThirdPartyGWT-Client.jar
 }}}
@@ -181,6 +181,8 @@ Here is an example of a simple ANT target that can construct the SFB archive fil
     
 
 Notice that the client GWT code requires the source also be included in the JAR file. The GWT compiler requires the source and will use this to compile, on the fly, the SOAApplet into GWT AJAX code. The lib directory can contain any needed third party JARs used by the SOAApplet.
+
+Note, that you have the option to include the GWT client code (java source code an compiled code) in the SFB and let the SFB container compile the GWT client code into javascript for you (frees developer from dealing with GWT compiler) or you can compile the GWT client code yourself (using the GWT compiler) and include the javascript in the SFB directly. You simple include the compiled GWT client code in the <code>www</code> directory in the SFB jar.
 
 ===Step 5: Deploy the new SFB to a SFB Container (like !JobServer)===
 
