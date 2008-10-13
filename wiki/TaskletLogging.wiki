@@ -2,12 +2,4 @@
 
 = Introduction =
 
-Add your content here.
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+Logging is essential in any mission critical environment. Tasklets can have their logging output captured by the SOAFaces container. If the Tasklet simply logs its output using either Log4J or Java Logging API then all output will be trapped by the container and made available for complementary reporting tools to present to users.
