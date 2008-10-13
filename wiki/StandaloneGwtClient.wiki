@@ -32,7 +32,7 @@ UniversalClient.send(String endpointURI, Object payload, UniversalClientPOJOCall
 
 This send method can invoke Mule endpoints or soafaces endpoints. For example when invoking a soafaces endpoint (using `soafaces://') you are actually invoking a remote method. This method can have zero or more arguments and can return a result (or Void).
 
-The !UniversalClient send method lets you invoke virtually any method using a simple approach similar to that used by MuleClient. Multiple arguments must be wrapped in an `Object[]` and passed as the payload. Here are the different options for passing parameters to a method or services using send:
+The !UniversalClient `send` method lets you invoke virtually any method using a simple approach similar to that used by MuleClient. Multiple arguments must be wrapped in an `Object[]` and passed as the payload. Here are the different options for passing parameters to a method or services using send:
 
 || *Supported Argument Types* || *Description* ||
 || Void argument || Can call methods/services that take no arguments ||
