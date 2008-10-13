@@ -23,7 +23,7 @@ If you do not need to route calls to Mule supported endpoints and you do not wis
   # Add `gwt-servlet-1.5.2.jar`, `xstream-1.2.2.jar` and `jettison-1.0.1.jar` in your webapps `WEB-INF/lib` directory
   # If you are using the mule make sure to include any mule dependent jars in your webapps `WEB-INF/lib` directory
 
-===Invoking !UniversalClient Services===
+===Invoking Services Through !UniversalClient===
 This section describes how to use the !UniversalClient API and to invoke methods on remote services. The API uses a similar approach as the `MuleClient` ESB API to send and receive method arguments and return values. For example here one of the simiple :
 `send` methods available in !UniversalClient:
 {{{
