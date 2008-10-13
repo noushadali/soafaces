@@ -42,7 +42,7 @@ The !UniversalClient send method lets you invoke virtually any method using a si
 || Array !IsSerializable || Arrays of !IsSeralizable (only one dimensional arrays supported) ||
 || Collections || Map, List, Set are supported ||
 || JSONObject || Can pass any JSON object to server by wrapping in GWT JSONObject. On the server it will be converted to corresponding Java object ||
-|| Multiple arguments || A method that requires multiple arguments can use Object[] to wrap all the arguments ||
+|| Multiple arguments || A method that requires multiple arguments can use Object[] to wrap all the arguments. Any combination of the previous types shown in this table can be wrapped in Object[] ||
 
 Types of that can be returned from a service call:
 
