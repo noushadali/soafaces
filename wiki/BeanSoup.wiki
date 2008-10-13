@@ -2,4 +2,4 @@
 
 = Introduction =
 
-Welcome to the !BeanSoup sub project within SOAFaces. !BeanSoup is a collection of SOAFaces Bundles (SFBs). The individual bundles provide sample code for developers wanting to learn the different things you can do SOAFaces and also as a repository for SOAFaces components that developers can contribute to.
+Welcome to the !BeanSoup sub project within SOAFaces. !BeanSoup is a collection of SOAFaces Bundles (SFBs). The individual bundles provide sample code for developers wanting to learn the different things you can do SOAFaces and also as a repository for SOAFaces components that developers can contribute to. You can download the collections of sample SFB components found in [Downloads BeanSoup here].
