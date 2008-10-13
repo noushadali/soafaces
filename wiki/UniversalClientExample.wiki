@@ -43,7 +43,8 @@ public class UCDemo implements EntryPoint {
             }
           };
 
-          //Using send method to call remote service 
+          //Simply use the UniversalClient send method to call remote service
+          //This service endpoint takes not arguments and returns a String
           getUniversalClient().send(stEndpoint1, oMuleJSONCallback);
         }
       }
