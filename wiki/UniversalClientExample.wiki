@@ -1,13 +1,13 @@
 #summary Example of how to use UniversalClient from a GWT application
 
-= Introduction =
+= Using UniversalClient in Gwt App =
 
 Here is an code example of what a simple GWT client would look like that uses the UniversalClient API to invoke a very simple service on the server side. This is of course a simple example but you can also use the UniversalClient to invoke Mule endpoints as well.
 
 {{{
 public class UCDemo implements EntryPoint {
 
-  private static final String UNIVERSAL_CLIENT_SERVLET = "/SOAFacesRPCServlet";
+  private static final String UNIVERSAL_CLIENT_SERVLET = "/mywebapp/SOAFacesRPCServlet";
   private UniversalClient _oClient;
 
   private Button button;
@@ -25,8 +25,8 @@ public class UCDemo implements EntryPoint {
     button.addClickListener(new ClickListener() {
       public void onClick(Widget btn) {
 
-        //Format endpoint is: soafaces:///
-        String stEndpoint1 = "soafaces://com.dupont.crd.gwt.service.HelloService/helloThereEndpoint";
+        //Format endpoint is: soafaces://<fully qualified class name>/<annotation name of method endpoint>
+        String stEndpoint1 = "soafaces://com.acme.HelloService/helloThereEndpoint";
         if (btn.equals(button)) {
 
           //Create the UniversalClient Async Callback
@@ -43,7 +43,7 @@ public class UCDemo implements EntryPoint {
             }
           };
 
-          //Using send method to call remote service
+          //Using send method to call remote service 
           getUniversalClient().send(stEndpoint1, oMuleJSONCallback);
         }
       }
