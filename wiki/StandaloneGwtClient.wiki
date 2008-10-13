@@ -55,4 +55,4 @@ Types of that can be returned from a service call:
 || Collections || Map, List, Set are supporteds. ||
 || JSON (JSONValue) || Return object from server will be converted to JSON and then represented as a JSONValue in GWT when pulled from the async callback. ||
 
-Here is a detailed example of how to use the UniversalClient from your GWT application: UniversalClientExample. 
+Here is a detailed example of how to use the !UniversalClient from your GWT application: UniversalClientExample. 
