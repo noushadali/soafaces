@@ -1,0 +1,72 @@
+#summary Example of how to use UniversalClient from a GWT application
+
+= Introduction =
+
+Here is an code example of what a simple GWT client would look like that uses the UniversalClient API to invoke a very simple service on the server side. This is of course a simple example but you can also use the UniversalClient to invoke Mule endpoints as well.
+
+{{{
+public class UCDemo implements EntryPoint {
+
+  private static final String UNIVERSAL_CLIENT_SERVLET = "/SOAFacesRPCServlet";
+  private UniversalClient _oClient;
+
+  private Button button;
+
+  /**
+   * Simple entry point and use call to UniversalClient.
+   */
+  public void onModuleLoad() {
+    button = new Button("Click To Execute Service Call");
+
+    DockPanel dockPanel = new DockPanel();
+    dockPanel.add(button, DockPanel.WEST);
+    RootPanel.get().add(dockPanel);
+
+    button.addClickListener(new ClickListener() {
+      public void onClick(Widget btn) {
+
+        //Format endpoint is: soafaces:///
+        String stEndpoint1 = "soafaces://com.dupont.crd.gwt.service.HelloService/helloThereEndpoint";
+        if (btn.equals(button)) {
+
+          //Create the UniversalClient Async Callback
+          UniversalClientPOJOCallback oMulePOJOCallback = new UniversalClientPOJOCallback() {
+
+            public void onUniversalClientSuccess(Object result) {
+              //Serivces returns a String
+              String returnVal = (String) result;
+              Window.alert("Wow this was a success! Return value: " + returnVal);
+            }
+
+            public void onFailure(Throwable ex) {
+              Window.alert("Error during UniversalClient call: " + ex.getMessage());
+            }
+          };
+
+          //Using send method to call remote service
+          getUniversalClient().send(stEndpoint1, oMuleJSONCallback);
+        }
+      }
+    });
+  }
+      
+  private UniversalClient getUniversalClient() {
+    if(_oClient == null) {
+      _oClient = UniversalClientFactory.getInstance().getUniversalClient(UNIVERSAL_CLIENT_SERVLET);
+    }
+    return _oClient;
+  }
+}
+}}}
+
+Here is what the server side code looks like. This is the service endpoint referenced by the client above. As you can see very simple. Just a POJO with an annotation marker. This allows the UnviversalClient to invoke this service and return the results.
+
+{{{
+public class HelloWorld {
+
+  @ServiceEndpoint(name="helloThereEndpoint")
+  public String helloThere() {
+    return "You got it";
+  }
+}
+}}}
