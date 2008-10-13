@@ -5,7 +5,7 @@
 This section describes how you can use the *Services* (!UniversalClient) portion of the SOAFaces API to make SOA messaging/RPC calls from any GWT client application with no RPC complexity. All you do is set an annotation endpoint marker on methods on a POJO object and then reference that endpoint in your !UniversalClient calls. You can send POJO and JSON objects as arguments and return POJO/JSON values without dealing with serialization and RPC related logic. See the [http://soafaces.googlecode.com/files/universalapp-example-war-2.0.0.zip universalapp WAR] application for an example of how to use the !UniversalClient API in a standalone WAR application. The WAR file also contains the source for the demonstration application.
 
 ===To get started:===
-  * Review the !UniversalClient Services API in the SOAFaces Javadocs
+  * Review the UniversalClient Services API in the SOAFaces Javadocs
   * Download and run the universalapp.war webapp in any servlet engine (aka Tomcat, Jetty ...etc)
   * Review the sample code in universalapp.war
   * Download and install the necessary soafaces jars and build your own application using the !UniversalClient messaging API
@@ -32,7 +32,7 @@ UniversalClient.send(String endpointURI, Object payload, UniversalClientPOJOCall
 
 This send method can invoke Mule endpoints or soafaces endpoints. For example when invoking a soafaces endpoint (using `soafaces://') you are actually invoking a remote method. This method can have zero or more arguments and can return a result (or Void).
 
-The !UniversalClient `send` method lets you invoke virtually any method using a simple approach similar to that used by !MuleClient. Multiple arguments must be wrapped in an `Object[]` and passed as the payload. Here are the different options for passing parameters to a method or services using send:
+The UniversalClient `send` method lets you invoke virtually any method using a simple approach similar to that used by !MuleClient. Multiple arguments must be wrapped in an `Object[]` and passed as the payload. Here are the different options for passing parameters to a method or services using send:
 
 || *Supported Argument Types* || *Description* ||
 || Void argument || Can call methods/services that take no arguments. ||
@@ -54,3 +54,5 @@ Types of that can be returned from a service call:
 || Arrays !IsSerializable || Arrays of !IsSeralizable. Only one dimensional arrays supported. ||
 || Collections || Map, List, Set are supporteds. ||
 || JSON (JSONValue) || Return object from server will be converted to JSON and then represented as a JSONValue in GWT when pulled from the async callback. ||
+
+Here is a detailed example of how to use the UniversalClient from your GWT application: UniversalClientExample. 
