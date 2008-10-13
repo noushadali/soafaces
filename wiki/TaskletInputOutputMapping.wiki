@@ -1,5 +1,105 @@
 #summary How workflow tasklets pass and exchange properties when job runs
 
-= Introduction =
+= Takslet to Tasklet Communication =
 
-SOATasklets can be chained together to form a job or workflow. SOATasklets that make up a job can work together and share data between each other.
+SOATasklets can be chained together to form a job or workflow. SOATasklets (aka tasklets) that make up a job can work together and share data between each other. This is an extremely powerful feature of SOAFaces and tasklets. The ability of one tasklet to pass output properties to another tasklet in the chain enables tasklets to work together withing a job or workflow without any prior knowledge of each other.
+
+What does that mean? Well let's take very simple example. Say you create a simple database tasks that pulls a status message from a database record. This is a custom tasklet let us say. Then let's imagine a simple generic tasklet that can send an email. This email tasklet has in input JavaBean that has properties for the email destination, subject and body. Now if the database tasklet could pass its status message to the email tasklet and place it as the subject that would allow the two tasklets to work together. All that is needed is a simple point a click way of mapping the output of the database tasklet to the input of the email tasklet.
+
+SOAFaces facilitates this by defined a specification for the SOAFaces container to support for how the output JavaBean of one tasklets can map its properties to the input JavaBean of another tasklet further down in the job/workflow chain. It is up to the SOAFaces container to support this specification and the required mapping GUI.
+
+The properties of the output JavaBean of the one tasklet are mapped/passed/converted to the input JavaBean of another tasklet. Here is how the properties are passed and converted.
+
+{{{
+Widening conversions are allowed - Narrowing conversions are NOT allowed. 
+ * Data Conversion:
+ * Two forms of data conversion are possible between an output bean
+ * property and input bean property:
+ * 1) Java Core Reflection Data Conversion Spec (Standard)
+ *    - wrapping and unwrapping primitive conversion
+ *    - widening conversion
+ *
+ * 2) Extended String Conversion (Extended)
+ *    - primitive converted to String/StringBuffer
+ *    - Object converted to String/StringBuffer
+ *
+ *
+ * The Extended conversion is allowed when the input bean
+ * is a String/StringBuffer. Given that all Java Objects support
+ * the toString() method, any object can be converted and mapped
+ * to a String or StringBuffer. Prmitive types are also mapped
+ * to String or StringBuffer by first wrapping them into corresponding objects.
+ * The Extended conversion rules are considred a form of "widening" 
+ * conversion. Thus converting to a String or StringBuffer is 
+ * considered permissable.
+ *
+ * Special Array Mapping Rules:
+ * There are some speically rules to consider when dealing with
+ * output bean to input bean mappings. These rules pertain to the
+ * use of Arrays in either an output bean and/or input bean. Arrays
+ * allow for some special behavior when mapping occurs. There are 
+ * three types of bean to bean mapping rules to consider:
+ * 
+ *  1) Non Array output Property to Non Array input Array 
+ *       Allows for Standard or Extended conversion. If defualt input value
+ *       exists it is replaced.
+ *
+ *  2) Non Array Property to Array Property
+ *       If the non output property is the same data type (or has compatible
+ *       conversion - Standard or Extended) as the target input Array
+ *       compenent type then conversion will be allowed. In such a case the 
+ *       non Array property is wrapped into an Array and assigned to the
+ *       input Array property.
+ *
+ *  3) Array property to Array Property
+ *       Allows for Standard or Extended conversion. If Extended conversion
+ *       is allowed then output Array propeties are converted to String or
+ *       StringBuffer, wrapped into a new Array and assigned to the input Array.
+ *
+ *  4) Array property to non Array property
+ *       This type of mapping is not allowed.
+ *
+ *
+ * Input Bean:
+ * If XyzBeanInfo object exists for input bean it will be used during the
+ * mapping processes. This allows the bean developer to control what 
+ * bean properties will be attempted to be mapped into the input bean from the
+ * output bean. This is done by controlling wheter an  input bean property dose or
+ * does not have a setter method meta information in the XyzBeanInfo class. This 
+ * also allows certain input bean properties to be settable only by the user
+ * via the code or GUI. In such a case the XyzBeanInfo object would only
+ * list the input bean properties that can be mapped (have setter methods). 
+ * All other valid java bean properties can thus only be set manually by directly
+ * accessing the settiner method output bean to input bean mapping are not allowed
+ * for such properties
+ * Input Beans properties defined in the 
+ * custom BeanInfo must be writable (ie have a public setter method).
+ * Other input bean properties can be readonly, but they will only be used
+ * by the operation and not during mapping.
+ * If a BeanInfo object is not available for an input bean then any property
+ * with a javabean setter method can be mapped from an output bean.
+ *
+ * Output Bean:
+ * No custom XyzBeanInfo will be used for the output bean. Output Beans are reflected
+ * to find their getter methods/properties. All properties with getter methods
+ * are avilable for mapping. Thus an output bean property can be RO or WR.
+ *
+ *
+ * Arrays and Aggregation:
+ * Array properties can be used to allow one or more output beans
+ * to aggregate into an input beans. It is really up to the
+ * input bean developer to implement the setter method of the property method such that it 
+ * aggregates/appends to the input bean property Array or not. 
+ * Input bean developers can disable this aggregate/append ability of a particular
+ * Array property setter method by setting a non persistent flag
+ * on the input javabean when needing to overwrite the Array. 
+ * The append state will not be persisted so long as it is not a java bean 
+ * property. Another approach is have an non javabean setter method
+ * will overwrite the Array instead of append to it. This would be used
+ * the internal code and not by the IOBean mapping engine.
+ *
+ * Future:
+ * Collections may be supported in the future to behave like Arrays when
+ * Generics are supported.
+
+}}}
