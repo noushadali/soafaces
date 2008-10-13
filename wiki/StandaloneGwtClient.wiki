@@ -37,17 +37,18 @@ The !UniversalClient send method lets you invoke virtually any method using a si
 || *Supported Argument Types* || *Description* ||
 || Standard Java types || For example String, Integer, int and any GWT supported serialized type can be sent as a single argument ||
 || !IsSeralizable || User defined types that support !IsSerializable ||
-|| Arrays || Arrays of !IsSeralizable or Java standard types ||
+|| Arrays Serializable || Arrays of Serializable or Java standard types (one and two dimensional arrays supported) ||
+|| Arrays !IsSerializable || Arrays of !IsSeralizable (only one dimensional arrays supported) ||
 || Collections || Map, List, Set are supported ||
 || JSONObject || JSON is a convenient way to pass objects that do not support !IsSerializable ||
-|| Multiple arguments || A method that requires multiple arguments can be sent using Object[] ||
+|| Multiple arguments || A method that requires multiple arguments can use Object[] to wrap all the arguments ||
 
 Types of that can be returned from a service call:
 
 || *Supported Return Types* || *Description* ||
 || Standard Java types || For example String, Integer, int and any GWT supported serialized type can be sent as a single argument ||
 || !IsSeralizable || User defined types that support !IsSerializable ||
-|| Arrays || Arrays of !IsSeralizable or Java standard types ||
+|| Arrays Serializable || Arrays of Serializable or Java standard types (one and two dimensional arrays supported) ||
+|| Arrays !IsSerializable || Arrays of !IsSeralizable (only one dimensional arrays supported) ||
 || Collections || Map, List, Set are supported ||
 || JSONObject || JSON is a convenient way to pass objects that do not support !IsSerializable ||
-|| Multiple arguments || A method that requires multiple arguments can be sent using Object[] ||
