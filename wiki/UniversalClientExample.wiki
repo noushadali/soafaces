@@ -26,7 +26,7 @@ public class UCDemo implements EntryPoint {
       public void onClick(Widget btn) {
 
         //Format endpoint is: soafaces://<fully qualified class name>/<annotation name of method endpoint>
-        String stEndpoint1 = "soafaces://com.acme.HelloService/helloThereEndpoint";
+        String stEndpoint1 = "soafaces://com.acme.HelloWorldService/helloThereEndpoint";
         if (btn.equals(button)) {
 
           //Create the UniversalClient Async Callback
@@ -62,7 +62,7 @@ public class UCDemo implements EntryPoint {
 Here is what the server side code looks like. This is the service endpoint referenced by the client above. As you can see very simple. Just a POJO with an annotation marker. This allows the UnviversalClient to invoke this service and return the results.
 
 {{{
-public class HelloWorld {
+public class HelloWorldService {
 
   @ServiceEndpoint(name="helloThereEndpoint")
   public String helloThere() {
