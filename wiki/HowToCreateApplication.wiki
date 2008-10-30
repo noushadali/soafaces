@@ -5,18 +5,18 @@ This example shows how to build a SFB application. The application uses an input
 
 Follow these steps to learn how to develop, package and deploy your own SOAFaces Bundle (SFB) application:
 
-  # Implement SOAApplet Interface
-  # Define an Input !JavaBean for Applet (Optional)
+  # Implement Weblet Interface
+  # Define an Input !JavaBean for Weblet (Optional)
   # Create MANIFEST.MF File
   # Package Contents into a SFB JAR file
   # Deploy the new SFB to a SFB Container (like !JobServer)
 
-===Step 1: Implement SOAApplet Interface ==
+===Step 1: Implement Weblet Interface ==
 
-The SOAApplet is the primary GUI interface of the application. Here is what the SOAApplet implementation might look like:
+The Weblet is the primary GUI interface of the application. Here is what the Weblet implementation might look like:
 
 {{{
-public class HelloWorldApp extends SimplePOJOApplet
+public class HelloWorldApp extends SimplePOJOWeblet
 { 
   private TextBox _oNameField = new TextBox();
   private HelloWorldInput _oMyInputBean = null;
@@ -54,7 +54,7 @@ public class HelloWorldApp extends SimplePOJOApplet
    * any necessary validation checks. If the validation
    * is not proper it should return false.
    *
-   * The Container hosting the SOApplet will call
+   * The Container hosting the Weblet will call
    * this method in order to save the input JavaBean
    * to its persistent store.
    */
@@ -84,9 +84,9 @@ public class HelloWorldApp extends SimplePOJOApplet
 }}}    
     
 
-===Step 2: Define an Input !JavaBean for Applet (Optional) ===
+===Step 2: Define an Input !JavaBean for Weblet (Optional) ===
 
-The input !JavaBean can be edited by the SOAApplet and used as input and to persist data for use by the application:
+The input !JavaBean can be edited by the Weblet and used as input and to persist data for use by the application:
 
 {{{
 public class HelloWorldInput implements IsSerializable
@@ -122,13 +122,13 @@ The MANIFEST.MF file contains the meta information that informs a SOAFaces conta
 SOAFaces-Name: Hello World App
 SOAFaces-SymbolicName: surda-beansoup-helloworldapp
 SOAFaces-Version: 1.0.0
-SOAFaces-Description: Simple Applet/Application with an input JavaBean
+SOAFaces-Description: Simple Weblet/Application with an input JavaBean
 SOAFaces-Vendor: Grand Logic, Inc
 SOAFaces-Category: example
-#Optional input JavaBean used by the Applet for persistence
+#Optional input JavaBean used by the Weblet for persistence
 SOAFaces-InputBean: org.beansoup.helloworld.client.HelloWorldInput
 #GWT client Module name
-SOAFaces-Applet: org.beansoup.helloworld.HelloBundeName
+SOAFaces-Weblet: org.beansoup.helloworld.HelloBundeName
 }}}
 
 ===Step 4: Package Contents into a SFB JAR file===
@@ -170,17 +170,17 @@ Here is an example of a simple ANT target that can construct the SFB archive fil
            <attribute name="SOAFaces-Name"            value="Hello World App"/>
            <attribute name="SOAFaces-SymbolicName"    value="surda-beansoup-helloworld"/>
            <attribute name="SOAFaces-Version"         value="1.0.0"/>
-           <attribute name="SOAFaces-Description"     value="Simple Applet/Application with an input JavaBean"/>
+           <attribute name="SOAFaces-Description"     value="Simple Weblet/Application with an input JavaBean"/>
            <attribute name="SOAFaces-Vendor"          value="Grand Logic, Inc"/>
            <attribute name="SOAFaces-Category"        value="example"/>
            <attribute name="SOAFaces-InputBean"       value="org.beansoup.helloworld3.client.HelloWorldInput"/>
-           <attribute name="SOAFaces-Applet"          value="org.beansoup.helloworld3.client.HelloWorldApp"/>
+           <attribute name="SOAFaces-Weblet"          value="org.beansoup.helloworld3.client.HelloWorldApp"/>
          </manifest>    
       </jar>
 }}}
     
 
-Notice that the client GWT code requires the source also be included in the JAR file. The GWT compiler requires the source and will use this to compile, on the fly, the SOAApplet into GWT AJAX code. The lib directory can contain any needed third party JARs used by the SOAApplet.
+Notice that the client GWT code requires the source also be included in the JAR file. The GWT compiler requires the source and will use this to compile, on the fly, the Weblet into GWT AJAX code. The lib directory can contain any needed third party JARs used by the Weblet.
 
 Note, that you have the option to include the GWT client code (java source code an compiled code) in the SFB and let the SFB container compile the GWT client code into javascript for you (frees developer from dealing with GWT compiler) or you can compile the GWT client code yourself (using the GWT compiler) and include the javascript in the SFB directly. You simple include the compiled GWT client code in the <code>www</code> directory in the SFB jar.
 
