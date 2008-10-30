@@ -6,7 +6,7 @@ This example shows how to build a very simple SFB that implements a Tasklet and 
 Follow these steps to learn how to develop, package and deploy your own SOAFaces Bundle (SFB):
 
   # Implement Tasklet Interface
-  # Implement SOAApplet Interface (Optional)
+  # Implement Weblet Interface (Optional)
   # Define an Input !JavaBean for Tasklet (Optional)
   # Define an Output !JavaBean for Tasklet (Optional)
   # Create MANIFEST.MF File
@@ -58,9 +58,9 @@ public class HelloWorld implements Tasklet
 
 The `onExecute` method will be called when the above Tasklet is run as part of a job.
 
-===Step 2: Implement SOAApplet Interface (Optional)==
+===Step 2: Implement Weblet Interface (Optional)==
 
-This step is optional when creating Tasklets. The SOAApplet will be used to customize the input !JavaBean that is used as input to the Tasklet when the job is run. Here is what the SOAApplet implementation might look like:
+This step is optional when creating Tasklets. The Weblet will be used to customize the input !JavaBean that is used as input to the Tasklet when the job is run. Here is what the Weblet implementation might look like:
 
 {{{
 public class HelloWorldCustomizer extends SimplePOJOApplet
@@ -136,7 +136,7 @@ public class HelloWorldCustomizer extends SimplePOJOApplet
 
 ===Step 3: Define an Input !JavaBean for Tasklet (Optional) ===
 
-The input !JavaBean can be edited by the SOAApplet and used as input by the Tasklet when the job is run. An example would be like this:
+The input !JavaBean can be edited by the Weblet and used as input by the Tasklet when the job is run. An example would be like this:
 
 {{{
 public class HelloWorldInput implements IsSerializable
@@ -272,7 +272,7 @@ Here is an example of a simple ANT target that can construct the SFB archive fil
 }}}
     
 
-Notice that the client GWT code requires the source also be included in the JAR file. The GWT compiler requires the source and will use this to compile, on the fly, the SOAApplet into GWT AJAX code. The lib directory can contain any needed third party JARs used by the SOAApplet or SOATasklet code.
+Notice that the client GWT code requires the source also be included in the JAR file. The GWT compiler requires the source and will use this to compile, on the fly, the Weblet into GWT AJAX code. The lib directory can contain any needed third party JARs used by the Weblet or Tasklet code.
 
 Note, that you have the option to include the GWT client code (java source code an compiled code) in the SFB and let the SFB container compile the GWT client code into javascript for you (frees developer from dealing with GWT compiler) or you can compile the GWT client code yourself (using the GWT compiler) and include the javascript in the SFB directly. You simple include the compiled GWT client code in the <code>www</code> directory in the SFB jar.
 
