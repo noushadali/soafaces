@@ -5,7 +5,7 @@ This example shows how to build a very simple SFB that implements a Tasklet and 
 
 Follow these steps to learn how to develop, package and deploy your own SOAFaces Bundle (SFB):
 
-  # Implement SOATasklet Interface
+  # Implement Tasklet Interface
   # Implement SOAApplet Interface (Optional)
   # Define an Input !JavaBean for Tasklet (Optional)
   # Define an Output !JavaBean for Tasklet (Optional)
@@ -13,12 +13,12 @@ Follow these steps to learn how to develop, package and deploy your own SOAFaces
   # Package Contents into a SFB JAR file
   # Deploy the new SFB to a SFB Container (like !JobServer)
 
-===Step 1: Implement SOATasklet Interface===
+===Step 1: Implement Tasklet Interface===
 
-Using the SOATasklet interface, implement the `org.soafces.bundle.workflow.SOATasklet` interface by implementing the `onExecute` method. Here is a simple example:
+Using the Tasklet interface, implement the `org.soafces.bundle.workflow.Tasklet` interface by implementing the `onExecute` method. Here is a simple example:
 
 {{{
-public class HelloWorld implements SOATasklet 
+public class HelloWorld implements Tasklet 
 {
   public HelloWorld()
   {
@@ -32,7 +32,7 @@ public class HelloWorld implements SOATasklet
    */
   public void onExecute(SOATaskInputContext inputContext, SOATaskOutputContext outputContext)
   {	
-    //If your SOATasklet uses an input and/or output JavaBean then it is 
+    //If your Tasklet uses an input and/or output JavaBean then it is 
     //best to get them and cast to the appropriate class type.
     HelloWorldInput inputBean = (HelloWorldInput) inputContext.getInputBean();
 
@@ -60,7 +60,7 @@ The `onExecute` method will be called when the above Tasklet is run as part of a
 
 ===Step 2: Implement SOAApplet Interface (Optional)==
 
-This step is optional when creating Tasklets. The SOAApplet will be used to customize the input !JavaBean that is used as input to the SOATasklet when the job is run. Here is what the SOAApplet implementation might look like:
+This step is optional when creating Tasklets. The SOAApplet will be used to customize the input !JavaBean that is used as input to the Tasklet when the job is run. Here is what the SOAApplet implementation might look like:
 
 {{{
 public class HelloWorldCustomizer extends SimplePOJOApplet
@@ -80,7 +80,7 @@ public class HelloWorldCustomizer extends SimplePOJOApplet
 
     getMainPanel().add(new Label("Simple hello world example. Constructs a simple " +
                                   "hello world message and logs it using Java " + 
-                                  "Logging API when the SOATasklet is run in a Job"));
+                                  "Logging API when the Tasklet is run in a Job"));
     vSpacer = new VerticalPanel(); vSpacer.setHeight("20");
     getMainPanel().add(vSpacer);
     
@@ -106,7 +106,7 @@ public class HelloWorldCustomizer extends SimplePOJOApplet
    * this method in order to save the input JavaBean
    * to its persistent store. The saved state of the
    * input JavaBean is what is referenced when the
-   * SOATasklet/Job is run.
+   * Tasklet/Job is run.
    */
   public void onSaveInputBean(SuccessFailCallback callback)
   {
@@ -136,7 +136,7 @@ public class HelloWorldCustomizer extends SimplePOJOApplet
 
 ===Step 3: Define an Input !JavaBean for Tasklet (Optional) ===
 
-The input !JavaBean can be edited by the SOAApplet and used as input by the SOATasklet when the job is run. An example would be like this:
+The input !JavaBean can be edited by the SOAApplet and used as input by the Tasklet when the job is run. An example would be like this:
 
 {{{
 public class HelloWorldInput implements IsSerializable
@@ -165,7 +165,7 @@ public class HelloWorldInput implements IsSerializable
 
 ===Step 4: Define an Output !JavaBean for Tasklet (Optional) ===
 
-The output !JavaBean is used by the SOATasklet as output. When the Tasklet is run as part of a job the SOATasklet interface can write an relevant output to this !JavaBean An example would be like this:
+The output !JavaBean is used by the Tasklet as output. When the Tasklet is run as part of a job the Tasklet interface can write an relevant output to this !JavaBean An example would be like this:
 
 {{{
 public class HelloWorldOutput implements IsSerializable
