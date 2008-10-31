@@ -1,6 +1,8 @@
 #summary New releases and happenings
 
 ==Status and News===
+  * *10/30/2008 - Release 2.3.0*
+    * _Stable release. Includes some API changes._
   * *9/25/2008 - Release 2.1.0 Beta*
     * _API improvements_
     * _Support Hot/Static GWT compiling_
