@@ -1,4 +1,4 @@
-#summary Specification for how logging is handled by the SOAFaces Container
+#summary Specification for how java logging is supported by Tasklets handled by the SOAFaces Container
 
 = Introduction =
 
