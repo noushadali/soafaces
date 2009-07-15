@@ -1,6 +1,8 @@
 #summary New releases and happenings
 
 ==Status and News===
+  * *07/15/2009 - Release 2.4.0*
+    * _Support for Mule 2.2.1 and minor enhancements._
   * *12/29/2008 - Release 2.3.6*
     * _Minor bug fixes._
   * *10/30/2008 - Release 2.3.0*
