@@ -1,17 +1,17 @@
-#summary Steps to creating a SFB Tasklet
+#summary Steps to creating a Bundle Tasklet
 
-==Example of a Tasklet Based SFB==
-This example shows how to build a very simple SFB that implements a Tasklet and also includes an Weblet for customizing the Tasklet's input !JavaBean.
+==Example of a Tasklet Based Bundle==
+This example shows how to build a very simple Bundle that implements a Tasklet and also includes an Weblet for customizing the Tasklet's input !JavaBean.
 
-Follow these steps to learn how to develop, package and deploy your own SOAFaces Bundle (SFB):
+Follow these steps to learn how to develop, package and deploy your own SOAFaces Bundle (Bundle):
 
   # Implement Tasklet Interface
   # Implement Weblet Interface (Optional)
   # Define an Input !JavaBean for Tasklet (Optional)
   # Define an Output !JavaBean for Tasklet (Optional)
   # Create MANIFEST.MF File
-  # Package Contents into a SFB JAR file
-  # Deploy the new SFB to a SFB Container (like !JobServer)
+  # Package Contents into a Bundle JAR file
+  # Deploy the new Bundle to a SOAFaces Container (like !JobServer)
 
 ===Step 1: Implement Tasklet Interface===
 
@@ -195,7 +195,7 @@ public class HelloWorldOutput implements IsSerializable
 
 ===Step 5: Create MANIFEST.MF File===
 
-The MANIFEST.MF file contains the meta information that informs a SOAFaces container like !JobServer what is contained in the SFB JAR file and what interfaces are defined by the SFB. The file is placed in the META-INF directory within the SFB JAR.
+The MANIFEST.MF file contains the meta information that informs a SOAFaces container like !JobServer what is contained in the Bundle JAR file and what interfaces are defined by the Bundle. The file is placed in the META-INF directory within the Bundle JAR.
 
 {{{
 SOAFaces-Name: Hello World 3
@@ -212,9 +212,9 @@ SOAFaces-InputBean: org.beansoup.helloworld3.client.HelloWorldInput
 SOAFaces-Weblet: org.beansoup.helloworld3.HelloModuleName
 }}}
 
-===Step 6: Package Contents into a SFB JAR file===
+===Step 6: Package Contents into a Bundle JAR file===
 
-All the code and content are packaged and put into a SFB JAR file with the file extension .sfb. Here is an example directory structure of the JAR file.
+All the code and content are packaged and put into a Bundle JAR file with the file extension .sfb. Here is an example directory structure of the JAR file.
 
 {{{
 META-INF/MANIFEST.MF
@@ -232,10 +232,10 @@ lib/
     someThirdPartyServer-Side.jar
 }}}
 
-Here is an example of a simple ANT target that can construct the SFB archive file:
+Here is an example of a simple ANT target that can construct the Bundle archive file:
 
 {{{
-    <target name="build_sfb" depends="compile" description="Build SFB for example Tasklet">
+    <target name="build_sfb" depends="compile" description="Build Bundle for example Tasklet">
       <mkdir dir="build/sfb-dir/org-beansoup-helloworld3-v1-0-0/classes" />
       <copy todir="build/sfb-dir/org-beansoup-helloworld3-v1-0-0/classes"
             overwrite="false">
@@ -274,8 +274,8 @@ Here is an example of a simple ANT target that can construct the SFB archive fil
 
 Notice that the client GWT code requires the source also be included in the JAR file. The GWT compiler requires the source and will use this to compile, on the fly, the Weblet into GWT AJAX code. The lib directory can contain any needed third party JARs used by the Weblet or Tasklet code.
 
-Note, that you have the option to include the GWT client code (java source code an compiled code) in the SFB and let the SFB container compile the GWT client code into javascript for you (frees developer from dealing with GWT compiler) or you can compile the GWT client code yourself (using the GWT compiler) and include the javascript in the SFB directly. You simple include the compiled GWT client code in the <code>www</code> directory in the SFB jar.
+Note, that you have the option to include the GWT client code (java source code an compiled code) in the Bundle and let the SOAFaces container compile the GWT client code into javascript for you (frees developer from dealing with GWT compiler) or you can compile the GWT client code yourself (using the GWT compiler) and include the javascript in the Bundle directly. You simple include the compiled GWT client code in the <code>www</code> directory in the Bundle jar.
 
-===Step 7: Deploy the new SFB to a SFB Container (like !JobServer)===
+===Step 7: Deploy the new Bundle to a SOAFaces Container (like !JobServer)===
 
-Name the SFB JAR something like myhelloworld.sfb and place it in the !JobServer soafaces directory. The name must be unique within !JobServer. Now go to the !JobServer SOAFaces Repository tool and you should see the new SFB. It can now be used to build a new job! 
+Name the Bundle JAR something like myhelloworld.sfb and place it in the !JobServer soafaces directory. The name must be unique within !JobServer. Now go to the !JobServer SOAFaces Repository tool and you should see the new Bundle. It can now be used to build a new job! 
