@@ -11,7 +11,7 @@ The !UniversalClient interface can pass any java object supported for serializat
 {{{
   //If you are using soafaces from a generic GWT app then you need to use
   //the UniversalClientFactory to get the UniversalClient object. Otherwise,
-  //if your code is running in a SFB Container you can simpley get the UniversalClient
+  //if your code is running in a SOAFaces Container you can simpley get the UniversalClient
   //object from the context.
   UniversalClient uClient = UniversalClientFactory.getInstance().getUniversalClient("/mywebapp/SoafacesServlet");
   
