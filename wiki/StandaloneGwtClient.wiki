@@ -10,9 +10,12 @@ This section describes how you can use the *Services* (!UniversalClient) portion
   * Review the sample code in universalapp.war
   * Download and install the necessary soafaces jars and build your own application using the !UniversalClient messaging API
 
-If you want to also access endpoint services that include soafaces endpoints along with Mule endpoints (like JMS, SOAP ...etc) use the jars shown below in your webapp. Note that you will also need to include in your webapp any necessary Mule jars:
+If you want to also access endpoint services that include soafaces endpoints along with Mule endpoints (like JMS, SOAP ...etc) use the jars shown below in your webapp.
+
   * soafaces-services-client.jar
   * soafaces-services-servlet.jar
+
+Note that you will also need to include in your webapp any necessary Mule jars.
 
 If you do not need to route calls to Mule supported endpoints and you do not wish to include the Mule JAR dependencies you can use a stripped down version of the servlet JAR, `soafaces-services-servlet-nomule.jar` that has no mule dependencies or mule support. This will allow you to make !UniversalClient calls to endpoints using the `soafaces://` protocol only.
 
