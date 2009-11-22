@@ -21,8 +21,8 @@ If you do not need to route calls to Mule supported endpoints and you do not wis
 
 ===Steps for setting up your webapp to use the !UniversalClient:===
   # Inherit the `Services.gwt.xml` module in your GWT module file
-  # Add soafaces-services-client.jar to your GWTCompiler's classpath when compiling your GWT client to javascript
-  # Place soafaces-services-servlet.jar in your webapps `WEB-INF/lib` directory
+  # Add `soafaces-services-client.jar` to your GWTCompiler's classpath when compiling your GWT client to javascript
+  # Place `soafaces-services-servlet.jar` in your webapps `WEB-INF/lib` directory
   # Add `gwt-servlet-1.5.2.jar`, `xstream-1.2.2.jar` and `jettison-1.0.1.jar` in your webapps `WEB-INF/lib` directory
   # If you are using the mule make sure to include any mule dependent jars in your webapps `WEB-INF/lib` directory
 
