@@ -1,7 +1,7 @@
 #summary New releases and happenings
 
 ==Status and News===
-  * *10/06/2009 - Release 2.5.5*
+  * *10/06/2010 - Release 2.5.5*
     * _Minor release with javadoc and doc fixes._
   * *11/15/2009 - Release 2.4.4*
     * _Minor bug fix release._
