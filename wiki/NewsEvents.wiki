@@ -1,7 +1,10 @@
 #summary New releases and happenings
 
 ==Status and News===
-  * *10/06/2010 - Release 2.5.5*
+  * *1/11/2011 - Release 2.5.4*
+    * _Fix for no arg soafaces end points_
+    * _Minor doc changes and UI fix to BeanSoup HellWorld component._
+  * *10/06/2010 - Release 2.5.0*
     * _Minor release with javadoc and doc fixes._
   * *11/15/2009 - Release 2.4.4*
     * _Minor bug fix release._
