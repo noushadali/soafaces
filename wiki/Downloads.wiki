@@ -3,7 +3,7 @@
 = SOAFaces Release Archive =
 
 == Version 2.5.6 ==
-January 11, 201` - [http://soafaces.googlecode.com/files/release_notes-2.5.6.html Release Notes]
+January 11, 2011 - [http://soafaces.googlecode.com/files/release_notes-2.5.6.html Release Notes]
 
 || *Download Package* || *Description* ||
 || [http://soafaces.googlecode.com/files/soafaces-jars-2.5.6.zip soafaces-jars-2.5.6.zip] || SOAFaces binary JARs ||
@@ -14,7 +14,7 @@ January 11, 201` - [http://soafaces.googlecode.com/files/release_notes-2.5.6.htm
 || [http://soafaces.googlecode.com/files/universalapp-example-war-2.5.6.zip universalapp-example-war-2.5.6.zip] || Example using !UniversalClient API in a GWT web application to access remote services with no RPC! WAR file includes the sample source code for both GWT client and backend services. ||
 
 == Version 2.5.4 ==
-January 11, 201` - [http://soafaces.googlecode.com/files/release_notes-2.5.4.html Release Notes]
+January 11, 2011 - [http://soafaces.googlecode.com/files/release_notes-2.5.4.html Release Notes]
 
 || *Download Package* || *Description* ||
 || [http://soafaces.googlecode.com/files/soafaces-jars-2.5.4.zip soafaces-jars-2.5.4.zip] || SOAFaces binary JARs ||
