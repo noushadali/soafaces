@@ -283,7 +283,7 @@ Here is an example of a simple ANT target that can construct the Bundle archive 
 
 Notice that the client GWT code requires the source also be included in the JAR file. The GWT compiler requires the source and will use this to compile, on the fly, the Weblet into GWT AJAX code. The lib directory can contain any needed third party JARs used by the Weblet or Tasklet code.
 
-Note, that you have the option to include the GWT client code (java source code an compiled code) in the Bundle and let the SOAFaces container compile the GWT client code into javascript for you (frees developer from dealing with GWT compiler) or you can compile the GWT client code yourself (using the GWT compiler) and include the javascript in the Bundle directly. You simply include the compiled GWT client code in the <code>www</code> directory in the Bundle jar.
+Note, that you have the option to include the GWT client code (java source code an compiled code) in the Bundle and let the SOAFaces container compile the GWT client code into javascript for you (frees developer from dealing with GWT compiler) or you can compile the GWT client code yourself (using the GWT compiler) and include the javascript in the Bundle directly. You simply include the compiled GWT client code in the `www` directory in the Bundle jar.
 
 ===Step 7: Deploy the new Bundle to a SOAFaces Container (like !JobServer)===
 
