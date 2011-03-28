@@ -139,6 +139,10 @@ public class HelloWorldCustomizer extends SimplePOJOWeblet
 The input !JavaBean can be edited by the Weblet and used as input by the Tasklet when the job is run. An example would be like this:
 
 {{{
+/**
+ * Note that Input JavaBean must implement IsSerializable to be used
+ * by GWT clients.
+ */
 public class HelloWorldInput implements IsSerializable
 {
   private String personName="";
@@ -165,9 +169,14 @@ public class HelloWorldInput implements IsSerializable
 
 ===Step 4: Define an Output !JavaBean for Tasklet (Optional) ===
 
-The output !JavaBean is used by the Tasklet as output. When the Tasklet is run as part of a job the Tasklet interface can write an relevant output to this !JavaBean An example would be like this:
+The output !JavaBean is used by the Tasklet as output. When the Tasklet is run as part of a job the Tasklet interface can write an relevant output to this !JavaBean. An example would be like this:
 
 {{{
+/**
+ * Note that Output JavaBean must implement IsSerializable to be used
+ * by GWT clients.
+ */
+ 
 public class HelloWorldOutput implements IsSerializable
 {
   private String personName="";
