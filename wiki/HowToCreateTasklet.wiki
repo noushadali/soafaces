@@ -1,7 +1,7 @@
 #summary Steps to creating a Bundle Tasklet
 
 ==Example of a Tasklet Based Bundle==
-This example shows how to build a very simple Bundle that implements a Tasklet and also includes an Weblet for customizing the Tasklet's input !JavaBean.
+This example shows how to build a very simple Bundle that implements a Tasklet and also includes an Weblet GUI interface for customizing the Tasklet's input !JavaBean.
 
 Follow these steps to learn how to develop, package and deploy your own SOAFaces Bundle (Bundle):
 
@@ -60,7 +60,7 @@ The `onExecute` method will be called when the above Tasklet is run as part of a
 
 ===Step 2: Implement Weblet Interface (Optional)==
 
-This step is optional when creating Tasklets. The Weblet will be used to customize the input !JavaBean that is used as input to the Tasklet when the job is run. Here is what the Weblet implementation might look like:
+This step is optional when creating Tasklets. The Weblet GUI will be used to customize the input !JavaBean that is used as input to the Tasklet when the job is run on the server-side. Here is what the Weblet implementation might look like:
 
 {{{
 public class HelloWorldCustomizer extends SimplePOJOWeblet
@@ -136,11 +136,11 @@ public class HelloWorldCustomizer extends SimplePOJOWeblet
 
 ===Step 3: Define an Input !JavaBean for Tasklet (Optional) ===
 
-The input !JavaBean can be edited by the Weblet and used as input by the Tasklet when the job is run. An example would be like this:
+The input !JavaBean can be edited by the Weblet GUI and used as input by the Tasklet when the job is run. An example would be like this:
 
 {{{
 /**
- * Note that Input JavaBean must implement IsSerializable to be used
+ * Note that an input JavaBean must implement IsSerializable to be used
  * by GWT clients.
  */
 public class HelloWorldInput implements IsSerializable
@@ -169,11 +169,11 @@ public class HelloWorldInput implements IsSerializable
 
 ===Step 4: Define an Output !JavaBean for Tasklet (Optional) ===
 
-The output !JavaBean is used by the Tasklet as output. When the Tasklet is run as part of a job the Tasklet interface can write an relevant output to this !JavaBean. An example would be like this:
+The output !JavaBean is used by the Tasklet as output. When the Tasklet is run as part of a job the Tasklet interface can write all relevant output to this !JavaBean. An example of an output !JavaBean would be like this:
 
 {{{
 /**
- * Note that Output JavaBean must implement IsSerializable to be used
+ * Note that an output JavaBean must implement IsSerializable to be used
  * by GWT clients.
  */
  
