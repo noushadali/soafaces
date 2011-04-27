@@ -271,7 +271,7 @@ Here is an example of a simple ANT target that can construct the Bundle archive 
            <attribute name="SOAFaces-Category"        value="example"/>
            <attribute name="SOAFaces-Tasklet"         value="org.beansoup.helloworld3.workflow.HelloWorld"/>
            <attribute name="SOAFaces-InputBean"       value="org.beansoup.helloworld3.client.HelloWorldInput"/>
-           <attribute name="SOAFaces-OutputBean"      value=""/>
+           <attribute name="SOAFaces-OutputBean"      value="org.beansoup.helloworld3.client.HelloWorldOutput"/>
            <attribute name="SOAFaces-Weblet"          value="org.beansoup.helloworld3.client.HelloWorldCustomizer"/>
            <attribute name="SOAFaces-InputViewer"     value=""/> <!-- Optional GUI viewer for viewing input of Tasklet -->
            <attribute name="SOAFaces-OutputViewer"    value=""/> <!-- Optional GUI viewer for viewing output of Tasklet -->
