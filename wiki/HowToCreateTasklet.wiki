@@ -140,7 +140,7 @@ The input !JavaBean can be edited by the Weblet GUI and used as input by the Tas
 
 {{{
 /**
- * Note that an input JavaBean must implement IsSerializable to be used
+ * Note that an Input JavaBean must implement IsSerializable to be used
  * by GWT clients.
  */
 public class HelloWorldInput implements IsSerializable
@@ -173,7 +173,7 @@ The output !JavaBean is used by the Tasklet as output. When the Tasklet is run a
 
 {{{
 /**
- * Note that an output JavaBean must implement IsSerializable to be used
+ * Note that an Output JavaBean must implement IsSerializable to be used
  * by GWT clients.
  */
  
@@ -273,8 +273,8 @@ Here is an example of a simple ANT target that can construct the Bundle archive 
            <attribute name="SOAFaces-InputBean"       value="org.beansoup.helloworld3.client.HelloWorldInput"/>
            <attribute name="SOAFaces-OutputBean"      value=""/>
            <attribute name="SOAFaces-Weblet"          value="org.beansoup.helloworld3.client.HelloWorldCustomizer"/>
-           <attribute name="SOAFaces-InputViewer"     value=""/>
-           <attribute name="SOAFaces-OutputViewer"    value=""/>
+           <attribute name="SOAFaces-InputViewer"     value=""/> <!-- Optional GUI viewer for viewing input of Tasklet -->
+           <attribute name="SOAFaces-OutputViewer"    value=""/> <!-- Optional GUI viewer for viewing output of Tasklet -->
          </manifest>    
       </jar>
     </target>
