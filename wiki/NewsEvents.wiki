@@ -1,6 +1,8 @@
 #summary New releases and happenings
 
 ==Status and News===
+  * *8/06/2011 - Release 2.5.8*
+    * _Minor API change to JobContext to add support for querying original schedule date_
   * *3/15/2011 - Release 2.5.6*
     * _API support for accessing SMTP Session from Container for emails_
     * _API support for sending email job level alerts via Container_
