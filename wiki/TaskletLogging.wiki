@@ -1,5 +1,5 @@
-#summary Specification for how java logging is supported by Tasklets handled by the SOAFaces Container
+#summary Specification for how java logging is supported by Tasklets handled by the soafaces container
 
 = Introduction =
 
-Logging is essential in any mission critical environment. Tasklets can have their logging output captured by the SOAFaces container. If the Tasklet simply logs its output using either Log4J or Java Logging API then all output will be trapped by the container and made available for complementary reporting tools to present to users.
+Logging is essential in any mission critical environment. Tasklets can have their logging output captured by the soafaces container. If the Tasklet simply logs its output using either Log4J or Java Logging API then all output will be trapped by the container and made available for complementary reporting tools to present to users.
