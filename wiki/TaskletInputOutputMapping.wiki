@@ -27,7 +27,7 @@ wrapping and unwrapping primitive conversion
 widening conversion
 2) Extended Widening String Conversion (Extended)
 primitive converted to String/!StringBuffer
-Object converted to String/StringBuffer
+Object converted to String/!StringBuffer
 The Extended conversion is allowed when the input !JavaBean is a String/!StringBuffer. Given that all Java Objects support the toString() method, any object can be converted and mapped to a String or !StringBuffer. Primitive types are also mapped to String or !StringBuffer by first wrapping them into corresponding objects. The Extended conversion rules are considered a form of "widening" conversion. Thus converting to a String or !StringBuffer is considered permissible.
 
 Special Array Mapping Rules:
