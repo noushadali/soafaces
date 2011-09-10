@@ -1,4 +1,4 @@
-#summary How to use the UniversalClient API in your GWT applications to send and receive SOA messages.
+#summary How to use the UniversalClient API in your GWT applications to send and receive web services messages.
 
 = Introduction =
 
