@@ -1,4 +1,4 @@
-#summary How to create a Bundle Application
+#summary How to create a GWT Weblet application
 
 ==Example of an Application Based Bundle==
 This example shows how to build a Bundle application. The application uses an input !JavaBean to allow users to customize the application behavior. The !JavaBean is persisted automatically by the framework.
