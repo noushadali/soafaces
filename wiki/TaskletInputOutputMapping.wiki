@@ -26,9 +26,9 @@ Two general forms of data conversion are possible between an output !JavaBean pr
 wrapping and unwrapping primitive conversion
 widening conversion
 2) Extended Widening String Conversion (Extended)
-primitive converted to String/StringBuffer
+primitive converted to String/!StringBuffer
 Object converted to String/StringBuffer
-The Extended conversion is allowed when the input !JavaBean is a String/StringBuffer. Given that all Java Objects support the toString() method, any object can be converted and mapped to a String or StringBuffer. Primitive types are also mapped to String or StringBuffer by first wrapping them into corresponding objects. The Extended conversion rules are considered a form of "widening" conversion. Thus converting to a String or StringBuffer is considered permissible.
+The Extended conversion is allowed when the input !JavaBean is a String/!StringBuffer. Given that all Java Objects support the toString() method, any object can be converted and mapped to a String or !StringBuffer. Primitive types are also mapped to String or !StringBuffer by first wrapping them into corresponding objects. The Extended conversion rules are considered a form of "widening" conversion. Thus converting to a String or !StringBuffer is considered permissible.
 
 Special Array Mapping Rules:
 There are some special rules to consider when dealing with Java Arrays. These rules pertain to the use of Arrays in either an output !JavaBean and/or input !JavaBean. Arrays allow for some special behavior when mapping occurs. There are three types of output !JavaBean to input !JavaBean mapping rules to consider:
@@ -37,10 +37,10 @@ Non Array Property to Array Property: If the non Array output property is the sa
 Array property to Array Property: If the Array types are of same type, then the mapping is simple. If they are of different types, but support widening conversion rules then the output Array property is copied into an Array that is of the same type as the target input !JavaBean property Array.
 Array property to non Array property: This type of mapping is not possible.
 Input !JavaBean Considerations:
-If a BeanInfo object exists for an input !JavaBean, it will be used during the mapping processes between Tasklets to determine which input !JavaBean properties are exposed for mapping. The developer can use this to control what input !JavaBean properties are exposed for mapping from other Tasklets. By defining a BeanInfo class for the input !JavaBean, this allows the Tasklet developer to control what !JavaBean properties are exposed to other Tasklets and which are not exposed. If a BeanInfo object is not available for an input !JavaBean, then only properties with public setter/getter methods will be exposed for mapping between Tasklets.
+If a !BeanInfo object exists for an input !JavaBean, it will be used during the mapping processes between Tasklets to determine which input !JavaBean properties are exposed for mapping. The developer can use this to control what input !JavaBean properties are exposed for mapping from other Tasklets. By defining a !BeanInfo class for the input !JavaBean, this allows the Tasklet developer to control what !JavaBean properties are exposed to other Tasklets and which are not exposed. If a !BeanInfo object is not available for an input !JavaBean, then only properties with public setter/getter methods will be exposed for mapping between Tasklets.
 
 Output !JavaBean Considerations:
-No custom BeanInfo will be used for the output bean. Output Beans are reflected to find their getter methods/properties. All properties with getter methods are available for passing to the input !JavaBean properties of other Tasklets.
+No custom !BeanInfo will be used for the output bean. Output Beans are reflected to find their getter methods/properties. All properties with getter methods are available for passing to the input !JavaBean properties of other Tasklets.
 
 Arrays and Aggregation Considerations:
 Array properties can be used to allow one or more output !JavaBeans to aggregate into an input !JavaBean. It is really up to the Tasklet developer to implement the setter method of the property method such that it aggregates/appends to the input !JavaBean property Array or not.
