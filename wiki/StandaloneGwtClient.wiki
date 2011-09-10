@@ -2,10 +2,10 @@
 
 = Introduction =
 
-This section describes how you can use the *Services* (!UniversalClient) portion of the SOAFaces API to make SOA messaging/RPC calls from any GWT client application with no RPC complexity. All you do is set an annotation endpoint marker on methods on a POJO object and then reference that endpoint in your !UniversalClient calls. You can send POJO and JSON objects as arguments and return POJO/JSON values without dealing with serialization and RPC related logic. See the [http://soafaces.googlecode.com/files/universalapp-example-war-2.0.0.zip universalapp WAR] application for an example of how to use the !UniversalClient API in a standalone WAR application. The WAR file also contains the source for the demonstration application.
+This section describes how you can use the *Services* (!UniversalClient) portion of the soafaces API to make SOA messaging/RPC calls from any GWT client application with no RPC complexity. All you do is set an annotation endpoint marker on methods on a POJO object and then reference that endpoint in your !UniversalClient calls. You can send POJO and JSON objects as arguments and return POJO/JSON values without dealing with serialization and RPC related logic. See the [http://soafaces.googlecode.com/files/universalapp-example-war-2.0.0.zip universalapp WAR] application for an example of how to use the !UniversalClient API in a standalone WAR application. The WAR file also contains the source for the demonstration application.
 
 ===To get started:===
-  * Review the UniversalClient Services API in the SOAFaces Javadocs
+  * Review the UniversalClient Services API in the soafaces Javadocs
   * Download and run the universalapp.war webapp in any servlet engine (aka Tomcat, Jetty ...etc)
   * Review the sample code in universalapp.war
   * Download and install the necessary soafaces jars and build your own application using the !UniversalClient messaging API
