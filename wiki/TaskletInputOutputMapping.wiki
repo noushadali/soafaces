@@ -22,13 +22,9 @@ The widening conversions rules described in this section detail how to map an ou
 
 Two general forms of data conversion are possible between an output !JavaBean property and input !JavaBean property when widening conversion occurs:
 
-1) Java Core Reflection Data Conversion Spec (basic widening conversion as defined by the Java spec)
-wrapping and unwrapping primitive conversion
-widening conversion
-2) Extended Widening String Conversion (Extended)
-primitive converted to String/!StringBuffer
-Object converted to String/!StringBuffer
-The Extended conversion is allowed when the input !JavaBean is a String/!StringBuffer. Given that all Java Objects support the toString() method, any object can be converted and mapped to a String or !StringBuffer. Primitive types are also mapped to String or !StringBuffer by first wrapping them into corresponding objects. The Extended conversion rules are considered a form of "widening" conversion. Thus converting to a String or !StringBuffer is considered permissible.
+1) Java Core Reflection Data Conversion Spec. This is basic widening conversion as defined by the Java spec and includes wrapping and unwrapping primitive conversion widening conversion
+
+2) Extended Widening String Conversion (Extended) primitive converted to String/!StringBuffer Object converted to String/!StringBuffer The Extended conversion is allowed when the input !JavaBean is a String/!StringBuffer. Given that all Java Objects support the toString() method, any object can be converted and mapped to a String or !StringBuffer. Primitive types are also mapped to String or !StringBuffer by first wrapping them into corresponding objects. The Extended conversion rules are considered a form of "widening" conversion. Thus converting to a String or !StringBuffer is considered permissible.
 
 Special Array Mapping Rules:
 There are some special rules to consider when dealing with Java Arrays. These rules pertain to the use of Arrays in either an output !JavaBean and/or input !JavaBean. Arrays allow for some special behavior when mapping occurs. There are three types of output !JavaBean to input !JavaBean mapping rules to consider:
