@@ -127,8 +127,8 @@ SOAFaces-Vendor: Grand Logic, Inc
 SOAFaces-Category: example
 #Optional input JavaBean used by the Weblet for persistence
 SOAFaces-InputBean: org.beansoup.helloworld.client.HelloWorldInput
-#GWT client Module name
-SOAFaces-Weblet: org.beansoup.helloworld.HelloBundeName
+#GWT client Module package name
+SOAFaces-Weblet: org.beansoup.helloworld.Bundle
 }}}
 
 ===Step 4: Package Contents into a Bundle JAR file===
@@ -174,7 +174,7 @@ Here is an example of a simple ANT target that can construct the Bundle archive 
            <attribute name="SOAFaces-Vendor"          value="Grand Logic, Inc"/>
            <attribute name="SOAFaces-Category"        value="example"/>
            <attribute name="SOAFaces-InputBean"       value="org.beansoup.helloworld3.client.HelloWorldInput"/>
-           <attribute name="SOAFaces-Weblet"          value="org.beansoup.helloworld3.client.HelloWorldApp"/>
+           <attribute name="SOAFaces-Weblet"          value="org.beansoup.helloworld3.client.Bundle"/>
          </manifest>    
       </jar>
 }}}
