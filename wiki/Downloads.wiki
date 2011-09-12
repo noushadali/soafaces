@@ -28,10 +28,10 @@ January 11, 2011 - [http://soafaces.googlecode.com/files/release_notes-2.5.4.htm
 October 06, 2010 - [http://soafaces.googlecode.com/files/release_notes-2.5.0.html Release Notes]
 
 || *Download Package* || *Description* ||
-|| [http://soafaces.googlecode.com/files/soafaces-jars-2.5.0.zip soafaces-jars-2.5.0.zip] || SOAFaces binary JARs ||
-|| [http://soafaces.googlecode.com/files/soafaces-src-2.5.0.zip soafaces-src-2.5.0.zip] || SOAFaces source ||
-|| [http://soafaces.googlecode.com/files/soafaces-javadocs-2.5.0.zip soafaces-javadocs-2.5.0.zip] || SOAFaces Javadocs ||
-|| [http://soafaces.googlecode.com/files/beansoup-sfb-2.5.0.zip beansoup-sfb-2.5.0.zip] || Beansoup compiled sample Bundle components. Unzip and use Bundles in your SOAFaces Container ||
+|| [http://soafaces.googlecode.com/files/soafaces-jars-2.5.0.zip soafaces-jars-2.5.0.zip] || soafaces binary JARs ||
+|| [http://soafaces.googlecode.com/files/soafaces-src-2.5.0.zip soafaces-src-2.5.0.zip] || soafaces source ||
+|| [http://soafaces.googlecode.com/files/soafaces-javadocs-2.5.0.zip soafaces-javadocs-2.5.0.zip] || soafaces Javadocs ||
+|| [http://soafaces.googlecode.com/files/beansoup-sfb-2.5.0.zip beansoup-sfb-2.5.0.zip] || Beansoup compiled sample Bundle components. Unzip and use Bundles in your soafaces Container ||
 || [http://soafaces.googlecode.com/files/beansoup-sfb-src-2.5.0.zip beansoup-sfb-src-2.5.0.zip] || Beansoup sample Bundle source code. Sample Bundle components ||
 || [http://soafaces.googlecode.com/files/universalapp-example-war-2.5.0.zip universalapp-example-war-2.5.0.zip] || Example using !UniversalClient API in a GWT web application to access remote services with no RPC! WAR file includes the sample source code for both GWT client and backend services. ||
 
@@ -39,10 +39,10 @@ October 06, 2010 - [http://soafaces.googlecode.com/files/release_notes-2.5.0.htm
 November 15, 2009 - [http://soafaces.googlecode.com/files/release_notes-2.4.4.html Release Notes]
 
 || *Download Package* || *Description* ||
-|| [http://soafaces.googlecode.com/files/soafaces-jars-2.4.4.zip soafaces-jars-2.4.4.zip] || SOAFaces binary JARs ||
-|| [http://soafaces.googlecode.com/files/soafaces-src-2.4.4.zip soafaces-src-2.4.4.zip] || SOAFaces source ||
-|| [http://soafaces.googlecode.com/files/soafaces-javadocs-2.4.4.zip soafaces-javadocs-2.4.4.zip] || SOAFaces Javadocs ||
-|| [http://soafaces.googlecode.com/files/beansoup-sfb-2.4.4.zip beansoup-sfb-2.4.4.zip] || Beansoup compiled sample Bundle components. Unzip and use Bundles in your SOAFaces Container ||
+|| [http://soafaces.googlecode.com/files/soafaces-jars-2.4.4.zip soafaces-jars-2.4.4.zip] || soafaces binary JARs ||
+|| [http://soafaces.googlecode.com/files/soafaces-src-2.4.4.zip soafaces-src-2.4.4.zip] || soafaces source ||
+|| [http://soafaces.googlecode.com/files/soafaces-javadocs-2.4.4.zip soafaces-javadocs-2.4.4.zip] || soafaces Javadocs ||
+|| [http://soafaces.googlecode.com/files/beansoup-sfb-2.4.4.zip beansoup-sfb-2.4.4.zip] || Beansoup compiled sample Bundle components. Unzip and use Bundles in your soafaces Container ||
 || [http://soafaces.googlecode.com/files/beansoup-sfb-src-2.4.4.zip beansoup-sfb-src-2.4.4.zip] || Beansoup sample Bundle source code. Sample Bundle components ||
 || [http://soafaces.googlecode.com/files/universalapp-example-war-2.4.4.zip universalapp-example-war-2.4.4.zip] || Example using !UniversalClient API in a GWT web application to access remote services with no RPC! WAR file includes the sample source code for both GWT client and backend services. ||
 
@@ -50,10 +50,10 @@ November 15, 2009 - [http://soafaces.googlecode.com/files/release_notes-2.4.4.ht
 July 15, 2009 - [http://soafaces.googlecode.com/files/release_notes-2.4.0.html Release Notes]
 
 || *Download Package* || *Description* ||
-|| [http://soafaces.googlecode.com/files/soafaces-jars-2.4.0.zip soafaces-jars-2.4.0.zip] || SOAFaces binary JARs ||
-|| [http://soafaces.googlecode.com/files/soafaces-src-2.4.0.zip soafaces-src-2.4.0.zip] || SOAFaces source ||
-|| [http://soafaces.googlecode.com/files/soafaces-javadocs-2.4.0.zip soafaces-javadocs-2.4.0.zip] || SOAFaces Javadocs ||
-|| [http://soafaces.googlecode.com/files/beansoup-sfb-2.4.0.zip beansoup-sfb-2.4.0.zip] || Beansoup compiled sample Bundle components. Unzip and use Bundles in your SOAFaces Container ||
+|| [http://soafaces.googlecode.com/files/soafaces-jars-2.4.0.zip soafaces-jars-2.4.0.zip] || soafaces binary JARs ||
+|| [http://soafaces.googlecode.com/files/soafaces-src-2.4.0.zip soafaces-src-2.4.0.zip] || soafaces source ||
+|| [http://soafaces.googlecode.com/files/soafaces-javadocs-2.4.0.zip soafaces-javadocs-2.4.0.zip] || soafaces Javadocs ||
+|| [http://soafaces.googlecode.com/files/beansoup-sfb-2.4.0.zip beansoup-sfb-2.4.0.zip] || Beansoup compiled sample Bundle components. Unzip and use Bundles in your soafaces Container ||
 || [http://soafaces.googlecode.com/files/beansoup-sfb-src-2.4.0.zip beansoup-sfb-src-2.4.0.zip] || Beansoup sample Bundle source code. Sample Bundle components ||
 || [http://soafaces.googlecode.com/files/universalapp-example-war-2.4.0.zip universalapp-example-war-2.4.0.zip] || Example using !UniversalClient API in a GWT web application to access remote services with no RPC! WAR file includes the sample source code for both GWT client and backend services. ||
 
@@ -61,10 +61,10 @@ July 15, 2009 - [http://soafaces.googlecode.com/files/release_notes-2.4.0.html R
 December 29, 2008 - [http://soafaces.googlecode.com/files/release_notes-2.3.6.html Release Notes]
 
 || *Download Package* || *Description* ||
-|| [http://soafaces.googlecode.com/files/soafaces-jars-2.3.6.zip soafaces-jars-2.3.6.zip] || SOAFaces binary JARs ||
-|| [http://soafaces.googlecode.com/files/soafaces-src-2.3.6.zip soafaces-src-2.3.6.zip] || SOAFaces source ||
-|| [http://soafaces.googlecode.com/files/soafaces-javadocs-2.3.0.zip soafaces-javadocs-2.3.6.zip] || SOAFaces Javadocs ||
-|| [http://soafaces.googlecode.com/files/beansoup-sfb-2.3.6.zip beansoup-sfb-2.3.6.zip] || Beansoup compiled sample Bundle components. Unzip and use Bundles in your SOAFaces Container ||
+|| [http://soafaces.googlecode.com/files/soafaces-jars-2.3.6.zip soafaces-jars-2.3.6.zip] || soafaces binary JARs ||
+|| [http://soafaces.googlecode.com/files/soafaces-src-2.3.6.zip soafaces-src-2.3.6.zip] || soafaces source ||
+|| [http://soafaces.googlecode.com/files/soafaces-javadocs-2.3.0.zip soafaces-javadocs-2.3.6.zip] || soafaces Javadocs ||
+|| [http://soafaces.googlecode.com/files/beansoup-sfb-2.3.6.zip beansoup-sfb-2.3.6.zip] || Beansoup compiled sample Bundle components. Unzip and use Bundles in your soafaces Container ||
 || [http://soafaces.googlecode.com/files/beansoup-sfb-src-2.3.6.zip beansoup-sfb-src-2.3.6.zip] || Beansoup sample Bundle source code. Sample Bundle components ||
 || [http://soafaces.googlecode.com/files/universalapp-example-war-2.3.6.zip universalapp-example-war-2.3.6.zip] || Example using !UniversalClient API in a GWT web application to access remote services with no RPC! WAR file includes the sample source code for both GWT client and backend services. ||
 
@@ -72,10 +72,10 @@ December 29, 2008 - [http://soafaces.googlecode.com/files/release_notes-2.3.6.ht
 October 30, 2008 - [http://soafaces.googlecode.com/files/release_notes-2.3.0.html Release Notes]
 
 || *Download Package* || *Description* ||
-|| [http://soafaces.googlecode.com/files/soafaces-jars-2.3.0.zip soafaces-jars-2.3.0.zip] || SOAFaces binary JARs ||
-|| [http://soafaces.googlecode.com/files/soafaces-src-2.3.0.zip soafaces-src-2.3.0.zip] || SOAFaces source ||
-|| [http://soafaces.googlecode.com/files/soafaces-javadocs-2.3.0.zip soafaces-javadocs-2.3.0.zip] || SOAFaces Javadocs ||
-|| [http://soafaces.googlecode.com/files/beansoup-sfb-2.3.0.zip beansoup-sfb-2.3.0.zip] || Beansoup compiled sample Bundle components. Unzip and use the Bundles in your SOAFaces Container ||
+|| [http://soafaces.googlecode.com/files/soafaces-jars-2.3.0.zip soafaces-jars-2.3.0.zip] || soafaces binary JARs ||
+|| [http://soafaces.googlecode.com/files/soafaces-src-2.3.0.zip soafaces-src-2.3.0.zip] || soafaces source ||
+|| [http://soafaces.googlecode.com/files/soafaces-javadocs-2.3.0.zip soafaces-javadocs-2.3.0.zip] || soafaces Javadocs ||
+|| [http://soafaces.googlecode.com/files/beansoup-sfb-2.3.0.zip beansoup-sfb-2.3.0.zip] || Beansoup compiled sample Bundle components. Unzip and use the Bundles in your soafaces Container ||
 || [http://soafaces.googlecode.com/files/beansoup-sfb-src-2.3.0.zip beansoup-sfb-src-2.3.0.zip] || Beansoup sample Bundle source code. Sample Bundle components ||
 || [http://soafaces.googlecode.com/files/universalapp-example-war-2.3.0.zip universalapp-example-war-2.3.0.zip] || Example using !UniversalClient API in a GWT web application to access remote services with no RPC! WAR file includes the sample source code for both GWT client and backend services. ||
 
@@ -83,10 +83,10 @@ October 30, 2008 - [http://soafaces.googlecode.com/files/release_notes-2.3.0.htm
 September 25, 2008 - [http://soafaces.googlecode.com/files/release_notes-2.1.0.html Release Notes]
 
 || *Download Package* || *Description* ||
-|| [http://soafaces.googlecode.com/files/soafaces-jars-2.1.0.zip soafaces-jars-2.1.0.zip] || SOAFaces binary JARs ||
-|| [http://soafaces.googlecode.com/files/soafaces-src-2.1.0.zip soafaces-src-2.1.0.zip] || SOAFaces source ||
-|| [http://soafaces.googlecode.com/files/soafaces-javadocs-2.1.0.zip soafaces-javadocs-2.1.0.zip] || SOAFaces Javadocs ||
-|| [http://soafaces.googlecode.com/files/beansoup-sfb-2.1.0.zip beansoup-sfb-2.1.0.zip] || Beansoup compiled sample Bundle components. Unzip and use Bundles in your SOAFaces Container ||
+|| [http://soafaces.googlecode.com/files/soafaces-jars-2.1.0.zip soafaces-jars-2.1.0.zip] || soafaces binary JARs ||
+|| [http://soafaces.googlecode.com/files/soafaces-src-2.1.0.zip soafaces-src-2.1.0.zip] || soafaces source ||
+|| [http://soafaces.googlecode.com/files/soafaces-javadocs-2.1.0.zip soafaces-javadocs-2.1.0.zip] || soafaces Javadocs ||
+|| [http://soafaces.googlecode.com/files/beansoup-sfb-2.1.0.zip beansoup-sfb-2.1.0.zip] || Beansoup compiled sample Bundle components. Unzip and use Bundles in your soafaces Container ||
 || [http://soafaces.googlecode.com/files/beansoup-sfb-src-2.1.0.zip beansoup-sfb-src-2.1.0.zip] || Beansoup sample Bundle source code. Sample Bundle components ||
 || [http://soafaces.googlecode.com/files/universalapp-example-war-2.1.0.zip universalapp-example-war-2.1.0.zip] || Example using !UniversalClient API in a GWT web application to access remote services with no RPC! WAR file includes the sample source code for both GWT client and backend services. ||
 
@@ -94,10 +94,10 @@ September 25, 2008 - [http://soafaces.googlecode.com/files/release_notes-2.1.0.h
 September 11, 2008 - [http://soafaces.googlecode.com/files/release_notes-2.0.3.html Release Notes]
 
 || *Download Package* || *Description* ||
-|| [http://soafaces.googlecode.com/files/soafaces-jars-2.0.3.zip soafaces-jars-2.0.3.zip] || SOAFaces binary JARs ||
-|| [http://soafaces.googlecode.com/files/soafaces-src-2.0.3.zip soafaces-src-2.0.3.zip] || SOAFaces source ||
-|| [http://soafaces.googlecode.com/files/soafaces-javadocs-2.0.3.zip soafaces-javadocs-2.0.3.zip] || SOAFaces Javadocs ||
-|| [http://soafaces.googlecode.com/files/beansoup-sfb-2.0.3.zip beansoup-sfb-2.0.3.zip] || Beansoup compiled sample Bundle components. Unzip and use Bundles in your SOAFaces Container ||
+|| [http://soafaces.googlecode.com/files/soafaces-jars-2.0.3.zip soafaces-jars-2.0.3.zip] || soafaces binary JARs ||
+|| [http://soafaces.googlecode.com/files/soafaces-src-2.0.3.zip soafaces-src-2.0.3.zip] || soafaces source ||
+|| [http://soafaces.googlecode.com/files/soafaces-javadocs-2.0.3.zip soafaces-javadocs-2.0.3.zip] || soafaces Javadocs ||
+|| [http://soafaces.googlecode.com/files/beansoup-sfb-2.0.3.zip beansoup-sfb-2.0.3.zip] || Beansoup compiled sample Bundle components. Unzip and use Bundles in your soafaces Container ||
 || [http://soafaces.googlecode.com/files/beansoup-sfb-src-2.0.3.zip beansoup-sfb-src-2.0.3.zip] || Beansoup sample Bundle source code. Sample Bundle components ||
 || [http://soafaces.googlecode.com/files/universalapp-example-war-2.0.3.zip universalapp-example-war-2.0.3.zip] || Example using !UniversalClient API in a GWT web application to access remote services with no RPC! WAR file includes the sample source code for both GWT client and backend services. ||
 
@@ -106,9 +106,9 @@ September 11, 2008 - [http://soafaces.googlecode.com/files/release_notes-2.0.3.h
 July 9, 2008
 
 || *Download Package* || *Description* ||
-|| [http://soafaces.googlecode.com/files/soafaces-jars-2.0.0.zip soafaces-jars-2.0.0.zip] || SOAFaces binary JARs ||
-|| [http://soafaces.googlecode.com/files/soafaces-src-2.0.0.zip soafaces-src-2.0.0.zip] || SOAFaces source ||
-|| [http://soafaces.googlecode.com/files/soafaces-javadocs-2.0.0.zip soafaces-javadocs-2.0.0.zip] || SOAFaces Javadocs ||
-|| [http://soafaces.googlecode.com/files/beansoup-sfb-2.0.0.zip beansoup-sfb-2.0.0.zip] || Beansoup compiled sample Bundle components. Unzip and use Bundles in your SOAFaces Container ||
+|| [http://soafaces.googlecode.com/files/soafaces-jars-2.0.0.zip soafaces-jars-2.0.0.zip] || soafaces binary JARs ||
+|| [http://soafaces.googlecode.com/files/soafaces-src-2.0.0.zip soafaces-src-2.0.0.zip] || soafaces source ||
+|| [http://soafaces.googlecode.com/files/soafaces-javadocs-2.0.0.zip soafaces-javadocs-2.0.0.zip] || soafaces Javadocs ||
+|| [http://soafaces.googlecode.com/files/beansoup-sfb-2.0.0.zip beansoup-sfb-2.0.0.zip] || Beansoup compiled sample Bundle components. Unzip and use Bundles in your soafaces Container ||
 || [http://soafaces.googlecode.com/files/beansoup-sfb-src-2.0.0.zip beansoup-sfb-src-2.0.0.zip] || Beansoup sample Bundle source code. Sample Bundle components ||
 || [http://soafaces.googlecode.com/files/universalapp-example-war-2.0.0.zip universalapp-example-war-2.0.0.zip] || Example using !UniversalClient API in a GWT web application to access remote services with no RPC! WAR file includes the sample source code for both GWT client and backend services. ||
