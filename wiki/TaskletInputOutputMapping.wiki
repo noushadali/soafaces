@@ -2,11 +2,11 @@
 
 = Tasklet to Tasklet Runtime Property Passing =
 
-Tasklets can be chained together to form a job or workflow. Tasklets that make up a job can work together and share data between each other. This is an extremely powerful feature of SOAFaces and tasklets. The ability of one tasklet to pass output properties to another tasklet in the chain enables tasklets to work together withing a job or workflow without any prior knowledge of each other.
+Tasklets can be chained together to form a job or workflow. Tasklets that make up a job can work together and share data between each other. This is an extremely powerful feature of soafaces and tasklets. The ability of one tasklet to pass output properties to another tasklet in the chain enables tasklets to work together withing a job or workflow without any prior knowledge of each other.
 
 What does that mean? Well let's take very simple example. Say you create a simple database tasks that pulls a status message from a database record. This is a custom tasklet let us say. Then let's imagine a simple generic tasklet that can send an email. This email tasklet has in input !JavaBean that has properties for the email destination, subject and body. Now if the database tasklet could pass its status message to the email tasklet and place it as the subject that would allow the two tasklets to work together. All that is needed is a simple point a click way of mapping the output of the database tasklet to the input of the email tasklet.
 
-SOAFaces facilitates this by defined a specification for the SOAFaces container to support for how the output !JavaBean of one tasklets can map its properties to the input !JavaBean of another tasklet further down in the job/workflow chain. It is up to the SOAFaces container to support this specification and the required mapping GUI.
+soafaces facilitates this by defined a specification for the soafaces  container to support for how the output !JavaBean of one tasklets can map its properties to the input !JavaBean of another tasklet further down in the job/workflow chain. It is up to the soafaces container to support this specification and the required mapping GUI.
 
 The properties of the output !JavaBean of the one tasklet are mapped/passed/converted to the input !JavaBean of another tasklet. Here is how the properties are passed and converted.
 
