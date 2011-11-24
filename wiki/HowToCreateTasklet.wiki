@@ -273,8 +273,7 @@ Here is an example of a simple ANT target that can construct the Bundle archive 
            <attribute name="SOAFaces-InputBean"       value="org.beansoup.helloworld3.client.HelloWorldInput"/>
            <attribute name="SOAFaces-OutputBean"      value="org.beansoup.helloworld3.client.HelloWorldOutput"/>
            <attribute name="SOAFaces-Weblet"          value="org.beansoup.helloworld3.Bundle"/>
-           <attribute name="SOAFaces-InputViewer"     value=""/> <!-- Optional GUI viewer for viewing input of Tasklet -->
-           <attribute name="SOAFaces-OutputViewer"    value=""/> <!-- Optional GUI viewer for viewing output of Tasklet -->
+           <attribute name="SOAFaces-RuntimeViewer"     value=""/> <!-- Optional GUI viewer for viewing input/output of Tasklet -->
          </manifest>    
       </jar>
     </target>
