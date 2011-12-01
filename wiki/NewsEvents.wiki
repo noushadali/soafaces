@@ -1,6 +1,12 @@
 #summary New releases and happenings
 
 ==Status and News===
+  * *11/30/2011 - Release 2.6.0*
+    * _Number of API changes including deprecating BaseIOView and some related classes_
+    * _New RuntimeViewer that unifies interface for runtime GUI for a Tasklet_
+    * _New TaskletStatus to report on status of running Tasklet_
+    * _New feature allowing Tasklets to track RUN and APP cookies. These are properties that can be tracked across multiple runs of a Tasklet/Job_
+    * _Some other minor API changes_
   * *8/06/2011 - Release 2.5.8*
     * _Minor API change to !JobContext to add support for querying original schedule date_
   * *3/15/2011 - Release 2.5.6*
