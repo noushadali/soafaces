@@ -1,13 +1,26 @@
-#summary One-sentence summary of this page.
+#Hadoop components
 
 = Introduction =
 
-Add your content here.
+soafaces comes packages with two components that allow for Hadoop integration:
+
+ * Hadoop Job Manager
+ * Hadoop Reporter
 
 
-= Details =
+= Hadoop Job Manager =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+This soafaces component lets you build, run and track any existing Hadoop job you have. You can simply package your hadoop code into a jar (or set of jars) and drop into the SFBs lib directory within.
+
+== Tasklet ==
+This SFB has a Tasklet that executes and tracks the Hadoop job on the server side.
+
+== Weblet ==
+This component comes with a Weblet customizer to let you customize how to connect and setup your Hadoop job.
+
+== RuntimeViewer ==
+This component includes a RuntimeViewer for tracking and monitoring the Hadoop job as it runs and to report on its final status.
+
+= Hadoop Reporter =
+
+This is a soafaces component (SFB) that runs a simple a job that will generate a report that can be viewed or emailed detailed the high-level status of all jobs within your specified Hadoop environment.
