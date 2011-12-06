@@ -1,4 +1,4 @@
-#Hadoop components
+Hadoop components available with soafaces
 
 = Introduction =
 
