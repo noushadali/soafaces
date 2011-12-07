@@ -28,7 +28,7 @@ The component includes a GWT !RuntimeViewer GUI for tracking and monitoring the 
 This is a soafaces component (SFB) that runs a basic job that will generate a report that can be viewed or emailed detailing the high-level status of all jobs within your specified Hadoop environment.
 
 == Tasklet ==
-The Tasklet associated with this component connects with your Hadoop environment to query the status of all the running jobs in the Hadoop JobTracker.
+The Tasklet associated with this component connects with your Hadoop environment to query the status of all the running jobs in the Hadoop !JobTracker.
 
 == Weblet ==
 The component comes with a GWT Weblet customizer to lets you customize how to connect and setup your Hadoop job.
