@@ -8,7 +8,7 @@ soafaces comes packages with two main components that allow for Hadoop integrati
  * Hadoop Reporter
 
 
-= Hadoop Job Manager =
+= Hadoop Job Runner =
 
 This soafaces component lets you build, run and track any existing Hadoop job you have. You can easily package your existing hadoop code into a jar (or set of jars) and drop them into the *lib* directory of the this soafaces component (aka SFB). The Hadoop Job Manager component can then execute and run the Hadoop job.
 
