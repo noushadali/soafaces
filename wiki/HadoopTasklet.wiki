@@ -2,7 +2,7 @@
 
 = Overview =
 
-soafaces comes packages with two main components that allow for Hadoop integration:
+The soafaces framework comes packages with two main components that allow for Hadoop integration:
 
  * Hadoop Job Runner
  * Hadoop Reporter
