@@ -1,4 +1,4 @@
-Hadoop components available with soafaces
+#summary Hadoop components available with soafaces
 
 = Overview =
 
