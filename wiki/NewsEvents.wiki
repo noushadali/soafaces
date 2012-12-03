@@ -3,6 +3,7 @@
 ==Status and News===
   * *11/29/2012 - Release 2.6.6*
     * _API changes to support returning job run id from !WorkflowContainer.runJob(..) interface_
+    *_Minor bug fixes to !ShellScript and !EmailAlert tasklets_
   * *07/03/2012 - Release 2.6.4*
     * _Minor UI and logic changes to Shell Script and EMail Tasklets_
     * _Source code javadoc fix for deprecated API references_
