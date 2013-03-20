@@ -311,7 +311,11 @@ Here is an example what your SFB directory structure looks like:
   -- www  (optional directory that contains compiled Weblet GWT javascript/html code)
 }}} 
 
-You may notice the SFB directory structure above is similar to the J2EE Servlet *`WAR`* file directory format. 
+You may notice the SFB directory structure above is similar to the J2EE Servlet *`WAR`* file directory format. The `MANIFEST.MF` file defines the configuration of the SFB. The `classes` directory contains your Weblet and Tasklet compiled java classes. 
+
+The `lib` directory contains any other java JAR files your Weblet and Tasklet code requires. Note, you can put your java code in either `classes` or the `lib` directory. The only difference is that the `lib` directory expects only JAR files while the `classes` directory expects full java package structure and directories. 
+
+The `www` directory is optional and is where you can put your compiled GWT Weblet application output. Note, you can also include the source for your GWT Weblet and let the soafaces container compile the GWT Weblet application for you on the fly. If you choose this path, you only need to include the java source and related GWT html/XML files in the `classes` or `lib` directory.
 
 ===Step 7: Deploy the new Bundle to a soafaces Container (like !JobServer)===
 
