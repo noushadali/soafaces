@@ -247,26 +247,29 @@ Here is an example of a simple ANT target that can construct the Bundle archive 
     <target name="build_sfb" depends="compile" description="Build Bundle for example Tasklet">
       <mkdir dir="build/sfb-dir/org-beansoup-helloworld3-v1-0-0/classes" />
       <!-- This step copies all the Tasklet compiled classes and all the Weblet compiled classes
-               and Weblet source java/html files into the SFB "classes" directory.  -->
+           and Weblet source java/html files into the SFB "classes" directory.  -->
       <!-- You only copy the Weblet source java/html files if you want the SFB container to
-             dynamically run the GWT compiler on your Weblet code. -->
+           dynamically run the GWT compiler on your Weblet code. -->
       <copy todir="build/sfb-dir/org-beansoup-helloworld3-v1-0-0/classes"
             overwrite="false">
          <fileset dir="${build.classes.dir}"
                   includes="org/beansoup/helloworld3/**/*.class"/>
                  
-         <!-- include source for GWT client code -->
+         <!-- Include Weblet related java source and html for GWT compiler. -->
+         <!-- Note, you only need to include the java source and html if you want
+              the soafaces container to compile the Weblet GWT code for you. -->
          <fileset dir="${src.dir}"
                   includes="org/beansoup/helloworld3/*.xml
                             org/beansoup/helloworld3/client/*.java
                             org/beansoup/helloworld3/public/*.css"/>
       </copy>
 
+      <!-- Create the SFB as a JAR package -->
       <jar destfile="build/sfb-dir/org-beansoup-helloworld3-v1-0-0.sfb"
            basedir="build/sfb-dir/org-beansoup-helloworld3-v1-0-0"
            includes="**">
     
-         <!-- Construct the MANIFEST.MF file for this SFB -->
+         <!-- Construct the MANIFEST.MF file that defines the SFB -->
          <manifest>
            <attribute name="SOAFaces-Name"            value="Hello World 3"/>
            <attribute name="SOAFaces-SymbolicName"    value="surda-beansoup-helloworld3"/>
@@ -301,7 +304,7 @@ Here is an example what your SFB directory structure looks like:
   -- classes  (directory that contains any Tasklet and Weblet classes that are not in jar format)
   |
   |
-  -- lib  (directory that contains any Tasklet and Weblet need jars)
+  -- lib  (directory that contains any Tasklet and Weblet required jars)
   |
   |
   -- www  (optional directory that contains compiled Weblet GWT javascript/html code)
