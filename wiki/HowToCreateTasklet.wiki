@@ -33,7 +33,7 @@ public class HelloWorld implements Tasklet
   {	
     //If your Tasklet uses an input and/or output JavaBean then it is 
     //best to get them and cast to the appropriate class type.
-    HelloWorldInput inputBean = (HelloWorldInput) inputContext.getInputBean();                    */
+    HelloWorldInput inputBean = (HelloWorldInput) inputContext.getInputBean();
     HelloWorldOutput outBean = (HelloWorldOutput) inputContext.getOutputBean();
 
     /**
