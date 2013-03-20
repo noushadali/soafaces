@@ -302,7 +302,7 @@ Here is an example what your SFB directory structure looks like:
   -- www  (optional directory that contains compiled GWT Weblet code)
 }}} 
 
-You may notice the SFB directory structure is similar to the servlet *`WAR`* directory structure. 
+You may notice the SFB directory structure above is similar to the servlet *`WAR`* directory structure. 
 
 ===Step 7: Deploy the new Bundle to a soafaces Container (like !JobServer)===
 
