@@ -245,7 +245,13 @@ Here is an example of a simple ANT target that can construct the Bundle archive 
 
 {{{
     <target name="build_sfb" depends="compile" description="Build Bundle for example Tasklet">
+      
+      <!-- Create "classes" directory to put your Weblet and Tasklet code in -->
       <mkdir dir="build/sfb-dir/org-beansoup-helloworld3-v1-0-0/classes" />
+
+      <!-- Create "lib" directory to put your Weblet and Tasklet code in and/or related
+           JARs your Weblet and Tasklet code depends on. -->
+      <mkdir dir="build/sfb-dir/org-beansoup-helloworld3-v1-0-0/lib" />
 
       <!-- This step copies all the Tasklet compiled classes and all the Weblet compiled classes
            and Weblet source java/html files into the SFB "classes" directory.  -->
