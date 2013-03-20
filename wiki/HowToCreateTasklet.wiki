@@ -246,6 +246,7 @@ Here is an example of a simple ANT target that can construct the Bundle archive 
 {{{
     <target name="build_sfb" depends="compile" description="Build Bundle for example Tasklet">
       <mkdir dir="build/sfb-dir/org-beansoup-helloworld3-v1-0-0/classes" />
+
       <!-- This step copies all the Tasklet compiled classes and all the Weblet compiled classes
            and Weblet source java/html files into the SFB "classes" directory.  -->
       <!-- You only copy the Weblet source java/html files if you want the SFB container to
@@ -282,7 +283,7 @@ Here is an example of a simple ANT target that can construct the Bundle archive 
            <attribute name="SOAFaces-OutputBean"      value="org.beansoup.helloworld3.client.HelloWorldOutput"/>
            <attribute name="SOAFaces-Weblet"          value="org.beansoup.helloworld3.Bundle"/>
            <attribute name="SOAFaces-RuntimeViewer"     value=""/> <!-- Optional GUI viewer for viewing input/output of Tasklet -->
-         </manifest>    
+         </manifest>
       </jar>
     </target>
 }}}
