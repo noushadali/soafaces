@@ -204,7 +204,7 @@ public class HelloWorldOutput implements IsSerializable
 
 ===Step 5: Create MANIFEST.MF File===
 
-The MANIFEST.MF file contains the meta information that informs a soafaces container like !JobServer what is contained in the Bundle JAR file and what interfaces are defined by the Bundle. The file is placed in the META-INF directory within the Bundle JAR.
+Now it is time to configure and package your Bundle into a JAR archive file called an `SFB`. Creating the `MANIFEST.MF` file is the first step in this processes. The `MANIFEST.MF` file contains the meta information that informs a soafaces container like !JobServer what is contained in the Bundle JAR file and what interfaces are defined by the Bundle. The file is placed in the META-INF directory inside the Bundle JAR. Here is an example of what a `MANIFEST.MF` file might look like:
 
 {{{
 SOAFaces-Name: Hello World 3
