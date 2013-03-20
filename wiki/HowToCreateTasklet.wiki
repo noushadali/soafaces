@@ -223,7 +223,7 @@ SOAFaces-Weblet: org.beansoup.helloworld3.Bundle
 
 ===Step 6: Package Contents into a Bundle JAR file===
 
-All the code and content are packaged and put into a Bundle JAR file with the file extension .sfb. Here is an example directory structure of what a SFB JAR file might look like and contain.
+All the code and content are packaged and put into a Bundle JAR file with the file extension `.sfb`. Here is an example directory structure of what a SFB JAR file might look like and contain.
 
 {{{
 META-INF/MANIFEST.MF
