@@ -232,7 +232,7 @@ SOAFaces-InputBean: org.beansoup.helloworld3.client.HelloWorldInput
 #Optional output JavaBean used by the Weblet and Tasklet.
 SOAFaces-OutputBean: org.beansoup.helloworld3.client.HelloWorldOutput
 
-#Optional GWT Weblet client module package name (gwt.xml module name).
+#Optional GWT Weblet client module package name (Bundle.gwt.xml GWT module name).
 #The gwt.xml file defines the GWT Weblet UI used for this Tasklet.
 SOAFaces-Weblet: org.beansoup.helloworld3.Bundle
 }}}
