@@ -248,7 +248,7 @@ Here is an example of a simple ANT target that can construct the Bundle archive 
       <mkdir dir="build/sfb-dir/org-beansoup-helloworld3-v1-0-0/classes" />
       <!-- This step copies all the Tasklet compiled classes and all the Weblet compiled classes
                and Weblet source java/html files into the SFB "classes" directory.  -->
-      <!- You only copy the Weblet source java/html files if you want the SFB container to
+      <!-- You only copy the Weblet source java/html files if you want the SFB container to
              dynamically run the GWT compiler on your Weblet code. -->
       <copy todir="build/sfb-dir/org-beansoup-helloworld3-v1-0-0/classes"
             overwrite="false">
