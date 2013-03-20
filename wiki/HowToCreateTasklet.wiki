@@ -299,7 +299,7 @@ Notice that the client GWT code requires the source also be included in the JAR 
 
 Note, that you have the option to include the GWT client code (java source code) in the Bundle and let the soafaces container compile the GWT client code into javascript for you. This frees the developer from having to compile the GWT code and including it in the SFB. You may also compile the GWT client code yourself (using the GWT compiler) and include the javascript in the Bundle directly. You simply include the compiled GWT client code in the *`www`* directory in the Bundle jar.
 
-Here is an example what your SFB directory structure looks like:
+Here is an example what a general SFB directory structure looks like:
 
 {{{
 helloworld3.sfb
