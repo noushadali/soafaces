@@ -302,7 +302,7 @@ Note, that you have the option to include the GWT client code (java source code)
 Here is an example what your SFB directory structure looks like:
 
 {{{
- MyComponent.sfb
+MyComponent.sfb
   |
   -- META-INF
   |    |
