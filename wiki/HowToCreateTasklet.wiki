@@ -250,7 +250,7 @@ Here is an example of a simple ANT target that can construct the Bundle archive 
       <mkdir dir="build/sfb-dir/org-beansoup-helloworld3-v1-0-0/classes" />
 
       <!-- Create "lib" directory to put your Weblet and Tasklet code in and/or related
-           JARs your Weblet and Tasklet code depends on. -->
+           JARs your Weblet and Tasklet code depend on. -->
       <mkdir dir="build/sfb-dir/org-beansoup-helloworld3-v1-0-0/lib" />
 
       <!-- This step copies all the Tasklet compiled classes and all the Weblet compiled classes
