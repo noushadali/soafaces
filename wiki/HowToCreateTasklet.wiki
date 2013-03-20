@@ -246,6 +246,10 @@ Here is an example of a simple ANT target that can construct the Bundle archive 
 {{{
     <target name="build_sfb" depends="compile" description="Build Bundle for example Tasklet">
       <mkdir dir="build/sfb-dir/org-beansoup-helloworld3-v1-0-0/classes" />
+      <!-- This step copies all the Tasklet compiled classes and all the Weblet compiled classes
+               and Weblet source java/html files into the SFB "classes" directory.  -->
+      <!- You only copy the Weblet source java/html files if you want the SFB container to
+             dynamically run the GWT compiler on your Weblet code. -->
       <copy todir="build/sfb-dir/org-beansoup-helloworld3-v1-0-0/classes"
             overwrite="false">
          <fileset dir="${build.classes.dir}"
@@ -262,6 +266,7 @@ Here is an example of a simple ANT target that can construct the Bundle archive 
            basedir="build/sfb-dir/org-beansoup-helloworld3-v1-0-0"
            includes="**">
     
+         <!-- Construct the MANIFEST.MF file for this SFB -->
          <manifest>
            <attribute name="SOAFaces-Name"            value="Hello World 3"/>
            <attribute name="SOAFaces-SymbolicName"    value="surda-beansoup-helloworld3"/>
