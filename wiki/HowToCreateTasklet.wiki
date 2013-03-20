@@ -222,12 +222,16 @@ SOAFaces-Version: 1.0.0
 SOAFaces-Description: Simple Tasklet with an input JavaBean and MFace Customizer
 SOAFaces-Vendor: Grand Logic, Inc
 SOAFaces-Category: example
-#Tasklet rusn on the server-side when java/task is run
+
+#Tasklet runs on the server-side when java/task is run
 SOAFaces-Tasklet: org.beansoup.helloworld3.workflow.HelloWorld
+
 #Optional input JavaBean used by the Weblet and Tasklet
 SOAFaces-InputBean: org.beansoup.helloworld3.client.HelloWorldInput
+
 #Optional output JavaBean used by the Weblet and Tasklet
 SOAFaces-OutputBean: org.beansoup.helloworld3.client.HelloWorldOutput
+
 #GWT Weblet client Module package name. Creating a Weblet is optional.
 SOAFaces-Weblet: org.beansoup.helloworld3.Bundle
 }}}
