@@ -33,7 +33,16 @@ public class HelloWorld implements Tasklet
   {	
     //If your Tasklet uses an input and/or output JavaBean then it is 
     //best to get them and cast to the appropriate class type.
+
+    //The input JavaBean contains properties passed down from other
+    //Taskelts in the job chain or properties set manually by the user
+    //using the Weblet's customizer UI.
+    //for example.
     HelloWorldInput inputBean = (HelloWorldInput) inputContext.getInputBean();
+
+    //The output JavaBean is the place where the Tasklet can save any
+    //output related to this Tasklet's run that it wants returned
+    //to the user or passed to other Tasklets down the job chain.
     HelloWorldOutput outBean = (HelloWorldOutput) inputContext.getOutputBean();
 
     /**
