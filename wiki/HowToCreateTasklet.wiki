@@ -311,4 +311,4 @@ You may notice the SFB directory structure above is similar to the J2EE Servlet 
 
 ===Step 7: Deploy the new Bundle to a soafaces Container (like !JobServer)===
 
-Name the Bundle JAR something like myhelloworld.sfb and place it in the !JobServer soafaces directory. The name must be unique within !JobServer. Now go to the !JobServer soafaces Repository tool and you should see the new Bundle. It can now be used to build a new job! 
+Name the Bundle JAR something like `myhelloworld.sfb` and place it in the !JobServer soafaces directory. The name must be unique within !JobServer. Now go to the !JobServer soafaces Repository tool and you should see the new Bundle. It can now be used to build a new job! 
