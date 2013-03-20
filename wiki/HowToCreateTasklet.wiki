@@ -299,7 +299,7 @@ Here is an example what your SFB directory structure looks like:
   -- lib  (directory that contains any Tasklet or Weblet need jars)
   |
   |
-  -- www  (optional directory that contains compiled GWT Weblet code)
+  -- www  (optional directory that contains compiled Weblet GWT javascript/html code)
 }}} 
 
 You may notice the SFB directory structure above is similar to the servlet *`WAR`* directory structure. 
