@@ -325,6 +325,6 @@ The `lib` directory contains any other java JAR files your Weblet and Tasklet co
 
 The `www` directory is optional and is where you can put your compiled GWT Weblet application output files. Note, you can also include the source for your GWT Weblet and let the soafaces container compile the GWT Weblet application for you on the fly. If you choose this path, you only need to include the java source and related GWT html/XML files in the `classes` or `lib` directory. The soafaces container will use this source information to compile the GWT Weblet application on the fly.
 
-===Step 7: Deploy the new Bundle to a soafaces Container (like !JobServer)===
+===Step 7: Deploy the new Bundle to a soafaces Container (such as!JobServer)===
 
 Now, name the Bundle JAR something like `myhelloworld.sfb`, for example, and place it in the !JobServer `soafaces` directory. The name must be unique within !JobServer. Now go to the !JobServer soafaces Repository tool and you should see the new Bundle. It can now be used to build a new job! 
