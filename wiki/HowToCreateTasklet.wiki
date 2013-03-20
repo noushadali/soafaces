@@ -298,10 +298,10 @@ Here is an example what your SFB directory structure looks like:
   |    --MANIFEST.MF  (manifest file that defines the SFB)
   |
   |
-  -- classes  (directory that contains any Tasklet or Weblet classes that are not in jar format)
+  -- classes  (directory that contains any Tasklet and Weblet classes that are not in jar format)
   |
   |
-  -- lib  (directory that contains any Tasklet or Weblet need jars)
+  -- lib  (directory that contains any Tasklet and Weblet need jars)
   |
   |
   -- www  (optional directory that contains compiled Weblet GWT javascript/html code)
