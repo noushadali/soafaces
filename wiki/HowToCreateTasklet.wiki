@@ -247,17 +247,17 @@ Here is an example of a simple ANT target that can construct the Bundle archive 
     <target name="build_sfb" depends="compile" description="Build Bundle for example Tasklet">
       
       <!-- Create "classes" directory to put your Weblet and Tasklet code in -->
-      <mkdir dir="build/sfb-dir/org-beansoup-helloworld3-v1-0-0/classes" />
+      <mkdir dir="build/sfb-dir/helloworld3/classes" />
 
       <!-- Create "lib" directory to put your Weblet and Tasklet code in and/or related
            JARs your Weblet and Tasklet code depend on. -->
-      <mkdir dir="build/sfb-dir/org-beansoup-helloworld3-v1-0-0/lib" />
+      <mkdir dir="build/sfb-dir/helloworld3/lib" />
 
       <!-- This step copies all the Tasklet compiled classes and all the Weblet compiled classes
            and Weblet source java/html files into the SFB "classes" directory.  -->
       <!-- You only copy the Weblet source java/html files if you want the SFB container to
            dynamically run the GWT compiler on your Weblet code. -->
-      <copy todir="build/sfb-dir/org-beansoup-helloworld3-v1-0-0/classes"
+      <copy todir="build/sfb-dir/helloworld3/classes"
             overwrite="false">
          <fileset dir="${build.classes.dir}"
                   includes="org/beansoup/helloworld3/**/*.class"/>
@@ -272,8 +272,8 @@ Here is an example of a simple ANT target that can construct the Bundle archive 
       </copy>
 
       <!-- Create the SFB as a JAR package -->
-      <jar destfile="build/sfb-dir/org-beansoup-helloworld3-v1-0-0.sfb"
-           basedir="build/sfb-dir/org-beansoup-helloworld3-v1-0-0"
+      <jar destfile="build/sfb-dir/helloworld3.sfb"
+           basedir="build/sfb-dir/helloworld3"
            includes="**">
     
          <!-- Construct the MANIFEST.MF file that defines the SFB -->
@@ -302,7 +302,7 @@ Note, that you have the option to include the GWT client code (java source code)
 Here is an example what your SFB directory structure looks like:
 
 {{{
-MyComponent.sfb
+helloworld3.sfb
   |
   |
   -- META-INF
