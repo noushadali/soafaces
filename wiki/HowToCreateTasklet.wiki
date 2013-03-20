@@ -304,6 +304,7 @@ Here is an example what your SFB directory structure looks like:
 {{{
 MyComponent.sfb
   |
+  |
   -- META-INF
   |    |
   |    --MANIFEST.MF  (manifest file that defines the SFB)
