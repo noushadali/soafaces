@@ -63,6 +63,8 @@ public class UCDemo implements EntryPoint {
 Here is what the server side code looks like. This is the service endpoint referenced by the client above. As you can see very simple. Just a POJO with an annotation marker. This allows the !UnviversalClient to invoke this service and return the results.
 
 {{{
+package com.acme;
+
 public class HelloWorldService {
 
   @ServiceEndpoint(name="helloThereEndpoint")
