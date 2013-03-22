@@ -27,4 +27,4 @@ The !UniversalClient interface can pass any java object supported for serializat
 
 Refer to the [http://soafaces.googlecode.com/files/universalapp-example-war-2.0.0.zip universalapp WAR file] for an example of how to use the !UniversalClient API directly from your own GWT client code. This is a sample webapp that shows how to use the API. Download and install it in an servlet container to demo the API in a simple GWT client application.
 
-Here is a more detailed example of how to use the !UniversalClient from your GWT application: UniversalClientExample.
+Here is a more detailed example of how to use the !UniversalClient from your GWT application: UniversalClientExample. And this another example of how to use the !UniversalClient API from the Weblet interface: UniversalClientWebletExample. Notice, the code for both is very similar. The only real difference is how you acquire the !UniversalClient object.
