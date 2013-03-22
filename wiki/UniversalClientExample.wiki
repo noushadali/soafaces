@@ -58,7 +58,7 @@ public class UCDemo implements EntryPoint {
       
   private UniversalClient getUniversalClient() {
     if(_oClient == null) {
-      _oClient = UniversalClientFactory.getInstance().getUniversalClient(UNIVERSAL_CLIENT_SERVLET);
+      _oClient = UniversalClientFactory.getInstance().getUniversalClient(UNIVERSAL_CLIENT_SERVLET_URL);
     }
     return _oClient;
   }
