@@ -19,7 +19,7 @@ The !UniversalClient interface can pass any java object supported for serializat
   myArgs[0] = new Integer(5); //argument #1 is an integer
   myArgs[1] = "Some Value"; //argument #2 is a string
 
-  //The method FooObject.myMethod must be marked with a soafaces annotation
+  //The method FooObject.myMethod(Integer, String) must be marked with a soafaces annotation
   //The example here uses the annotation name "SomeAnnotation" 
   //The object FooObject must also have a default constructor
   uClient.request("soafaces://com.acme.FooObject/SomeAnnotation", myArgs, asyncPOJOHandler);
