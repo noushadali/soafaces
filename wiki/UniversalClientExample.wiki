@@ -7,6 +7,8 @@ Here is an code example of what a simple GWT client would look like that uses th
 {{{
 public class UCDemo implements EntryPoint {
 
+  //This is the URI of the soafaces servlet that you have added to your appserver.
+  //The path is relative to your appserver base URI.
   private static final String UNIVERSAL_CLIENT_SERVLET_URL = "/mywebapp/SOAFacesRPCServlet";
   private UniversalClient _oClient;
 
@@ -56,12 +58,7 @@ public class UCDemo implements EntryPoint {
     });
   }
       
-  //Tip: If you want a UniversalClient object created and you are calling
-  //it from the Weblet interface then you can use the WebletContext
-  //interface. This creates a UniveralClient with the URL alerady
-  //defined in your soafaces container. If you are creating a UniveralClient
-  //from your own GWT client then you need to define the URL of the
-  //UniversalClient servlet as shown below.
+  //Simple function to make it easy to create and return a UniversalClient object
   private UniversalClient getUniversalClient() {
     if(_oClient == null) {
       _oClient = UniversalClientFactory.getInstance().getUniversalClient(UNIVERSAL_CLIENT_SERVLET_URL);
