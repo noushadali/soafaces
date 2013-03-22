@@ -2,7 +2,7 @@
 
 = Using UniversalClient in GWT App =
 
-Here is an code example of what a simple GWT client would look like that uses the UniversalClient API to invoke a very simple service on the server-side. This is of course a simple example, but you can also use the UniversalClient to [MuleEndpoints invoke Mule endpoints] as well.
+Here is an code example of what a simple GWT client would look like that uses the UniversalClient API to invoke a very simple service on the server-side. This is of course a simple example, but you can also use the UniversalClient to [invoke Mule endpoints MuleEndpoints] as well.
 
 {{{
 public class UCDemo implements EntryPoint {
