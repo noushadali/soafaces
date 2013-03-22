@@ -6,7 +6,7 @@
 
 !UniversalClient functions a universal interface capable of invoking any POJO service or any Mule service endpoint (SOAP, JMS...etc) using a simple API. You can pass and return POJO and JSON objects directly to your GWT application using the !UniversalClient API.
 
-The !UniversalClient interface can pass any java object supported for serialization by GWT including any object that support IsSerializable. You can also pass other objects by wrapping them as JSON. The interface allows you to pass any arbitrary number of objects by using an object array (e.g. Object []) argument. Here is an example of how you can use the API to invoke the object and method com.acme.FooObject.myMethod(int, String) :
+The !UniversalClient interface can pass any java object supported for serialization by GWT including any object that support !IsSerializable. You can also pass other objects by wrapping them as JSON. The interface allows you to pass any arbitrary number of objects by using an object array (e.g. Object []) argument. Here is an example of how you can use the API to invoke the object and method com.acme.FooObject.myMethod(int, String) :
 
 {{{
   //If you are using soafaces from a generic GWT app then you need to use
