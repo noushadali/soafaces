@@ -56,7 +56,7 @@ public class UCDemo implements EntryPoint {
     });
   }
       
-  //Tip: If you want to a UniversalClient object created and you are calling
+  //Tip: If you want anUniversalClient object created and you are calling
   //it from the Weblet interface then you can use the WebletContext
   //interface. This creates a UniveralClient with the URL alerady
   //defined in your soafaces container. If you are creating a UniveralClient
