@@ -43,8 +43,13 @@ public class UCDemo implements EntryPoint {
             }
           };
 
+          //Prepare the arguments to pass to the remote method
+          Object [] myArgs = new Object[2];
+          myArgs[0] = new Integer(5); //argument #1 is an integer
+          myArgs[1] = "Some Value"; //argument #2 is a string
+
           //Simply use the UniversalClient send method to call remote service
-          //This service endpoint takes not arguments and returns a String
+          //This service endpoint takes 2 arguments and returns a String
           getUniversalClient().send(stEndpoint1, oMuleJSONCallback);
         }
       }
@@ -68,8 +73,8 @@ package com.acme;
 public class HelloWorldService {
 
   @ServiceEndpoint(name="helloThereEndpoint")
-  public String helloThere() {
-    return "You got it";
+  public String helloThere(Integer val1, String val2) {
+    return "You got it" + val1 + val2;
   }
 }
 }}}
