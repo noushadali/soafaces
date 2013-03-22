@@ -1,4 +1,4 @@
-#summary Example of how to use UniversalClient from a Generic GWT application
+#summary Example of how to use UniversalClient from within a Generic GWT application
 
 = Using UniversalClient in a Generic GWT App =
 
