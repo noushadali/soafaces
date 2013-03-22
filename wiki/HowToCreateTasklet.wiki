@@ -1,4 +1,4 @@
-#summary Steps to creating a Tasklet component/bundle
+#summary Steps and example code for creating your first Tasklet component/bundle
 
 ==Example of creating a Tasklet based Bundle==
 This example shows how to build a very simple Bundle that implements a Tasklet and also includes an Weblet GUI interface for customizing the Tasklet's input !JavaBean.
