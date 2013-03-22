@@ -4,4 +4,4 @@
 
 Logging is essential in any mission critical environment. Tasklets can have their logging output captured by the soafaces container. If the Tasklet simply logs its output using either Log4J or Java Logging API then all output will be trapped by the container and made available for tracking and reporting by the soafaces container. 
 
-[JobServer http://www.grandlogic.com] , for example, traps all Log4J and Java Logging API calls made by a Taskelt and makes it available for reporting from is various GUI tools.
+[http://www.grandlogic.com/content/html_docs/products-jobserver.shtml JobServer] , for example, traps all Log4J and Java Logging API calls made by a Taskelt and makes it available for reporting from is various GUI tools.
