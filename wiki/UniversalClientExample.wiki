@@ -7,7 +7,7 @@ Here is an code example of what a simple GWT client would look like that uses th
 {{{
 public class UCDemo implements EntryPoint {
 
-  private static final String UNIVERSAL_CLIENT_SERVLET = "/mywebapp/SOAFacesRPCServlet";
+  private static final String UNIVERSAL_CLIENT_SERVLET_URL = "/mywebapp/SOAFacesRPCServlet";
   private UniversalClient _oClient;
 
   private Button button;
