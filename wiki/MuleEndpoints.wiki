@@ -1,14 +1,8 @@
 #summary How to invoke Mule services from the soafaces UniversalClient interface
 
 = Introduction =
+Invoking Mule service from the UniversalClient interface is similar to using the native MuleClient API found in the Mule API.
 
+To invoke a Mule service use the UniversalClient interface and reference the Mule endpoints like you would using the native !MuleClient API.
 
-Add your content here.
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+For example you can use endpoints such as `vm://myMuleService` or `jms://myJmsServer` ....etc.
