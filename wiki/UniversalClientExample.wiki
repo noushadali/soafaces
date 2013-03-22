@@ -60,7 +60,7 @@ public class UCDemo implements EntryPoint {
 }
 }}}
 
-Here is what the server side code looks like. This is the service endpoint referenced by the client above. As you can see very simple. Just a POJO with an annotation marker. This allows the !UnviversalClient above to invoke this service and return the results of invoked method.
+Here is what the server side code looks like. This is the service endpoint referenced by the client above. As you can see very simple. Just a POJO with an annotation marker. This allows the !UnviversalClient above to invoke this service and return the results of the invoked method.
 
 {{{
 package com.acme;
