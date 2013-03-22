@@ -1,4 +1,4 @@
-#summary How to create a GWT Weblet application
+#summary Steps and example code for how to create a GWT Weblet application
 
 ==Example of creating a soafaces application Bundle==
 This example shows how to build a Bundle application. The application uses an input !JavaBean to allow users to customize the application behavior. The !JavaBean is persisted automatically by the framework.
