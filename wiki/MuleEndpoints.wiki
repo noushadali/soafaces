@@ -5,6 +5,6 @@ Invoking Mule services from the UniversalClient interface is similar to using th
 
 To invoke a Mule service, use the UniversalClient interface and reference the Mule endpoints URI like you would using the native !MuleClient API.
 
-For example you can use endpoints such as `vm://myMuleService` or `jms://myJmsServer` ....etc.
+For example, you can use endpoints such as `vm://myMuleService` or `jms://myJmsServer` ....etc.
 
 Follow the example in UniversalClientExample to invoke Mule service from your GWT client. Also see the BeanSoup project for full source code examples of how to invoke Mule services using the !UniversalClient interface.
