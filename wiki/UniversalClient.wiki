@@ -22,7 +22,7 @@ The !UniversalClient interface can pass any java object supported for serializat
   //The method FooObject.myMethod(Integer, String) must be marked with a soafaces annotation
   //The example here uses the annotation name "SomeAnnotation" 
   //The object FooObject must also have a default constructor
-  uClient.request("soafaces://com.acme.FooObject/SomeAnnotation", myArgs, asyncPOJOHandler);
+  uClient.send("soafaces://com.acme.FooObject/SomeAnnotation", myArgs, asyncPOJOHandler);
 }}}
 
 Refer to the [http://soafaces.googlecode.com/files/universalapp-example-war-2.0.0.zip universalapp WAR file] for an example of how to use the !UniversalClient API directly from your own GWT client code. This is a sample webapp that shows how to use the API. Download and install it in an servlet container to demo the API in a simple GWT client application.
