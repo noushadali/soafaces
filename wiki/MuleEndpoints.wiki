@@ -1,4 +1,4 @@
-#summary How to invoke a Mule services from the soafaces UniversalClient interface
+#summary How to invoke Mule services from the soafaces UniversalClient interface
 
 = Introduction =
 
