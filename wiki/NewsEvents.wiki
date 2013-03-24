@@ -4,7 +4,7 @@
   * *03/23/2012 - Release 2.6.10*
     * _Support for GWT 2.5.1_
     * _Improvements to javadoc formatting_
-    * _UI improvements in layout of GUI for HelloMule Tasklet Customizer and HelloWorld Apps_
+    * _UI improvements in layout of GUI for !HelloMule Tasklet Customizer and !HelloWorld Apps_
   * *11/29/2012 - Release 2.6.6*
     * _API changes to support returning job run id from !WorkflowContainer.runJob(..) interface_
     * _Minor bug fixes to !ShellScript and !EmailAlert tasklets_
