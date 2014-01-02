@@ -9,7 +9,7 @@ Follow these steps to learn how to develop, package and deploy your own soafaces
   # Implement Weblet Interface (Optional)
   # Define an Input !JavaBean for Tasklet (Optional)
   # Define an Output !JavaBean for Tasklet (Optional)
-  # Create MANIFEST.MF file
+  # Create `MANIFEST.MF` file
   # Package Contents into a Bundle JAR file
   # Deploy the new Bundle to a soafaces Container (such as !JobServer)
 
@@ -211,9 +211,9 @@ public class HelloWorldOutput implements IsSerializable
 }}}
     
 
-===Step 5: Create MANIFEST.MF file===
+===Step 5: Create `MANIFEST.MF` file===
 
-Now it is time to configure and package your Bundle into a JAR archive file called a `SFB`. Creating the `MANIFEST.MF` file is the first step in this processes. The `MANIFEST.MF` file contains the meta information that informs a soafaces container like !JobServer what is contained in the Bundle JAR file and what interfaces are defined by the Bundle. The file is placed in the META-INF directory inside the Bundle JAR. Here is an example of what a `MANIFEST.MF` file might look like:
+Now it is time to configure and package your Bundle into a JAR archive file called a `SFB`. Creating the `MANIFEST.MF` file is the first step in this processes. The `MANIFEST.MF` file contains the meta information that informs a soafaces container like !JobServer what is contained in the Bundle JAR file and what interfaces are defined by the Bundle. The file is placed in the `META-INF` directory inside the Bundle JAR. Here is an example of what a `MANIFEST.MF` file might look like:
 
 {{{
 SOAFaces-Name: Hello World 3
