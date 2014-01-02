@@ -9,7 +9,7 @@ Follow these steps to learn how to develop, package and deploy your own soafaces
   # Implement Weblet Interface (Optional)
   # Define an Input !JavaBean for Tasklet (Optional)
   # Define an Output !JavaBean for Tasklet (Optional)
-  # Create MANIFEST.MF File
+  # Create MANIFEST.MF file
   # Package Contents into a Bundle JAR file
   # Deploy the new Bundle to a soafaces Container (such as !JobServer)
 
