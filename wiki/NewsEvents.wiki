@@ -2,7 +2,7 @@
 
 ==Status and News===
   * *09/07/2014 - Release 2.6.18*
-    * _Minor API changes_
+    * _Minor API changes. New JobContext method for accessing user email_
     * _Support for DOCTYPE HTML in Tasklet/Weblet UIs_
     * _UI layout improvements for several Tasklet Bundles_
     * _Shell Script Tasklet minor reporting and notification enhancements_
