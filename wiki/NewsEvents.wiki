@@ -5,7 +5,7 @@
     * _Minor API changes_
     * _Support for DOCTYPE HTML_
     * _UI layout improvements for several Tasklet Bundles_
-    * _ShellScript Tasklet minor reporting and notification enhancements_
+    * _Shell Script Tasklet minor reporting and notification enhancements_
   * *03/23/2012 - Release 2.6.10*
     * _Support for GWT 2.5.1_
     * _Improvements to javadoc formatting_
