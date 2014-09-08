@@ -1,7 +1,7 @@
 #summary New releases and happenings
 
 ==Status and News===
-  * *09/07/2012 - Release 2.6.18*
+  * *09/07/2014 - Release 2.6.18*
     * _Minor API changes_
     * _Support for DOCTYPE HTML_
     * _UI layout improvements for several Tasklet Bundles_
