@@ -6,7 +6,7 @@
 September 7, 2014 - [http://www.grandlogic.com/downloads_content/soafaces_downloads/release_notes-2.6.18.html Release Notes]
 
 || *Download Package* || *Description* ||
-|| [http://soafaces.googlecode.com/files/soafaces-jars-2.6.18.zip soafaces-jars-2.6.18.zip] || soafaces binary JARs ||
+|| [http://www.grandlogic.com/downloads_content/soafaces_downloads/soafaces-jars-2.6.18.zip soafaces-jars-2.6.18.zip] || soafaces binary JARs ||
 || [http://soafaces.googlecode.com/files/soafaces-src-2.6.18.zip soafaces-src-2.6.18.zip] || soafaces source ||
 || [http://soafaces.googlecode.com/files/soafaces-javadocs-2.6.18.zip soafaces-javadocs-2.6.18.zip] || soafaces soafaces Javadocs ||
 || [http://soafaces.googlecode.com/files/beansoup-sfb-2.6.18.zip beansoup-sfb-2.6.18.zip] || Beansoup compiled sample Bundle components. Unzip and use Bundles in your soafaces Container ||
