@@ -14,7 +14,7 @@ September 7, 2014 - [http://www.grandlogic.com/downloads_content/soafaces_downlo
 || [http://www.grandlogic.com/downloads_content/soafaces_downloads/universalapp-example-war-2.6.18.zip universalapp-example-war-2.6.18.zip] || Example using !UniversalClient API in a GWT web application to access remote services with no RPC! WAR file includes the sample source code for both GWT client and backend services. ||
 
 == Version 2.6.10 ==
-March 23, 2012 - [http://soafaces.googlecode.com/files/release_notes-2.6.10.html Release Notes]
+March 23, 2014 - [http://soafaces.googlecode.com/files/release_notes-2.6.10.html Release Notes]
 
 || *Download Package* || *Description* ||
 || [http://soafaces.googlecode.com/files/soafaces-jars-2.6.10.zip soafaces-jars-2.6.10.zip] || soafaces binary JARs ||
