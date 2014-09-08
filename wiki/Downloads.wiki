@@ -3,7 +3,7 @@
 = SOAFaces Release Download Archives =
 
 == Version 2.6.18 ==
-September 7, 2014 - [http://soafaces.googlecode.com/files/release_notes-2.6.18.html Release Notes]
+September 7, 2014 - [http://www.grandlogic.com/downloads_content/soafaces_downloads/release_notes-2.6.18.html Release Notes]
 
 || *Download Package* || *Description* ||
 || [http://soafaces.googlecode.com/files/soafaces-jars-2.6.18.zip soafaces-jars-2.6.18.zip] || soafaces binary JARs ||
