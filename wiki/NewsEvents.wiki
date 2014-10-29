@@ -1,6 +1,10 @@
 #summary New releases and happenings
 
 ==Status and News===
+  * *10/28/2014 - Release 2.6.20*
+    * _ShellScript Tasklet: Customize working directory_
+    * _ShellScript Tasklet: Use ProcessBuilder_
+    * _ShellScript Tasklet: Use Java API for setting command file to be an executable_
   * *09/07/2014 - Release 2.6.18*
     * _Minor API changes. New !JobContext method for accessing user email_
     * _Support for DOCTYPE HTML in Tasklet/Weblet UIs_
