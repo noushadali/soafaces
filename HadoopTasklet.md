@@ -1,0 +1,35 @@
+# Overview #
+
+The soafaces framework comes packages with two main components that allow for Hadoop integration:
+
+  * Hadoop Job Runner
+  * Hadoop Reporter
+
+
+# Hadoop Job Runner #
+
+This soafaces component lets you build, run and track any existing Hadoop job you have. You can easily package your existing hadoop code into a jar (or set of jars) and drop them into the **lib** directory of the this soafaces component (aka SFB). The Hadoop Job Manager component can then execute and run the Hadoop job.
+
+This component will allow a container that implements soafaces, like JobServer, to launch and track any Hadoop job. This gives you the ability to use the full power of [JobServer](http://grandlogic.com) to schedule and track in real-time the status of your Hadoop job.
+
+## Tasklet ##
+The Tasklet associated with this component executes and tracks the Hadoop job on the server side.
+
+## Weblet ##
+The component comes with a GWT Weblet customizer to lets you customize how to connect and setup your Hadoop job.
+
+## RuntimeViewer ##
+The component includes a GWT RuntimeViewer GUI for tracking and monitoring the Hadoop job as it runs and to report on its final status.
+
+# Hadoop Reporter #
+
+This is a soafaces component (SFB) that runs a basic job that will generate a report that can be viewed or emailed detailing the high-level status of all jobs within your specified Hadoop environment.
+
+## Tasklet ##
+The Tasklet associated with this component connects with your Hadoop environment to query the status of all the running jobs in the Hadoop JobTracker.
+
+## Weblet ##
+The component comes with a GWT Weblet customizer to lets you customize how to connect and setup your Hadoop job.
+
+## RuntimeViewer ##
+The component includes a GWT RuntimeViewer GUI that will display the status of all the running jobs in your Hadoop environment.

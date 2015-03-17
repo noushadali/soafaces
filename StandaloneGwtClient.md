@@ -1,0 +1,61 @@
+# Introduction #
+
+This section describes how you can use the **Services** (UniversalClient) portion of the soafaces API to make SOA messaging/RPC calls from any GWT client application with no RPC complexity. All you do is set an annotation endpoint marker on methods on a POJO object and then reference that endpoint in your UniversalClient calls. You can send POJO and JSON objects as arguments and return POJO/JSON values without dealing with serialization and RPC related logic. See the [universalapp WAR](http://soafaces.googlecode.com/files/universalapp-example-war-2.0.0.zip) application for an example of how to use the UniversalClient API in a standalone WAR application. The WAR file also contains the source for the demonstration application.
+
+### To get started: ###
+  * Review the UniversalClient Services API in the soafaces Javadocs
+  * Download and run the universalapp.war webapp in any servlet engine (aka Tomcat, Jetty ...etc)
+  * Review the sample code in universalapp.war
+  * Download and install the necessary soafaces jars and build your own application using the UniversalClient messaging API
+
+If you want to also access endpoint services that include soafaces endpoints along with Mule endpoints (like JMS, SOAP ...etc) use the jars shown below in your webapp.
+
+  * soafaces-services-client.jar
+  * soafaces-services-servlet.jar
+
+Note that you will also need to include in your webapp any necessary Mule jars.
+
+If you do not need to route calls to Mule supported endpoints and you do not wish to include the Mule JAR dependencies you can use a stripped down version of the servlet JAR, `soafaces-services-servlet-nomule.jar` that has no mule dependencies or mule support. This will allow you to make UniversalClient calls to endpoints using the `soafaces://` protocol only.
+
+### Steps for setting up your webapp to use the UniversalClient: ###
+  1. Inherit the `Services.gwt.xml` module in your GWT module file
+  1. Add `soafaces-services-client.jar` to your GWTCompiler's classpath when compiling your GWT client to javascript
+  1. Place `soafaces-services-servlet.jar` in your webapps `WEB-INF/lib` directory
+  1. Add `gwt-servlet-1.5.2.jar`, `xstream-1.2.2.jar` and `jettison-1.0.1.jar` in your webapps `WEB-INF/lib` directory
+  1. If you are using the mule make sure to include any mule dependent jars in your webapps `WEB-INF/lib` directory
+
+### Invoking Services Through UniversalClient ###
+This section describes how to use the UniversalClient API and to invoke methods on remote services. The API uses a similar approach as the `MuleClient` ESB API to send and receive method arguments and return values. For example here one of the simiple :
+`send` methods available in UniversalClient:
+```
+UniversalClient.send(String endpointURI, Object payload, UniversalClientPOJOCallback callback);
+```
+
+This send method can invoke Mule endpoints or soafaces endpoints. For example when invoking a soafaces endpoint (using `soafaces://') you are actually invoking a remote method. This method can have zero or more arguments and can return a result (or Void).
+
+The UniversalClient `send` method lets you invoke virtually any method using a simple approach similar to that used by MuleClient. Multiple arguments must be wrapped in an `Object[]` and passed as the payload. Here are the different options for passing parameters to a method or services using send:
+
+| **Supported Argument Types** | **Description** |
+|:-----------------------------|:----------------|
+| Void argument | Can call methods/services that take no arguments. |
+| Built in Java types | For example String, Integer, primitives and any GWT supported serialized type can be sent as a single arguments |
+| IsSeralizable | User defined types that support IsSerializable |
+| Arrays (built-in types) | Arrays of built in Java types. One and two dimensional arrays supported. Includes all primitives and built-in Serializable types. |
+| Arrays IsSerializable | Arrays of IsSeralizable. Only one dimensional arrays supported. |
+| Collections | Map, List, Set are supported. |
+| JSON (JSONObject) | Can pass any JSON object to server by wrapping in GWT JSONObject. On the server it will be converted to corresponding Java object and passed to the service or method being invoked. |
+| Multiple arguments | A method that requires multiple arguments can use Object[.md](.md) to wrap all the arguments. Any combination of the previous types shown in this table can be wrapped in Object[.md](.md). |
+
+Types of that can be returned from a service call:
+
+| **Supported Return Types** | **Description** |
+|:---------------------------|:----------------|
+| Void | Return type Void. Nothing returned. |
+| Built in Java types | For example String, Integer, primitives and any GWT supported serialized type can be sent as a single arguments. |
+| IsSeralizable | User defined types that support IsSerializable |
+| Arrays (built-in types) | Arrays of built in Java types. One and two dimensional arrays supported. Includes all primitives and built-in Serializable types. |
+| Arrays IsSerializable | Arrays of IsSeralizable. Only one dimensional arrays supported. |
+| Collections | Map, List, Set are supported. |
+| JSON (JSONValue) | Return object from server will be converted to JSON and then represented as a JSONValue in GWT when pulled from the async callback. |
+
+Here is a detailed example of how to use the UniversalClient from your GWT application: UniversalClientExample.

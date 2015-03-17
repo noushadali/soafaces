@@ -1,0 +1,28 @@
+# Introduction #
+
+UniversalClient is GWT interface that gives you much of the power of the classical [MuleClient](http://mulesource.org) API used to connect to Mule endpoints and other SOA services all across your network.
+
+UniversalClient functions a universal interface capable of invoking any POJO service or any Mule service endpoint (SOAP, JMS...etc) using a simple API. You can pass and return POJO and JSON objects directly to your GWT application using the UniversalClient API.
+
+The UniversalClient interface can pass any java object supported for serialization by GWT including any object that supports the IsSerializable interface. You can also pass other objects by wrapping them as JSON. The interface allows you to pass any arbitrary number of objects by using an object array (e.g. `Object []`) argument. Here is an example of how you can use the API to invoke the object and method `com.acme.FooObject.myMethod(int, String)` :
+
+```
+  //If you are using soafaces from a generic GWT app then you need to use
+  //the UniversalClientFactory to get the UniversalClient object. Otherwise,
+  //if your code is running in a SOAFaces Container you can simpley get the UniversalClient
+  //object from the context.
+  UniversalClient uClient = UniversalClientFactory.getInstance().getUniversalClient("/mywebapp/SoafacesServlet");
+  
+  Object [] myArgs = new Object[2];
+  myArgs[0] = new Integer(5); //argument #1 is an integer
+  myArgs[1] = "Some Value"; //argument #2 is a string
+
+  //The method FooObject.myMethod(Integer, String) must be marked with a soafaces annotation
+  //The example here uses the annotation name "SomeAnnotation" 
+  //The object FooObject must also have a default constructor
+  uClient.send("soafaces://com.acme.FooObject/SomeAnnotation", myArgs, asyncPOJOHandler);
+```
+
+Refer to the [universalapp WAR file](http://soafaces.googlecode.com/files/universalapp-example-war-2.0.0.zip) for an example of how to use the UniversalClient API directly from your own GWT client code. This is a sample webapp that shows how to use the API. Download and install it in an servlet container to demo the API in a simple GWT client application.
+
+Here is a more detailed example of how to use the UniversalClient from your GWT application: UniversalClientExample. And this another example of how to use the UniversalClient API from the Weblet interface: UniversalClientWebletExample. Notice, the code for both is very similar. The only real difference is how you acquire the UniversalClient object.

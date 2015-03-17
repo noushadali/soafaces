@@ -1,0 +1,81 @@
+# Using UniversalClient in a Generic GWT App #
+
+Here is a code example of what a simple GWT client would look like that uses the UniversalClient API to invoke a very simple service on the server-side. This is of course a simple example, but you can also use the UniversalClient to [invoke Mule endpoints](MuleEndpoints.md) as well.
+
+```
+public class UCDemo implements EntryPoint {
+
+  //This is the URI of the soafaces servlet that you have added to your appserver.
+  //The path is relative to your appserver base URI.
+  private static final String UNIVERSAL_CLIENT_SERVLET_URL = "/mywebapp/SOAFacesRPCServlet";
+  private UniversalClient _oClient;
+
+  private Button button;
+
+  /**
+   * Simple entry point and use call to UniversalClient.
+   */
+  public void onModuleLoad() {
+    button = new Button("Click To Execute Service Call");
+
+    DockPanel dockPanel = new DockPanel();
+    dockPanel.add(button, DockPanel.WEST);
+    RootPanel.get().add(dockPanel);
+
+    button.addClickListener(new ClickListener() {
+      public void onClick(Widget btn) {
+
+        //Format endpoint is: soafaces://<fully qualified class name>/<annotation name of method endpoint>
+        String stEndpoint1 = "soafaces://com.acme.HelloWorldService/helloThereEndpoint";
+        if (btn.equals(button)) {
+
+          //Create the UniversalClient Async Callback
+          UniversalClientPOJOCallback oMulePOJOCallback = new UniversalClientPOJOCallback() {
+
+            public void onUniversalClientSuccess(Object result) {
+              //Serivces returns a String
+              String returnVal = (String) result;
+              Window.alert("Wow this was a success! Return value: " + returnVal);
+            }
+
+            public void onFailure(Throwable ex) {
+              Window.alert("Error during UniversalClient call: " + ex.getMessage());
+            }
+          };
+
+          //Prepare the arguments to pass to the remote method
+          Object [] myArgs = new Object[2];
+          myArgs[0] = new Integer(5); //argument #1 is an integer
+          myArgs[1] = "Some Value"; //argument #2 is a string
+
+          //Simply use the UniversalClient send method to call remote service
+          //This service endpoint takes 2 arguments and returns a String
+          getUniversalClient().send(stEndpoint1, myArgs, oMuleJSONCallback);
+        }
+      }
+    });
+  }
+      
+  //Simple function to make it easy to create and return a UniversalClient object
+  private UniversalClient getUniversalClient() {
+    if(_oClient == null) {
+      _oClient = UniversalClientFactory.getInstance().getUniversalClient(UNIVERSAL_CLIENT_SERVLET_URL);
+    }
+    return _oClient;
+  }
+}
+```
+
+Here is what the server-side code looks like. The annotation name `helloThereEndpoint` is the service endpoint referenced by the client code above. As you can see, the server-side code is very simple to setup. You just create a POJO with an annotation marker. This allows the UnviversalClient code above to invoke this service and return the results of the method.
+
+```
+package com.acme;
+
+public class HelloWorldService {
+
+  @ServiceEndpoint(name="helloThereEndpoint")
+  public String helloThere(Integer val1, String val2) {
+    return "You got it" + val1 + val2;
+  }
+}
+```

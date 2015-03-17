@@ -1,0 +1,3 @@
+# Introduction #
+
+Welcome to the BeanSoup sub project within soafaces. BeanSoup is a collection of soafaces Bundles (SFBs). The individual bundles provide sample code for developers wanting to learn the different things you can do soafaces and also as a repository for soafaces components that developers can contribute to. You can download the collection of sample SFB components found in [BeanSoup here](Downloads.md).

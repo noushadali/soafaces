@@ -1,0 +1,5 @@
+A Bundle (soafaces Bundle) is a simple JAR file that contains the classes and resources needed to execute your soafaces Application or Task/Job. Bundles are very powerful and flexible software components. You can develop a Bundle to serve as an Application that will implement a web GUI type application or as a Tasklet that will be part of a server-side job process. In either case the steps for developing, packaging, and deploying types of components (aka Bundles) are very similar.
+
+Let's walk through the process of creating a very simple Bundle components. We will show you how to create the two kinds of Bundles:
+  1. [Server-side Tasklet oriented Bundle](HowToCreateTasklet.md) (used to build batch jobs and workflows)
+  1. [Application oriented Bundle](HowToCreateApplication.md) (used to build web services powered GUI applications)

@@ -1,0 +1,9 @@
+# Introduction #
+
+SoaFacesRunner is a reference implementation of soafaces. It can be used for both development and production deployment purposes. Developers can use it to test development of their soafaces Bundle components (SFBs) and it can also be used to deploy a soafaces job or application as in its own WAR file for production deployment.
+
+With SoaFacesRunner you can package up your SFB into a WAR file and deploy to any standard JEE servlet engine.
+
+
+# Status #
+Planning phase.

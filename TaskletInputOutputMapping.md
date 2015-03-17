@@ -1,0 +1,45 @@
+# Tasklet to Tasklet Runtime Property Passing #
+
+Tasklets can be chained together to form a job or workflow. Tasklets that make up a job can work together and share data between each other. This is an extremely powerful feature of soafaces and tasklets. The ability of one tasklet to pass output properties to another tasklet in the chain enables tasklets to work together withing a job or workflow without any prior knowledge of each other.
+
+What does that mean? Well let's take very simple example. Say you create a simple database tasks that pulls a status message from a database record. This is a custom tasklet let us say. Then let's imagine a simple generic tasklet that can send an email. This email tasklet has in input JavaBean that has properties for the email destination, subject and body. Now if the database tasklet could pass its status message to the email tasklet and place it as the subject that would allow the two tasklets to work together. All that is needed is a simple point a click way of mapping the output of the database tasklet to the input of the email tasklet.
+
+soafaces facilitates this by defined a specification for the soafaces  container to support for how the output JavaBean of one tasklets can map its properties to the input JavaBean of another tasklet further down in the job/workflow chain. It is up to the soafaces container to support this specification and the required mapping GUI.
+
+The properties of the output JavaBean of the one tasklet are mapped/passed/converted to the input JavaBean of another tasklet. Here is how the properties are passed and converted.
+
+A Job that is composed of multiple Tasklets, can configure the Tasklets to communicate with each other. A Tasklet has the option of exposing properties via its output JavaBean that can then be passed to other Tsasklet that execute after it in the Job workflow. These output properties can be passed to the input JavaBean properties of other Tasklets. The result of this is that the output of one Tasklet functions as the input to another Tasklet. And you can do all this with no programming - just point and click to map one output property to a corresponing input property.
+
+If a Tasklet does not wish to communicate with other Tasklets, then you will not need to use this feature. But the power of building components really comes into play when you can get components (Bundles), that have no prior knowledge of each other, to be able to collaborate by passing information between each other using simple point and click.
+
+The user, using a GUI, can pick and choose which outputs map to which inputs for each pair of Tasklet in a Job. There are restrictions in how the output/input mappings can work, especially when the output/input types are not identical. The types must be compatible based on what is referred to as "widening conversion rules". The GUI automatically takes care of deciding which output/input properties are compatible, so the user does not need to deal with it directly, but it can be helpful for some user to understand the details. They are as follows:
+
+**Widening Conversion Rules**
+
+The widening conversions rules described in this section detail how to map an output JavaBean property to an input JavaBean property when the properties are not of the exact same Java type. Narrowing conversions are not allowed. So for example, this means that going from an Integer Java type to a a Short Java type is not allowed, because an Integer would have to be "narrowed" to be mapped to a Short. This would cause information to be lost and thus is not allowed. The reverse is allowed, because a Short when converted to an Integer is considered a widening conversion and no information is lost in the conversion.
+
+Two general forms of data conversion are possible between an output JavaBean property and input JavaBean property when widening conversion occurs:
+
+1) Java Core Reflection Data Conversion Spec. This is basic widening conversion as defined by the Java spec and includes wrapping and unwrapping primitive conversion widening conversion
+
+2) Extended Widening String Conversion (aka Extended). Primitives are converted to String/StringBuffer and other Object data types are converted to String/StringBuffer as well. The Extended conversion is allowed when the input JavaBean is a String/StringBuffer. Given that all Java Objects support the toString() method, any object can be converted and mapped to a String or StringBuffer. Primitive types are also mapped to String or StringBuffer by first wrapping them into corresponding objects. The Extended conversion rules are considered a form of "widening" conversion. Thus converting to a String or StringBuffer is considered permissible.
+
+**Special Array Mapping Rules:**
+
+There are some special rules to consider when dealing with Java Arrays. These rules pertain to the use of Arrays in either an output JavaBean and/or input JavaBean. Arrays allow for some special behavior when mapping occurs. There are three types of output JavaBean to input JavaBean mapping rules to consider:
+
+Non Array Property to Array Property: If the non Array output property is the same data type (or has compatible widening conversion) as the target input Array property type, then conversion will be allowed. In such a case the non Array property is wrapped into an Array and assigned to the input Array property.
+Array property to Array Property: If the Array types are of same type, then the mapping is simple. If they are of different types, but support widening conversion rules then the output Array property is copied into an Array that is of the same type as the target input JavaBean property Array.
+Array property to non Array property: This type of mapping is not possible.
+
+**Input JavaBean Considerations:**
+
+If a BeanInfo object exists for an input JavaBean, it will be used during the mapping processes between Tasklets to determine which input JavaBean properties are exposed for mapping. The developer can use this to control what input JavaBean properties are exposed for mapping from other Tasklets. By defining a BeanInfo class for the input JavaBean, this allows the Tasklet developer to control what JavaBean properties are exposed to other Tasklets and which are not exposed. If a BeanInfo object is not available for an input JavaBean, then only properties with public setter/getter methods will be exposed for mapping between Tasklets.
+
+**Output JavaBean Considerations:**
+
+No custom BeanInfo will be used for the output bean. Output Beans are reflected to find their getter methods/properties. All properties with getter methods are available for passing to the input JavaBean properties of other Tasklets.
+
+**Arrays and Aggregation Considerations:**
+
+Array properties can be used to allow one or more output JavaBeans to aggregate into an input JavaBean. It is really up to the Tasklet developer to implement the setter method of the property method such that it aggregates/appends to the input JavaBean property Array or not.

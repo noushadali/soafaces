@@ -1,0 +1,52 @@
+## Status and News ##
+  * **10/28/2014 - Release 2.6.20**
+    * _ShellScript Tasklet: Customize working directory_
+    * _ShellScript Tasklet: Use ProcessBuilder_
+    * _ShellScript Tasklet: Use Java API for setting command file to be an executable_
+  * **09/07/2014 - Release 2.6.18**
+    * _Minor API changes. New JobContext method for accessing user email_
+    * _Support for DOCTYPE HTML in Tasklet/Weblet UIs_
+    * _UI layout improvements for several Tasklet Bundles_
+    * _Shell Script Tasklet minor reporting and notification enhancements_
+  * **03/23/2012 - Release 2.6.10**
+    * _Support for GWT 2.5.1_
+    * _Improvements to javadoc formatting_
+    * _UI improvements in layout of GUI for HelloMule Tasklet Customizer and HelloWorld Apps_
+  * **11/29/2012 - Release 2.6.6**
+    * _API changes to support returning job run id from WorkflowContainer.runJob(..) interface_
+    * _Minor bug fixes to ShellScript and EmailAlert tasklets_
+  * **07/03/2012 - Release 2.6.4**
+    * _Minor UI and logic changes to Shell Script and EMail Tasklets_
+    * _Source code javadoc fix for deprecated API references_
+    * _Code compiled with Java 6 (previously Java 5)_
+  * **11/30/2011 - Release 2.6.0**
+    * _Number of API changes including deprecating BaseIOView and some related classes_
+    * _New RuntimeViewer that unifies interface for runtime GUI for a Tasklet_
+    * _New TaskletStatus to report on status of running Tasklet_
+    * _New feature allowing Tasklets to track RUN and APP cookies. These are properties that can be tracked across multiple runs of a Tasklet/Job_
+    * _Some other minor API changes_
+  * **8/06/2011 - Release 2.5.8**
+    * _Minor API change to JobContext to add support for querying original schedule date_
+  * **3/15/2011 - Release 2.5.6**
+    * _API support for accessing SMTP Session from Container for emails_
+    * _API support for sending email job level alerts via Container_
+  * **1/11/2011 - Release 2.5.4**
+    * _Fix for no arg soafaces end points_
+    * _Minor doc changes and UI fix to BeanSoup HellWorld component._
+  * **10/06/2010 - Release 2.5.0**
+    * _Minor release with javadoc and doc fixes._
+  * **11/15/2009 - Release 2.4.4**
+    * _Minor bug fix release._
+  * **07/15/2009 - Release 2.4.0**
+    * _Support for Mule 2.2.1 and minor API enhancements._
+  * **12/29/2008 - Release 2.3.6**
+    * _Minor bug fixes._
+  * **10/30/2008 - Release 2.3.0**
+    * _Stable release. Includes some API changes._
+  * **9/25/2008 - Release 2.1.0 Beta**
+    * _API improvements_
+    * _Support Hot/Static GWT compiling_
+  * **9/11/2008 - Release 2.0.3 Beta**
+    * _Support for GWT 1.5 and Java 1.5 among other things_
+  * **6/26/2008 - Release 2.0.0 Beta is out the door!**
+  * **4/22/2008 - Work is on-going towards the 2.0 release of the specification**

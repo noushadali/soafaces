@@ -1,0 +1,344 @@
+## Example of creating a Tasklet based Bundle ##
+This example shows how to build a very simple Bundle that implements a Tasklet and also includes an Weblet GUI interface for customizing the Tasklet's input JavaBean.
+
+Follow these steps to learn how to develop, package and deploy your own soafaces Bundle (Bundle):
+
+  1. Implement Tasklet Interface
+  1. Implement Weblet Interface (Optional)
+  1. Define an Input JavaBean for Tasklet (Optional)
+  1. Define an Output JavaBean for Tasklet (Optional)
+  1. Create `MANIFEST.MF` file
+  1. Package contents into a Bundle JAR file
+  1. Deploy the new Bundle to a soafaces Container (such as JobServer)
+
+### Step 1: Implement Tasklet Interface ###
+
+Using the Tasklet interface, implement the `org.soafces.bundle.workflow.Tasklet` interface by implementing the `onExecute` method. Here is a simple example:
+
+```
+public class HelloWorld implements Tasklet 
+{
+  public HelloWorld()
+  {
+    super();
+  }
+
+  /**
+   * Initialize your Tasklet.
+   *  
+   */
+  public void onExecute(SOATaskInputContext inputContext, SOATaskOutputContext outputContext)
+  {	
+    //If your Tasklet uses an input and/or output JavaBean then it is 
+    //best to get them and cast to the appropriate class type.
+
+    //The input JavaBean contains properties passed down from other
+    //Taskelts in the job chain or properties set manually by the user
+    //using the Weblet's customizer UI.
+    //for example.
+    HelloWorldInput inputBean = (HelloWorldInput) inputContext.getInputBean();
+
+    //The output JavaBean is the place where the Tasklet can save any
+    //output related to this Tasklet's run that it wants returned
+    //to the user or passed to other Tasklets down the job chain.
+    HelloWorldOutput outBean = (HelloWorldOutput) inputContext.getOutputBean();
+
+    /**
+     * Create and name a logger in order to log all messages. The name
+     * can be anything you like. These logs messages can be viewed
+     * using the JobServer Tracker tool which privides a history of
+     * all Taskelets and Jobs that have run.
+     *
+     * JobServer captures all Log4J and Java Logging API messages
+     * made by the Tasklet and makes them available for viewing from
+     * the Job Tracker tool. Note that Log4J Logger must support
+     * additivity=true for logs to be captured and reported by Job Tracker.
+     */
+    Logger myLogger = Logger.getLogger("myLogger");
+    myLogger.log(Level.INFO, "Hello " + inputBean.getPersonName());
+
+    return;
+  }
+}
+```
+
+
+The `onExecute` method will be called when the above Tasklet is run as part of a job.
+
+### Step 2: Implement Weblet Interface (Optional) ###
+
+This step is optional when creating Tasklets. The Weblet GUI will be used to customize the input JavaBean that is used as input to the Tasklet when the job is run on the server-side. Here is what the Weblet implementation might look like:
+
+```
+public class HelloWorldCustomizer extends SimplePOJOWeblet
+{ 
+  private TextBox _oNameField = new TextBox();
+  private HelloWorldInput _oMyInputBean = null;
+
+  /**
+   */
+  public HelloWorldCustomizer() {}
+
+  protected void populateMainPanelPOJO(IsSerializable inputBean)
+  {
+    _oMyInputBean = (HelloWorldInput) inputBean;
+
+    VerticalPanel vSpacer = null;
+
+    getMainPanel().add(new Label("Simple hello world example. Constructs a simple " +
+                                  "hello world message and logs it using Java " + 
+                                  "Logging API when the Tasklet is run in a Job"));
+    vSpacer = new VerticalPanel(); vSpacer.setHeight("20");
+    getMainPanel().add(vSpacer);
+    
+    getMainPanel().add(new Label("(Enter your name to put into hello world message)"));	
+    vSpacer = new VerticalPanel(); vSpacer.setHeight("2");
+    getMainPanel().add(vSpacer);
+    getMainPanel().add(new Label("Name: "));
+    getMainPanel().add(_oNameField);
+    vSpacer = new VerticalPanel(); vSpacer.setHeight("20");
+    getMainPanel().add(vSpacer);
+      
+    //Initialize the field to the value in the input JavaBean
+    _oNameField.setText(_oMyInputBean.getPersonName());
+  }
+
+  /**
+   * This method should be used to save the state 
+   * of the GUI to the input JavaBean and perform
+   * any necessary validation checks. If the validation
+   * is not proper it should return false.
+   *
+   * The Container hosting the Weblet will call
+   * this method in order to save the input JavaBean
+   * to its persistent store. The saved state of the
+   * input JavaBean is what is referenced when the
+   * Tasklet/Job is run.
+   */
+  public void onSaveInputBean(SuccessFailCallback callback)
+  {
+    try {
+      //Save the changes made by the user/gui to the input JavaBean
+      //person name
+      if(_oNameField.getText() == null || _oNameField.getText().trim().equals(""))
+      {
+        Window.alert("Error: No name specified");
+        
+        callback.returnFailure();
+        return;
+      }
+      else
+      {
+        _oMyInputBean.setPersonName(_oNameField.getText());
+      }
+
+      callback.returnSuccess();
+    }catch(Throwable ex) {
+      callback.returnFailure();
+    }
+  }
+}
+```
+
+
+### Step 3: Define an Input JavaBean for Tasklet (Optional) ###
+
+The input JavaBean can be edited by the Weblet GUI and used as input by the Tasklet when the job is run. An example would be like this:
+
+```
+/**
+ * Note that an Input JavaBean must implement IsSerializable to be used
+ * by GWT clients.
+ */
+public class HelloWorldInput implements IsSerializable
+{
+  private String personName="";
+
+  public HelloWorldInput()
+  {
+    super();
+  }
+
+  /**
+   * Name of person to put in the Hello world sentence.
+   */
+  public void setPersonName(String value)
+  {
+    personName=value;
+  } 
+
+  public String getPersonName()
+  {
+    return personName;
+  } 	
+}
+```
+
+### Step 4: Define an Output JavaBean for Tasklet (Optional) ###
+
+The output JavaBean is used by the Tasklet as output. When the Tasklet is run as part of a job the Tasklet interface can write all relevant output to this JavaBean. An example of an output JavaBean would be like this:
+
+```
+/**
+ * Note that an Output JavaBean must implement IsSerializable to be used
+ * by GWT clients.
+ */
+ 
+public class HelloWorldOutput implements IsSerializable
+{
+  private String personName="";
+
+  public HelloWorldInput()
+  {
+    super();
+  }
+
+  /**
+   * Name of person to put in the Hello world sentence.
+   */
+  public void setPersonName(String value)
+  {
+    personName=value;
+  } 
+
+  public String getPersonName()
+  {
+    return personName;
+  } 	
+}
+```
+
+
+### Step 5: Create `MANIFEST.MF` file ###
+
+Now it is time to configure and package your Bundle into a JAR archive file called a `SFB`. Creating the `MANIFEST.MF` file is the first step in this processes. The `MANIFEST.MF` file contains the meta information that informs a soafaces container like JobServer what is contained in the Bundle JAR file and what interfaces are defined by the Bundle. The file is placed in the `META-INF` directory inside the Bundle JAR. Here is an example of what a `MANIFEST.MF` file might look like:
+
+```
+SOAFaces-Name: Hello World 3
+SOAFaces-SymbolicName: surda-beansoup-helloworld3
+SOAFaces-Version: 1.0.0
+SOAFaces-Description: Simple Tasklet with an input JavaBean and MFace Customizer
+SOAFaces-Vendor: Grand Logic, Inc
+SOAFaces-Category: example
+
+#Tasklet runs on the server-side when this java interface is executed.
+SOAFaces-Tasklet: org.beansoup.helloworld3.workflow.HelloWorld
+
+#Optional input JavaBean used by the Weblet and Tasklet.
+SOAFaces-InputBean: org.beansoup.helloworld3.client.HelloWorldInput
+
+#Optional output JavaBean used by the Weblet and Tasklet.
+SOAFaces-OutputBean: org.beansoup.helloworld3.client.HelloWorldOutput
+
+#Optional GWT Weblet client module package name (Bundle.gwt.xml GWT module name).
+#The Bundle.gwt.xml file defines the GWT Weblet UI used for this Tasklet.
+SOAFaces-Weblet: org.beansoup.helloworld3.Bundle
+```
+
+### Step 6: Package Contents into a Bundle JAR file ###
+
+All the code and content are packaged and put into a Bundle JAR file with the file extension `.sfb`. Here is an example directory structure of what a SFB JAR file might look like and what it might contain:
+
+```
+META-INF/MANIFEST.MF
+classes/org/beansoup/helloworld3/client/
+                                        HelloWorldCustomizer.java
+                                        HelloWorldCustomzier.class
+                                        HelloWorldInput.java
+                                        HelloWorldInput.class
+                                        
+classes/org/beansoup/helloworld3/workflow/
+                                          HelloWorld.class
+                                        
+lib/
+    someThirdPartyGWT-Client.jar
+    someThirdPartyServer-Side.jar
+```
+
+Here is an example of a simple ANT target that can construct the Bundle archive file:
+
+```
+    <target name="build_sfb" depends="compile" description="Build Bundle for example Tasklet">
+      
+      <!-- Create "classes" directory to put your Weblet and Tasklet code in -->
+      <mkdir dir="build/sfb-dir/helloworld3/classes" />
+
+      <!-- Create "lib" directory to put your Weblet and Tasklet code in and/or related
+           JARs your Weblet and Tasklet code depend on. -->
+      <mkdir dir="build/sfb-dir/helloworld3/lib" />
+
+      <!-- This step copies all the Tasklet compiled classes and all the Weblet compiled classes
+           and Weblet source java/html files into the SFB "classes" directory.  -->
+      <!-- You only copy the Weblet source java/html files if you want the SFB container to
+           dynamically run the GWT compiler on your Weblet code. -->
+      <copy todir="build/sfb-dir/helloworld3/classes"
+            overwrite="false">
+         <fileset dir="${build.classes.dir}"
+                  includes="org/beansoup/helloworld3/**/*.class"/>
+                 
+         <!-- Include Weblet related java source and html for GWT compiler. -->
+         <!-- Note, you only need to include the java source and html if you want
+              the soafaces container to compile the Weblet GWT code for you. -->
+         <fileset dir="${src.dir}"
+                  includes="org/beansoup/helloworld3/*.xml
+                            org/beansoup/helloworld3/client/*.java
+                            org/beansoup/helloworld3/public/*.css"/>
+      </copy>
+
+      <!-- Create the SFB as a JAR package -->
+      <jar destfile="build/sfb-dir/helloworld3.sfb"
+           basedir="build/sfb-dir/helloworld3"
+           includes="**">
+    
+         <!-- Construct the MANIFEST.MF file that defines the SFB -->
+         <manifest>
+           <attribute name="SOAFaces-Name"            value="Hello World 3"/>
+           <attribute name="SOAFaces-SymbolicName"    value="helloworld3"/>
+           <attribute name="SOAFaces-Version"         value="1.0.0"/>
+           <attribute name="SOAFaces-Description"     value="Simple Tasklet with an input JavaBean and Weblet customizer"/>
+           <attribute name="SOAFaces-Vendor"          value="Grand Logic, Inc"/>
+           <attribute name="SOAFaces-Category"        value="example"/>
+           <attribute name="SOAFaces-Tasklet"         value="org.beansoup.helloworld3.workflow.HelloWorld"/>
+           <attribute name="SOAFaces-InputBean"       value="org.beansoup.helloworld3.client.HelloWorldInput"/>
+           <attribute name="SOAFaces-OutputBean"      value="org.beansoup.helloworld3.client.HelloWorldOutput"/>
+           <attribute name="SOAFaces-Weblet"          value="org.beansoup.helloworld3.Bundle"/>
+           <attribute name="SOAFaces-RuntimeViewer"   value=""/> <!-- Optional GUI viewer for viewing input/output of Tasklet -->
+         </manifest>
+      </jar>
+    </target>
+```
+
+
+Notice that the client GWT code requires the source also be included in the JAR file. The GWT compiler requires the source and will use this to compile, on the fly, the Weblet into GWT AJAX code. The **`lib`** directory can contain any needed third party JARs used by the Weblet or Tasklet code.
+
+Note, that you have the option to include the GWT client code (java source code) in the Bundle and let the soafaces container compile the GWT client code into javascript for you. This frees the developer from having to compile the GWT code and including it in the SFB. You may also compile the GWT client code yourself (using the GWT compiler) and include the javascript in the Bundle directly. You simply include the compiled GWT client code in the **`www`** directory in the Bundle jar.
+
+Here is an example what a general SFB directory structure looks like:
+
+```
+helloworld3.sfb
+  |
+  |
+  -- META-INF
+  |    |
+  |    --MANIFEST.MF  (manifest file that defines the SFB)
+  |
+  |
+  -- classes  (directory that contains any Tasklet and Weblet classes that are not in jar format)
+  |
+  |
+  -- lib  (directory that contains any Tasklet and Weblet required jars)
+  |
+  |
+  -- www  (optional directory that contains compiled Weblet GWT javascript/html code)
+```
+
+You may notice the SFB directory structure above is similar to the J2EE Servlet **`WAR`** file directory format. The `MANIFEST.MF` file defines the configuration of the SFB. The `classes` directory contains your Weblet and Tasklet compiled java classes.
+
+The `lib` directory contains any other java JAR files your Weblet and Tasklet code requires. Note, you can put your java code in either the `classes` or the `lib` directory. The only difference is that the `lib` directory expects only JAR files while the `classes` directory expects full java package structure and directories.
+
+The `www` directory is optional and is where you can put your compiled GWT Weblet application output files. Note, you can also include the source for your GWT Weblet and let the soafaces container compile the GWT Weblet application for you on the fly. If you choose this path, you only need to include the java source and related GWT html/XML files in the `classes` or `lib` directory. The soafaces container will use this source information to compile the GWT Weblet application on the fly.
+
+### Step 7: Deploy the new Bundle to a soafaces Container (such as JobServer) ###
+
+Now, name the Bundle JAR something like `myhelloworld.sfb`, for example, and place it in the JobServer `soafaces` directory. The name must be unique within JobServer. Now go to the JobServer soafaces Repository tool and you should see the new Bundle. It can now be used to build a new job!
